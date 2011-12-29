@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="test" Class="ShiduchimDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DEOHOME-PC\MSSQLSERVER08;Initial Catalog=test;User ID=sa" SettingsObjectName="DatingManagement.Properties.Settings" SettingsPropertyName="testConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Age" Member="Ages">
+    <Type Name="Age">
+      <Column Name="Age" Member="Age1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Age_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Yeshivas" Member="Yeshivas">
+    <Type Name="Yeshiva">
+      <Column Name="Yeshiva" Member="Yeshiva1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Yeshiva_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BaisHamedresh" Member="BaisHamedreshes">
+    <Type Name="BaisHamedresh">
+      <Column Name="BaisHamedresh" Member="BaisHamedresh1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BaisHamedresh_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Camps" Member="Camps">
+    <Type Name="Camp">
+      <Column Name="Camp" Member="Camp1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Camp_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Countries">
+    <Type Name="Country">
+      <Column Name="Country" Member="Country1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Duplicates" Member="Duplicates">
+    <Type Name="Duplicate">
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MotherName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FathersID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Duplicates_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Heights" Member="Heights">
+    <Type Name="Height">
+      <Column Name="Height" Member="Height1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Height_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MadeShiduchim" Member="MadeShiduchims">
+    <Type Name="MadeShiduchim">
+      <Column Name="MadeShiduchim_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Month" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BoysSide" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AmountBoy" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GirlsSide" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AmountGirl" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mechitunem" Member="Mechitunems">
+    <Type Name="Mechitunem">
+      <Column Name="FathersID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MechitenID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BaisMedresh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Family_Mechitunem" Member="Family" ThisKey="FathersID" OtherKey="FathersID" Type="Family" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Months" Member="Months">
+    <Type Name="Month">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Month" Member="Month1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Months_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Region" Member="Regions">
+    <Type Name="Region">
+      <Column Name="Region" Member="Region1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Region_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Schools" Member="Schools">
+    <Type Name="School">
+      <Column Name="School" Member="School1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="School_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Seminarys" Member="Seminaries">
+    <Type Name="Seminary">
+      <Column Name="Seminary" Member="Seminary1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Seminary_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Years" Member="Years">
+    <Type Name="Year">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Year" Member="Year1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="s_ColLineage" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="s_Generation" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="s_GUID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="s_Lineage" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Family" Member="Families">
+    <Type Name="Family">
+      <Column Name="FathersID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MotherName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HomePhone1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HomePhone2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="WorkPhone" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Pager" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BaisHamedresh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Work]" Member="Work" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[E-Mail]" Member="E_Mail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mechitunim" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Rating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HomePhone1_Descr" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HomePhone2_Descr" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="WorkPhone_Descr" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Mobile_Descr" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="Family_Mechitunem" Member="Mechitunems" ThisKey="FathersID" OtherKey="FathersID" Type="Mechitunem" />
+      <Association Name="Family_Girl" Member="Girls" ThisKey="FathersID" OtherKey="FathersID" Type="Girl" />
+      <Association Name="Family_Boy" Member="Boys" ThisKey="FathersID" OtherKey="FathersID" Type="Boy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Girls" Member="Girls">
+    <Type Name="Girl">
+      <Column Name="FathersID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GirlsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GirlsName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Height" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="School" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Seminary" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Camp" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="[Work]" Member="Work" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Graduate" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Gen_Picture" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Dor_Yeshurim" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Association Name="Family_Girl" Member="Family" ThisKey="FathersID" OtherKey="FathersID" Type="Family" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Boys" Member="Boys">
+    <Type Name="Boy">
+      <Column Name="FathersID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BoysID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BoysName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Height" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="Yeshiva" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Gen_Picture" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="s_GUID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Dor_Yeshurim" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Association Name="Family_Boy" Member="Family" ThisKey="FathersID" OtherKey="FathersID" Type="Family" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
