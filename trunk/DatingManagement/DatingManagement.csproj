@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46BEA9D8-EEB1-46EB-88CA-7A5E1542968F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DatingManagement</RootNamespace>
+    <AssemblyName>DatingManagement</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1.Design, Version=10.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="log4net">
+      <HintPath>..\ref\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\BasePresenter.cs" />
+    <Compile Include="BLL\CLogger.cs" />
+    <Compile Include="BLL\BoysListPresenter.cs" />
+    <Compile Include="BLL\MadeShiduchimListPresenter.cs" />
+    <Compile Include="BLL\GirlsListPresenter.cs" />
+    <Compile Include="BLL\FamilyListPresenter.cs" />
+    <Compile Include="BLL\CampsPresenter.cs" />
+    <Compile Include="BLL\BaisHamedreshPresenter.cs" />
+    <Compile Include="BLL\SeminarysPresenter.cs" />
+    <Compile Include="BLL\SchoolsPresenter.cs" />
+    <Compile Include="BLL\RegionPresenter.cs" />
+    <Compile Include="BLL\MonthsPresenter.cs" />
+    <Compile Include="BLL\HeightsPresenter.cs" />
+    <Compile Include="BLL\CountryPresenter.cs" />
+    <Compile Include="BLL\Views\IMadeShiduchimDetailsView.cs" />
+    <Compile Include="BLL\Views\IMadeShiduchimListView.cs" />
+    <Compile Include="BLL\Views\IGirlDetailsView.cs" />
+    <Compile Include="BLL\Views\IGirlListView.cs" />
+    <Compile Include="BLL\Views\IBoyListView.cs" />
+    <Compile Include="BLL\Views\IBoyDetailsView.cs" />
+    <Compile Include="BLL\Views\IBaisHamedreshsView.cs" />
+    <Compile Include="BLL\Views\ISeminarysView.cs" />
+    <Compile Include="BLL\Views\ISchoolsView.cs" />
+    <Compile Include="BLL\Views\IRegionsView.cs" />
+    <Compile Include="BLL\Views\ICampsView.cs" />
+    <Compile Include="BLL\Views\IMonthsView.cs" />
+    <Compile Include="BLL\Views\IHeightsView.cs" />
+    <Compile Include="BLL\Views\ICountrysView.cs" />
+    <Compile Include="BLL\DataLayer.cs" />
+    <Compile Include="BLL\Definitions.cs" />
+    <Compile Include="BLL\Views\IBaseDetailsView.cs" />
+    <Compile Include="BLL\Views\IBaseView.cs" />
+    <Compile Include="BLL\Views\IFamilyDetailsView.cs" />
+    <Compile Include="BLL\Views\IFamilyListView.cs" />
+    <Compile Include="BLL\Views\IYeshivasView.cs" />
+    <Compile Include="Controls\BaseDetailCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseDetailCtrl.Designer.cs">
+      <DependentUpon>BaseDetailCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseDetailsForm.Designer.cs">
+      <DependentUpon>BaseDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlMadeShiduchimDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlMadeShiduchimDetails.Designer.cs">
+      <DependentUpon>ctrlMadeShiduchimDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlMadeShiduchimList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlMadeShiduchimList.Designer.cs">
+      <DependentUpon>ctrlMadeShiduchimList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlGirlDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlGirlDetails.Designer.cs">
+      <DependentUpon>ctrlGirlDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlGirlsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlGirlsList.Designer.cs">
+      <DependentUpon>ctrlGirlsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlBoysDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlBoysDetails.Designer.cs">
+      <DependentUpon>ctrlBoysDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlBoysList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlBoysList.Designer.cs">
+      <DependentUpon>ctrlBoysList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlSeminarysList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlSeminarysList.Designer.cs">
+      <DependentUpon>ctrlSeminarysList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlSchoolsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlSchoolsList.Designer.cs">
+      <DependentUpon>ctrlSchoolsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlRegionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlRegionList.Designer.cs">
+      <DependentUpon>ctrlRegionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlMonthsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlMonthsList.Designer.cs">
+      <DependentUpon>ctrlMonthsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlHeightsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlHeightsList.Designer.cs">
+      <DependentUpon>ctrlHeightsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlCountryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlCountryList.Designer.cs">
+      <DependentUpon>ctrlCountryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlCampsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlCampsList.Designer.cs">
+      <DependentUpon>ctrlCampsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlBaisHamedreshList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlBaisHamedreshList.Designer.cs">
+      <DependentUpon>ctrlBaisHamedreshList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Utils.cs" />
+    <Compile Include="BLL\YeshivasPresenter.cs" />
+    <Compile Include="Controls\ctrlFamilyDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlFamilyDetails.Designer.cs">
+      <DependentUpon>ctrlFamilyDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlFamilyList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlFamilyList.Designer.cs">
+      <DependentUpon>ctrlFamilyList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrlYeshivasList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlYeshivasList.Designer.cs">
+      <DependentUpon>ctrlYeshivasList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SchiduchimCalculated.cs" />
+    <Compile Include="DAL\ShiduchimDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShiduchimDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\BaseDetailCtrl.resx">
+      <DependentUpon>BaseDetailCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseDetailsForm.resx">
+      <DependentUpon>BaseDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlMadeShiduchimDetails.resx">
+      <DependentUpon>ctrlMadeShiduchimDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlMadeShiduchimList.resx">
+      <DependentUpon>ctrlMadeShiduchimList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlGirlDetails.resx">
+      <DependentUpon>ctrlGirlDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlGirlsList.resx">
+      <DependentUpon>ctrlGirlsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlBoysDetails.resx">
+      <DependentUpon>ctrlBoysDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlBoysList.resx">
+      <DependentUpon>ctrlBoysList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlSeminarysList.resx">
+      <DependentUpon>ctrlSeminarysList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlSchoolsList.resx">
+      <DependentUpon>ctrlSchoolsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlRegionList.resx">
+      <DependentUpon>ctrlRegionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlMonthsList.resx">
+      <DependentUpon>ctrlMonthsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlHeightsList.resx">
+      <DependentUpon>ctrlHeightsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlCountryList.resx">
+      <DependentUpon>ctrlCountryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlCampsList.resx">
+      <DependentUpon>ctrlCampsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlBaisHamedreshList.resx">
+      <DependentUpon>ctrlBaisHamedreshList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlFamilyDetails.resx">
+      <DependentUpon>ctrlFamilyDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlFamilyList.resx">
+      <DependentUpon>ctrlFamilyList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlYeshivasList.resx">
+      <DependentUpon>ctrlYeshivasList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="DAL\ShiduchimDB.dbml.layout">
+      <DependentUpon>ShiduchimDB.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="DAL\ShiduchimDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ShiduchimDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\DatingManagement.DAL.Boy.datasource" />
+    <None Include="Properties\DataSources\DatingManagement.DAL.Family.datasource" />
+    <None Include="Properties\DataSources\DatingManagement.DAL.Girl.datasource" />
+    <None Include="Properties\DataSources\DatingManagement.DAL.MadeShiduchim.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin_2_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customers_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\demographic_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classmate_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\college_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\geography_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pre_schools_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student_2_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_back.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diskette_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classroom_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house_zoom_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school_fav_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="shiduchim.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
