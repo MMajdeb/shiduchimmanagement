@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             this.txtFocus = new DevExpress.XtraEditors.TextEdit();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.SeminaryComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.SchoolComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.CampComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnOpenFamily = new DevExpress.XtraEditors.SimpleButton();
             this.FathersIDLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
@@ -51,10 +55,10 @@
             this.GirlsNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.WorkTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.GraduateTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.SchoolComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.SeminaryComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.Dor_YeshurimTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.CampTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.SchoolTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.SeminaryTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.ItemForBoysID = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForGen_Picture = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemFors_GUID = new DevExpress.XtraLayout.LayoutControlItem();
@@ -82,6 +86,8 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForCamp = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.familyBindingSource = new System.Windows.Forms.BindingSource();
@@ -91,6 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFocus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SeminaryComboBoxEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CampComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FathersIDLookUpEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.girlBindingSource)).BeginInit();
@@ -111,10 +119,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.GirlsNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GraduateTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolComboBoxEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SeminaryComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dor_YeshurimTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CampTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SeminaryTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForBoysID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForGen_Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemFors_GUID)).BeginInit();
@@ -142,6 +150,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCamp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.familyBindingSource)).BeginInit();
@@ -159,6 +169,8 @@
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.SeminaryComboBoxEdit);
+            this.dataLayoutControl1.Controls.Add(this.SchoolComboBoxEdit);
             this.dataLayoutControl1.Controls.Add(this.CampComboBoxEdit);
             this.dataLayoutControl1.Controls.Add(this.btnOpenFamily);
             this.dataLayoutControl1.Controls.Add(this.FathersIDLookUpEdit);
@@ -177,10 +189,10 @@
             this.dataLayoutControl1.Controls.Add(this.GirlsNameTextEdit);
             this.dataLayoutControl1.Controls.Add(this.WorkTextEdit);
             this.dataLayoutControl1.Controls.Add(this.GraduateTextEdit);
-            this.dataLayoutControl1.Controls.Add(this.SchoolComboBoxEdit);
-            this.dataLayoutControl1.Controls.Add(this.SeminaryComboBoxEdit);
             this.dataLayoutControl1.Controls.Add(this.Dor_YeshurimTextEdit);
             this.dataLayoutControl1.Controls.Add(this.CampTextEdit);
+            this.dataLayoutControl1.Controls.Add(this.SchoolTextEdit);
+            this.dataLayoutControl1.Controls.Add(this.SeminaryTextEdit);
             this.dataLayoutControl1.DataSource = this.girlBindingSource;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -197,12 +209,35 @@
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
+            // SeminaryComboBoxEdit
+            // 
+            this.SeminaryComboBoxEdit.Location = new System.Drawing.Point(619, 134);
+            this.SeminaryComboBoxEdit.Name = "SeminaryComboBoxEdit";
+            this.SeminaryComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            this.SeminaryComboBoxEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.SeminaryComboBoxEdit.Size = new System.Drawing.Size(280, 20);
+            this.SeminaryComboBoxEdit.StyleController = this.dataLayoutControl1;
+            this.SeminaryComboBoxEdit.TabIndex = 36;
+            this.SeminaryComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.SeminaryComboBoxEdit_SelectedIndexChanged);
+            // 
+            // SchoolComboBoxEdit
+            // 
+            this.SchoolComboBoxEdit.Location = new System.Drawing.Point(619, 62);
+            this.SchoolComboBoxEdit.Name = "SchoolComboBoxEdit";
+            this.SchoolComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            this.SchoolComboBoxEdit.Size = new System.Drawing.Size(280, 20);
+            this.SchoolComboBoxEdit.StyleController = this.dataLayoutControl1;
+            this.SchoolComboBoxEdit.TabIndex = 37;
+            this.SchoolComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.SchoolComboBoxEdit_SelectedIndexChanged);
+            // 
             // CampComboBoxEdit
             // 
-            this.CampComboBoxEdit.Location = new System.Drawing.Point(557, 180);
+            this.CampComboBoxEdit.Location = new System.Drawing.Point(557, 216);
             this.CampComboBoxEdit.Name = "CampComboBoxEdit";
             this.CampComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.CampComboBoxEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.CampComboBoxEdit.Size = new System.Drawing.Size(342, 20);
             this.CampComboBoxEdit.StyleController = this.dataLayoutControl1;
@@ -255,7 +290,7 @@
             // AgeTextEdit
             // 
             this.AgeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Age", true));
-            this.AgeTextEdit.Location = new System.Drawing.Point(619, 62);
+            this.AgeTextEdit.Location = new System.Drawing.Point(619, 86);
             this.AgeTextEdit.Name = "AgeTextEdit";
             this.AgeTextEdit.Size = new System.Drawing.Size(280, 20);
             this.AgeTextEdit.StyleController = this.dataLayoutControl1;
@@ -312,7 +347,7 @@
             // Email3TextEdit
             // 
             this.Email3TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Email3", true));
-            this.Email3TextEdit.Location = new System.Drawing.Point(79, 156);
+            this.Email3TextEdit.Location = new System.Drawing.Point(79, 192);
             this.Email3TextEdit.Name = "Email3TextEdit";
             this.Email3TextEdit.Size = new System.Drawing.Size(407, 20);
             this.Email3TextEdit.StyleController = this.dataLayoutControl1;
@@ -346,6 +381,8 @@
             this.HeightComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Height", true));
             this.HeightComboBoxEdit.Location = new System.Drawing.Point(79, 84);
             this.HeightComboBoxEdit.Name = "HeightComboBoxEdit";
+            this.HeightComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
             this.HeightComboBoxEdit.Size = new System.Drawing.Size(151, 20);
             this.HeightComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.HeightComboBoxEdit.TabIndex = 19;
@@ -377,7 +414,7 @@
             // WorkTextEdit
             // 
             this.WorkTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Work", true));
-            this.WorkTextEdit.Location = new System.Drawing.Point(619, 110);
+            this.WorkTextEdit.Location = new System.Drawing.Point(619, 158);
             this.WorkTextEdit.Name = "WorkTextEdit";
             this.WorkTextEdit.Size = new System.Drawing.Size(280, 20);
             this.WorkTextEdit.StyleController = this.dataLayoutControl1;
@@ -392,32 +429,10 @@
             this.GraduateTextEdit.StyleController = this.dataLayoutControl1;
             this.GraduateTextEdit.TabIndex = 28;
             // 
-            // SchoolComboBoxEdit
-            // 
-            this.SchoolComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "School", true));
-            this.SchoolComboBoxEdit.Location = new System.Drawing.Point(619, 38);
-            this.SchoolComboBoxEdit.Name = "SchoolComboBoxEdit";
-            this.SchoolComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
-            this.SchoolComboBoxEdit.Size = new System.Drawing.Size(280, 20);
-            this.SchoolComboBoxEdit.StyleController = this.dataLayoutControl1;
-            this.SchoolComboBoxEdit.TabIndex = 29;
-            // 
-            // SeminaryComboBoxEdit
-            // 
-            this.SeminaryComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Seminary", true));
-            this.SeminaryComboBoxEdit.Location = new System.Drawing.Point(619, 86);
-            this.SeminaryComboBoxEdit.Name = "SeminaryComboBoxEdit";
-            this.SeminaryComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
-            this.SeminaryComboBoxEdit.Size = new System.Drawing.Size(280, 20);
-            this.SeminaryComboBoxEdit.StyleController = this.dataLayoutControl1;
-            this.SeminaryComboBoxEdit.TabIndex = 30;
-            // 
             // Dor_YeshurimTextEdit
             // 
             this.Dor_YeshurimTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Dor_Yeshurim", true));
-            this.Dor_YeshurimTextEdit.Location = new System.Drawing.Point(79, 204);
+            this.Dor_YeshurimTextEdit.Location = new System.Drawing.Point(79, 240);
             this.Dor_YeshurimTextEdit.Name = "Dor_YeshurimTextEdit";
             this.Dor_YeshurimTextEdit.Size = new System.Drawing.Size(820, 20);
             this.Dor_YeshurimTextEdit.StyleController = this.dataLayoutControl1;
@@ -426,12 +441,32 @@
             // CampTextEdit
             // 
             this.CampTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Camp", true));
-            this.CampTextEdit.Location = new System.Drawing.Point(557, 156);
+            this.CampTextEdit.Location = new System.Drawing.Point(557, 192);
             this.CampTextEdit.Name = "CampTextEdit";
             this.CampTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.CampTextEdit.Size = new System.Drawing.Size(342, 20);
             this.CampTextEdit.StyleController = this.dataLayoutControl1;
             this.CampTextEdit.TabIndex = 34;
+            // 
+            // SchoolTextEdit
+            // 
+            this.SchoolTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "School", true));
+            this.SchoolTextEdit.Location = new System.Drawing.Point(619, 38);
+            this.SchoolTextEdit.Name = "SchoolTextEdit";
+            this.SchoolTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.SchoolTextEdit.Size = new System.Drawing.Size(280, 20);
+            this.SchoolTextEdit.StyleController = this.dataLayoutControl1;
+            this.SchoolTextEdit.TabIndex = 40;
+            // 
+            // SeminaryTextEdit
+            // 
+            this.SeminaryTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Seminary", true));
+            this.SeminaryTextEdit.Location = new System.Drawing.Point(619, 110);
+            this.SeminaryTextEdit.Name = "SeminaryTextEdit";
+            this.SeminaryTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.SeminaryTextEdit.Size = new System.Drawing.Size(280, 20);
+            this.SeminaryTextEdit.StyleController = this.dataLayoutControl1;
+            this.SeminaryTextEdit.TabIndex = 42;
             // 
             // ItemForBoysID
             // 
@@ -539,10 +574,12 @@
             this.ItemForDor_Yeshurim,
             this.layoutControlItem1,
             this.ItemForCamp,
-            this.layoutControlItem2});
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem4});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(891, 302);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(891, 265);
             this.layoutControlGroup2.Text = "autoGeneratedGroup0";
             // 
             // ItemForFathersID
@@ -581,7 +618,7 @@
             this.ItemForEmail2.CustomizationFormText = "Email2";
             this.ItemForEmail2.Location = new System.Drawing.Point(0, 120);
             this.ItemForEmail2.Name = "ItemForEmail2";
-            this.ItemForEmail2.Size = new System.Drawing.Size(478, 24);
+            this.ItemForEmail2.Size = new System.Drawing.Size(478, 60);
             this.ItemForEmail2.Text = "Email2";
             this.ItemForEmail2.TextSize = new System.Drawing.Size(63, 13);
             // 
@@ -598,18 +635,18 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 216);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 252);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(891, 86);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(891, 13);
             this.emptySpaceItem2.Text = "emptySpaceItem2";
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(540, 122);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(540, 170);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(351, 22);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(351, 10);
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -617,7 +654,7 @@
             // 
             this.ItemForEmail3.Control = this.Email3TextEdit;
             this.ItemForEmail3.CustomizationFormText = "Email3";
-            this.ItemForEmail3.Location = new System.Drawing.Point(0, 144);
+            this.ItemForEmail3.Location = new System.Drawing.Point(0, 180);
             this.ItemForEmail3.Name = "ItemForEmail3";
             this.ItemForEmail3.Size = new System.Drawing.Size(478, 48);
             this.ItemForEmail3.Text = "Email3";
@@ -635,9 +672,9 @@
             // 
             // ItemForSeminary
             // 
-            this.ItemForSeminary.Control = this.SeminaryComboBoxEdit;
+            this.ItemForSeminary.Control = this.SeminaryTextEdit;
             this.ItemForSeminary.CustomizationFormText = "Seminary";
-            this.ItemForSeminary.Location = new System.Drawing.Point(540, 74);
+            this.ItemForSeminary.Location = new System.Drawing.Point(540, 98);
             this.ItemForSeminary.Name = "ItemForSeminary";
             this.ItemForSeminary.Size = new System.Drawing.Size(351, 24);
             this.ItemForSeminary.Text = "Seminary";
@@ -647,7 +684,7 @@
             // 
             this.ItemForWork.Control = this.WorkTextEdit;
             this.ItemForWork.CustomizationFormText = "Work";
-            this.ItemForWork.Location = new System.Drawing.Point(540, 98);
+            this.ItemForWork.Location = new System.Drawing.Point(540, 146);
             this.ItemForWork.Name = "ItemForWork";
             this.ItemForWork.Size = new System.Drawing.Size(351, 24);
             this.ItemForWork.Text = "Work";
@@ -668,7 +705,7 @@
             this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
             this.emptySpaceItem3.Location = new System.Drawing.Point(478, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(62, 144);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(62, 180);
             this.emptySpaceItem3.Text = "emptySpaceItem3";
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -676,7 +713,7 @@
             // 
             this.ItemForAge.Control = this.AgeTextEdit;
             this.ItemForAge.CustomizationFormText = "Age";
-            this.ItemForAge.Location = new System.Drawing.Point(540, 50);
+            this.ItemForAge.Location = new System.Drawing.Point(540, 74);
             this.ItemForAge.Name = "ItemForAge";
             this.ItemForAge.Size = new System.Drawing.Size(351, 24);
             this.ItemForAge.Text = "Age";
@@ -684,7 +721,7 @@
             // 
             // ItemForSchool
             // 
-            this.ItemForSchool.Control = this.SchoolComboBoxEdit;
+            this.ItemForSchool.Control = this.SchoolTextEdit;
             this.ItemForSchool.CustomizationFormText = "School";
             this.ItemForSchool.Location = new System.Drawing.Point(540, 26);
             this.ItemForSchool.Name = "ItemForSchool";
@@ -696,7 +733,7 @@
             // 
             this.ItemForDor_Yeshurim.Control = this.Dor_YeshurimTextEdit;
             this.ItemForDor_Yeshurim.CustomizationFormText = "Dor Yeshurim";
-            this.ItemForDor_Yeshurim.Location = new System.Drawing.Point(0, 192);
+            this.ItemForDor_Yeshurim.Location = new System.Drawing.Point(0, 228);
             this.ItemForDor_Yeshurim.Name = "ItemForDor_Yeshurim";
             this.ItemForDor_Yeshurim.Size = new System.Drawing.Size(891, 24);
             this.ItemForDor_Yeshurim.Text = "Dor Yeshurim";
@@ -718,7 +755,7 @@
             // 
             this.ItemForCamp.Control = this.CampTextEdit;
             this.ItemForCamp.CustomizationFormText = "Camp";
-            this.ItemForCamp.Location = new System.Drawing.Point(478, 144);
+            this.ItemForCamp.Location = new System.Drawing.Point(478, 180);
             this.ItemForCamp.Name = "ItemForCamp";
             this.ItemForCamp.Size = new System.Drawing.Size(413, 24);
             this.ItemForCamp.Text = "Camp";
@@ -728,20 +765,40 @@
             // 
             this.layoutControlItem2.Control = this.CampComboBoxEdit;
             this.layoutControlItem2.CustomizationFormText = " ";
-            this.layoutControlItem2.Location = new System.Drawing.Point(478, 168);
+            this.layoutControlItem2.Location = new System.Drawing.Point(478, 204);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(413, 24);
             this.layoutControlItem2.Text = " ";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(63, 13);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.SchoolComboBoxEdit;
+            this.layoutControlItem3.CustomizationFormText = " ";
+            this.layoutControlItem3.Location = new System.Drawing.Point(540, 50);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(351, 24);
+            this.layoutControlItem3.Text = " ";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(63, 13);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.SeminaryComboBoxEdit;
+            this.layoutControlItem4.CustomizationFormText = " ";
+            this.layoutControlItem4.Location = new System.Drawing.Point(540, 122);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(351, 24);
+            this.layoutControlItem4.Text = " ";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(63, 13);
             // 
             // layoutControlGroup3
             // 
             this.layoutControlGroup3.AllowDrawBackground = false;
             this.layoutControlGroup3.CustomizationFormText = "autoGeneratedGroup0";
             this.layoutControlGroup3.GroupBordersVisible = false;
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 302);
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 265);
             this.layoutControlGroup3.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(891, 19);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(891, 17);
             this.layoutControlGroup3.Text = "autoGeneratedGroup0";
             // 
             // layoutControlGroup4
@@ -749,9 +806,9 @@
             this.layoutControlGroup4.AllowDrawBackground = false;
             this.layoutControlGroup4.CustomizationFormText = "autoGeneratedGroup0";
             this.layoutControlGroup4.GroupBordersVisible = false;
-            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 321);
+            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 282);
             this.layoutControlGroup4.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(891, 45);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(891, 84);
             this.layoutControlGroup4.Text = "autoGeneratedGroup0";
             // 
             // familyBindingSource
@@ -800,6 +857,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFocus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SeminaryComboBoxEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CampComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FathersIDLookUpEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.girlBindingSource)).EndInit();
@@ -820,10 +879,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.GirlsNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GraduateTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolComboBoxEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SeminaryComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dor_YeshurimTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CampTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SeminaryTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForBoysID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForGen_Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemFors_GUID)).EndInit();
@@ -851,6 +910,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCamp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.familyBindingSource)).EndInit();
@@ -898,8 +959,6 @@
         private DevExpress.XtraEditors.TextEdit GirlsNameTextEdit;
         private DevExpress.XtraEditors.TextEdit WorkTextEdit;
         private DevExpress.XtraEditors.TextEdit GraduateTextEdit;
-        private DevExpress.XtraEditors.ComboBoxEdit SchoolComboBoxEdit;
-        private DevExpress.XtraEditors.ComboBoxEdit SeminaryComboBoxEdit;
         private DevExpress.XtraLayout.LayoutControlItem ItemForGirlsID;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlItem ItemForGirlsName;
@@ -921,5 +980,11 @@
         private DevExpress.XtraEditors.TextEdit txtFocus;
         private DevExpress.XtraEditors.ComboBoxEdit CampComboBoxEdit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraEditors.ComboBoxEdit SchoolComboBoxEdit;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraEditors.ComboBoxEdit SeminaryComboBoxEdit;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraEditors.TextEdit SchoolTextEdit;
+        private DevExpress.XtraEditors.TextEdit SeminaryTextEdit;
     }
 }

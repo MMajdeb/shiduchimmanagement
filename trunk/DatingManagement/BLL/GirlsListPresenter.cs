@@ -282,5 +282,25 @@ namespace DatingManagement
 
             detailsView.LoadDetails(selectedDetail);
         }
+
+        internal void ModifySchool(bool addtoSchool, string School)
+        {
+            if (addtoSchool)
+                selectedDetail.School += ", " + School;
+            else
+                selectedDetail.School = School;
+
+            detailsView.LoadDetails(selectedDetail);
+        }
+
+        internal void ModifySeminary(bool addtoSeminary, string Seminary)
+        {
+            if (addtoSeminary)
+                selectedDetail.Seminary += ", " + Seminary;
+            else
+                selectedDetail.Seminary = Seminary;
+
+            detailsView.LoadDetails(selectedDetail);
+        }
     }
 }

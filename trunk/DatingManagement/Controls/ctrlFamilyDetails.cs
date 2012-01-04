@@ -275,5 +275,16 @@ namespace DatingManagement
                 frm.ShowDialog();
             }
         }
+
+        private void BaisHamedreshComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Do you want to add to selection?" + Environment.NewLine +
+                                   "Press Yes to add, press No to replace.", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                presenter.ModifyBaisHamedresh(true, BaisHamedreshComboBoxEdit.Text);
+            }
+            else
+                presenter.ModifyBaisHamedresh(false, BaisHamedreshComboBoxEdit.Text);
+        }
     }
 }
