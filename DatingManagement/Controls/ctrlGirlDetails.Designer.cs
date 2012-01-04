@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.txtFocus = new DevExpress.XtraEditors.TextEdit();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.CampComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.girlBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnOpenFamily = new DevExpress.XtraEditors.SimpleButton();
             this.FathersIDLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
+            this.girlBindingSource = new System.Windows.Forms.BindingSource();
             this.BoysIDSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.boyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.boyBindingSource = new System.Windows.Forms.BindingSource();
             this.AgeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.PictureTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.Gen_PictureTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -84,7 +84,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.familyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.familyBindingSource = new System.Windows.Forms.BindingSource();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -92,8 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CampComboBoxEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.girlBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FathersIDLookUpEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.girlBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BoysIDSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AgeTextEdit.Properties)).BeginInit();
@@ -199,17 +199,15 @@
             // 
             // CampComboBoxEdit
             // 
-            this.CampComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Camp", true));
             this.CampComboBoxEdit.Location = new System.Drawing.Point(557, 180);
             this.CampComboBoxEdit.Name = "CampComboBoxEdit";
+            this.CampComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            this.CampComboBoxEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.CampComboBoxEdit.Size = new System.Drawing.Size(342, 20);
             this.CampComboBoxEdit.StyleController = this.dataLayoutControl1;
-            this.CampComboBoxEdit.TabIndex = 36;
+            this.CampComboBoxEdit.TabIndex = 35;
             this.CampComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.CampComboBoxEdit_SelectedIndexChanged);
-            // 
-            // girlBindingSource
-            // 
-            this.girlBindingSource.DataSource = typeof(DatingManagement.DAL.Girl);
             // 
             // btnOpenFamily
             // 
@@ -230,6 +228,10 @@
             this.FathersIDLookUpEdit.StyleController = this.dataLayoutControl1;
             this.FathersIDLookUpEdit.TabIndex = 4;
             this.FathersIDLookUpEdit.EditValueChanged += new System.EventHandler(this.FathersIDLookUpEdit_EditValueChanged);
+            // 
+            // girlBindingSource
+            // 
+            this.girlBindingSource.DataSource = typeof(DatingManagement.DAL.Girl);
             // 
             // BoysIDSpinEdit
             // 
@@ -395,6 +397,8 @@
             this.SchoolComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "School", true));
             this.SchoolComboBoxEdit.Location = new System.Drawing.Point(619, 38);
             this.SchoolComboBoxEdit.Name = "SchoolComboBoxEdit";
+            this.SchoolComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
             this.SchoolComboBoxEdit.Size = new System.Drawing.Size(280, 20);
             this.SchoolComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.SchoolComboBoxEdit.TabIndex = 29;
@@ -404,6 +408,8 @@
             this.SeminaryComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Seminary", true));
             this.SeminaryComboBoxEdit.Location = new System.Drawing.Point(619, 86);
             this.SeminaryComboBoxEdit.Name = "SeminaryComboBoxEdit";
+            this.SeminaryComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
             this.SeminaryComboBoxEdit.Size = new System.Drawing.Size(280, 20);
             this.SeminaryComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.SeminaryComboBoxEdit.TabIndex = 30;
@@ -422,6 +428,7 @@
             this.CampTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Camp", true));
             this.CampTextEdit.Location = new System.Drawing.Point(557, 156);
             this.CampTextEdit.Name = "CampTextEdit";
+            this.CampTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.CampTextEdit.Size = new System.Drawing.Size(342, 20);
             this.CampTextEdit.StyleController = this.dataLayoutControl1;
             this.CampTextEdit.TabIndex = 34;
@@ -794,8 +801,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CampComboBoxEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.girlBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FathersIDLookUpEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.girlBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BoysIDSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AgeTextEdit.Properties)).EndInit();
@@ -910,9 +917,9 @@
         private DevExpress.XtraEditors.SimpleButton btnOpenFamily;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
-        private DevExpress.XtraEditors.ComboBoxEdit CampComboBoxEdit;
         private DevExpress.XtraEditors.TextEdit CampTextEdit;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.TextEdit txtFocus;
+        private DevExpress.XtraEditors.ComboBoxEdit CampComboBoxEdit;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }
