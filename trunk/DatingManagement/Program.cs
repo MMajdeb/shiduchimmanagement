@@ -16,7 +16,7 @@ namespace DatingManagement
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            
-            DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("iMaginary");
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Blue");
             DevExpress.Skins.SkinManager.EnableFormSkins();
 
 
