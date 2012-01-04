@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.btnOpenFamily = new DevExpress.XtraEditors.SimpleButton();
             this.YeshivaComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.FathersIDLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
-            this.boyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.boyBindingSource = new System.Windows.Forms.BindingSource();
             this.BoysIDSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.BoysNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.AgeTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -173,11 +173,13 @@
             this.YeshivaComboBoxEdit.Location = new System.Drawing.Point(525, 110);
             this.YeshivaComboBoxEdit.Name = "YeshivaComboBoxEdit";
             this.YeshivaComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            this.YeshivaComboBoxEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.YeshivaComboBoxEdit.Size = new System.Drawing.Size(374, 20);
             this.YeshivaComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.YeshivaComboBoxEdit.TabIndex = 24;
             this.YeshivaComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.YeshivaComboBoxEdit_SelectedIndexChanged);
+            this.YeshivaComboBoxEdit.EditValueChanged += new System.EventHandler(this.YeshivaComboBoxEdit_SelectedIndexChanged);
             // 
             // FathersIDLookUpEdit
             // 
@@ -334,6 +336,7 @@
             this.YeshivaTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.boyBindingSource, "Yeshiva", true));
             this.YeshivaTextEdit.Location = new System.Drawing.Point(524, 86);
             this.YeshivaTextEdit.Name = "YeshivaTextEdit";
+            this.YeshivaTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.YeshivaTextEdit.Size = new System.Drawing.Size(375, 20);
             this.YeshivaTextEdit.StyleController = this.dataLayoutControl1;
             this.YeshivaTextEdit.TabIndex = 22;

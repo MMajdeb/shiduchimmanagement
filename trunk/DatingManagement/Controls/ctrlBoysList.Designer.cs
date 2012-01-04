@@ -31,7 +31,6 @@ namespace DatingManagement
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.grcList = new DevExpress.XtraGrid.GridControl();
             this.grvList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,7 +43,7 @@ namespace DatingManagement
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
@@ -55,7 +54,7 @@ namespace DatingManagement
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.ctrlBoysDetails1 = new DatingManagement.ctrlBoysDetails();
