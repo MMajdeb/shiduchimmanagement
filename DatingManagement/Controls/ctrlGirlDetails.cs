@@ -261,5 +261,27 @@ namespace DatingManagement
             else
                 presenter.ModifyCamp(false, CampComboBoxEdit.Text);
         }
+
+        private void SchoolComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Do you want to add to selection?" + Environment.NewLine +
+                                    "Press Yes to add, press No to replace.", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                presenter.ModifySchool(true, SchoolComboBoxEdit.Text);
+            }
+            else
+                presenter.ModifySchool(false, SchoolComboBoxEdit.Text);
+        }
+
+        private void SeminaryComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Do you want to add to selection?" + Environment.NewLine +
+                                    "Press Yes to add, press No to replace.", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                presenter.ModifySeminary(true, SeminaryComboBoxEdit.Text);
+            }
+            else
+                presenter.ModifySeminary(false, SeminaryComboBoxEdit.Text);
+        }
     }
 }

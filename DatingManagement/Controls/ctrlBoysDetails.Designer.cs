@@ -318,7 +318,7 @@
             this.HeightComboBoxEdit.Name = "HeightComboBoxEdit";
             this.HeightComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.HeightComboBoxEdit.Size = new System.Drawing.Size(374, 20);
+            this.HeightComboBoxEdit.Size = new System.Drawing.Size(373, 20);
             this.HeightComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.HeightComboBoxEdit.TabIndex = 19;
             // 
@@ -334,10 +334,10 @@
             // YeshivaTextEdit
             // 
             this.YeshivaTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.boyBindingSource, "Yeshiva", true));
-            this.YeshivaTextEdit.Location = new System.Drawing.Point(524, 86);
+            this.YeshivaTextEdit.Location = new System.Drawing.Point(523, 86);
             this.YeshivaTextEdit.Name = "YeshivaTextEdit";
             this.YeshivaTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.YeshivaTextEdit.Size = new System.Drawing.Size(375, 20);
+            this.YeshivaTextEdit.Size = new System.Drawing.Size(376, 20);
             this.YeshivaTextEdit.StyleController = this.dataLayoutControl1;
             this.YeshivaTextEdit.TabIndex = 22;
             // 
@@ -482,7 +482,7 @@
             this.ItemForHeight.CustomizationFormText = "Height";
             this.ItemForHeight.Location = new System.Drawing.Point(0, 74);
             this.ItemForHeight.Name = "ItemForHeight";
-            this.ItemForHeight.Size = new System.Drawing.Size(445, 24);
+            this.ItemForHeight.Size = new System.Drawing.Size(444, 24);
             this.ItemForHeight.Text = "Height";
             this.ItemForHeight.TextSize = new System.Drawing.Size(63, 13);
             // 
@@ -520,9 +520,9 @@
             // 
             this.ItemForYeshiva.Control = this.YeshivaTextEdit;
             this.ItemForYeshiva.CustomizationFormText = "Yeshiva";
-            this.ItemForYeshiva.Location = new System.Drawing.Point(445, 74);
+            this.ItemForYeshiva.Location = new System.Drawing.Point(444, 74);
             this.ItemForYeshiva.Name = "ItemForYeshiva";
-            this.ItemForYeshiva.Size = new System.Drawing.Size(446, 24);
+            this.ItemForYeshiva.Size = new System.Drawing.Size(447, 24);
             this.ItemForYeshiva.Text = "Yeshiva";
             this.ItemForYeshiva.TextSize = new System.Drawing.Size(63, 13);
             // 

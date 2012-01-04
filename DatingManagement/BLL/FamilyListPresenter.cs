@@ -255,5 +255,18 @@ namespace DatingManagement
                 RemoveNewAdded();
             }
         }
+
+
+
+        internal void ModifyBaisHamedresh(bool addtoBaisHamedresh, string BaisHamedresh)
+        {
+
+            if (addtoBaisHamedresh)
+                selectedDetail.BaisHamedresh += ", " + BaisHamedresh;
+            else
+                selectedDetail.BaisHamedresh = BaisHamedresh;
+
+            detailsView.LoadDetails(selectedDetail);
+        }
     }
 }
