@@ -941,6 +941,8 @@ namespace DatingManagement.DAL
 		
 		private System.Nullable<decimal> _AmountGirl;
 		
+		private System.Nullable<System.DateTime> _ShiduchimDate;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -959,6 +961,8 @@ namespace DatingManagement.DAL
     partial void OnGirlsSideChanged();
     partial void OnAmountGirlChanging(System.Nullable<decimal> value);
     partial void OnAmountGirlChanged();
+    partial void OnShiduchimDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnShiduchimDateChanged();
     #endregion
 		
 		public MadeShiduchim()
@@ -1102,6 +1106,26 @@ namespace DatingManagement.DAL
 					this._AmountGirl = value;
 					this.SendPropertyChanged("AmountGirl");
 					this.OnAmountGirlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShiduchimDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ShiduchimDate
+		{
+			get
+			{
+				return this._ShiduchimDate;
+			}
+			set
+			{
+				if ((this._ShiduchimDate != value))
+				{
+					this.OnShiduchimDateChanging(value);
+					this.SendPropertyChanging();
+					this._ShiduchimDate = value;
+					this.SendPropertyChanged("ShiduchimDate");
+					this.OnShiduchimDateChanged();
 				}
 			}
 		}

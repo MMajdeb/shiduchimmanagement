@@ -54,6 +54,7 @@
       <Column Name="AmountBoy" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="GirlsSide" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AmountGirl" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ShiduchimDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Mechitunem" Member="Mechitunems">
