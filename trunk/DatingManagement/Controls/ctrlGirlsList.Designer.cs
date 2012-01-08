@@ -59,6 +59,8 @@ namespace DatingManagement
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridControlLite = new DevExpress.XtraGrid.GridControl();
@@ -169,27 +171,31 @@ namespace DatingManagement
             // 
             // barDockControlTop
             // 
+            this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(894, 42);
+            this.barDockControlTop.Size = new System.Drawing.Size(894, 40);
             // 
             // barDockControlBottom
             // 
+            this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 589);
             this.barDockControlBottom.Size = new System.Drawing.Size(894, 0);
             // 
             // barDockControlLeft
             // 
+            this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 547);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 549);
             // 
             // barDockControlRight
             // 
+            this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(894, 42);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 547);
+            this.barDockControlRight.Location = new System.Drawing.Point(894, 40);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 549);
             // 
             // dockManager1
             // 
@@ -224,9 +230,9 @@ namespace DatingManagement
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.ctrlGirlDetails1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(888, 213);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(886, 214);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // ctrlGirlDetails1
@@ -236,7 +242,7 @@ namespace DatingManagement
             this.ctrlGirlDetails1.Location = new System.Drawing.Point(0, 0);
             this.ctrlGirlDetails1.Name = "ctrlGirlDetails1";
             this.ctrlGirlDetails1.Presenter = null;
-            this.ctrlGirlDetails1.Size = new System.Drawing.Size(888, 213);
+            this.ctrlGirlDetails1.Size = new System.Drawing.Size(886, 214);
             this.ctrlGirlDetails1.TabIndex = 0;
             // 
             // repositoryItemDateEdit1
@@ -251,14 +257,14 @@ namespace DatingManagement
             // grcList
             // 
             this.grcList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grcList.Location = new System.Drawing.Point(0, 42);
+            this.grcList.Location = new System.Drawing.Point(0, 40);
             this.grcList.MainView = this.grvList;
             this.grcList.Name = "grcList";
             this.grcList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
             this.repositoryItemCheckEdit1});
             this.grcList.ShowOnlyPredefinedDetails = true;
-            this.grcList.Size = new System.Drawing.Size(894, 306);
+            this.grcList.Size = new System.Drawing.Size(894, 308);
             this.grcList.TabIndex = 6;
             this.grcList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvList});
@@ -274,7 +280,9 @@ namespace DatingManagement
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7,
-            this.gridColumn8});
+            this.gridColumn8,
+            this.gridColumn18,
+            this.gridColumn19});
             this.grvList.GridControl = this.grcList;
             this.grvList.IndicatorWidth = 50;
             this.grvList.Name = "grvList";
@@ -301,7 +309,7 @@ namespace DatingManagement
             this.gridColumn2.FieldName = "MotherName";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 2;
             // 
             // gridColumn3
             // 
@@ -311,7 +319,7 @@ namespace DatingManagement
             this.gridColumn3.FieldName = "GirlsName";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 1;
             // 
             // gridColumn4
             // 
@@ -323,7 +331,7 @@ namespace DatingManagement
             // 
             // grcolumnAge
             // 
-            this.grcolumnAge.Caption = "gridColumn5";
+            this.grcolumnAge.Caption = "Age";
             this.grcolumnAge.FieldName = "Age";
             this.grcolumnAge.Name = "grcolumnAge";
             this.grcolumnAge.Visible = true;
@@ -365,6 +373,22 @@ namespace DatingManagement
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 8;
             // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Height";
+            this.gridColumn18.FieldName = "Height";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 9;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "Graduate";
+            this.gridColumn19.FieldName = "Graduate";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 10;
+            // 
             // repositoryItemTextEdit1
             // 
             this.repositoryItemTextEdit1.AutoHeight = false;
@@ -381,14 +405,14 @@ namespace DatingManagement
             // gridControlLite
             // 
             this.gridControlLite.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlLite.Location = new System.Drawing.Point(0, 42);
+            this.gridControlLite.Location = new System.Drawing.Point(0, 40);
             this.gridControlLite.MainView = this.gridView1;
             this.gridControlLite.Name = "gridControlLite";
             this.gridControlLite.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit2,
             this.repositoryItemCheckEdit2});
             this.gridControlLite.ShowOnlyPredefinedDetails = true;
-            this.gridControlLite.Size = new System.Drawing.Size(894, 547);
+            this.gridControlLite.Size = new System.Drawing.Size(894, 549);
             this.gridControlLite.TabIndex = 12;
             this.gridControlLite.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -585,6 +609,8 @@ namespace DatingManagement
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
          
     }
 }
