@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.btnOpenFamily = new DevExpress.XtraEditors.SimpleButton();
             this.YeshivaComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.FathersIDLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
-            this.boyBindingSource = new System.Windows.Forms.BindingSource();
+            this.boyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BoysIDSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.BoysNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.AgeTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -178,8 +179,8 @@
             this.YeshivaComboBoxEdit.Size = new System.Drawing.Size(374, 20);
             this.YeshivaComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.YeshivaComboBoxEdit.TabIndex = 24;
-            this.YeshivaComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.YeshivaComboBoxEdit_SelectedIndexChanged);
             this.YeshivaComboBoxEdit.EditValueChanged += new System.EventHandler(this.YeshivaComboBoxEdit_SelectedIndexChanged);
+            this.YeshivaComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.YeshivaComboBoxEdit_SelectedIndexChanged);
             // 
             // FathersIDLookUpEdit
             // 
@@ -219,6 +220,7 @@
             this.BoysNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.boyBindingSource, "BoysName", true));
             this.BoysNameTextEdit.Location = new System.Drawing.Point(79, 38);
             this.BoysNameTextEdit.Name = "BoysNameTextEdit";
+            this.BoysNameTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BoysNameTextEdit.Size = new System.Drawing.Size(820, 20);
             this.BoysNameTextEdit.StyleController = this.dataLayoutControl1;
             this.BoysNameTextEdit.TabIndex = 6;

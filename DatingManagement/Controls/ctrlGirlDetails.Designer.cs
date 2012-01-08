@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -38,9 +39,9 @@
             this.CampComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnOpenFamily = new DevExpress.XtraEditors.SimpleButton();
             this.FathersIDLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
-            this.girlBindingSource = new System.Windows.Forms.BindingSource();
+            this.girlBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BoysIDSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.boyBindingSource = new System.Windows.Forms.BindingSource();
+            this.boyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AgeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.PictureTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.Gen_PictureTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -90,7 +91,7 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.familyBindingSource = new System.Windows.Forms.BindingSource();
+            this.familyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -407,6 +408,7 @@
             this.GirlsNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "GirlsName", true));
             this.GirlsNameTextEdit.Location = new System.Drawing.Point(79, 36);
             this.GirlsNameTextEdit.Name = "GirlsNameTextEdit";
+            this.GirlsNameTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.GirlsNameTextEdit.Size = new System.Drawing.Size(407, 20);
             this.GirlsNameTextEdit.StyleController = this.dataLayoutControl1;
             this.GirlsNameTextEdit.TabIndex = 23;
