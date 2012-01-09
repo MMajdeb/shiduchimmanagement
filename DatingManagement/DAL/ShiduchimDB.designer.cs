@@ -22,7 +22,7 @@ namespace DatingManagement.DAL
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="test")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="shiduchim")]
 	public partial class ShiduchimDBDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,12 +33,12 @@ namespace DatingManagement.DAL
     partial void InsertAge(Age instance);
     partial void UpdateAge(Age instance);
     partial void DeleteAge(Age instance);
-    partial void InsertYeshiva(Yeshiva instance);
-    partial void UpdateYeshiva(Yeshiva instance);
-    partial void DeleteYeshiva(Yeshiva instance);
     partial void InsertBaisHamedresh(BaisHamedresh instance);
     partial void UpdateBaisHamedresh(BaisHamedresh instance);
     partial void DeleteBaisHamedresh(BaisHamedresh instance);
+    partial void InsertBoy(Boy instance);
+    partial void UpdateBoy(Boy instance);
+    partial void DeleteBoy(Boy instance);
     partial void InsertCamp(Camp instance);
     partial void UpdateCamp(Camp instance);
     partial void DeleteCamp(Camp instance);
@@ -48,6 +48,12 @@ namespace DatingManagement.DAL
     partial void InsertDuplicate(Duplicate instance);
     partial void UpdateDuplicate(Duplicate instance);
     partial void DeleteDuplicate(Duplicate instance);
+    partial void InsertFamily(Family instance);
+    partial void UpdateFamily(Family instance);
+    partial void DeleteFamily(Family instance);
+    partial void InsertGirl(Girl instance);
+    partial void UpdateGirl(Girl instance);
+    partial void DeleteGirl(Girl instance);
     partial void InsertHeight(Height instance);
     partial void UpdateHeight(Height instance);
     partial void DeleteHeight(Height instance);
@@ -69,22 +75,10 @@ namespace DatingManagement.DAL
     partial void InsertSeminary(Seminary instance);
     partial void UpdateSeminary(Seminary instance);
     partial void DeleteSeminary(Seminary instance);
-    partial void InsertFamily(Family instance);
-    partial void UpdateFamily(Family instance);
-    partial void DeleteFamily(Family instance);
-    partial void InsertGirl(Girl instance);
-    partial void UpdateGirl(Girl instance);
-    partial void DeleteGirl(Girl instance);
-    partial void InsertBoy(Boy instance);
-    partial void UpdateBoy(Boy instance);
-    partial void DeleteBoy(Boy instance);
+    partial void InsertYeshiva(Yeshiva instance);
+    partial void UpdateYeshiva(Yeshiva instance);
+    partial void DeleteYeshiva(Yeshiva instance);
     #endregion
-		
-		public ShiduchimDBDataContext() : 
-				base(global::DatingManagement.Properties.Settings.Default.testConnectionString, mappingSource)
-		{
-			OnCreated();
-		}
 		
 		public ShiduchimDBDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -118,19 +112,19 @@ namespace DatingManagement.DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<Yeshiva> Yeshivas
-		{
-			get
-			{
-				return this.GetTable<Yeshiva>();
-			}
-		}
-		
 		public System.Data.Linq.Table<BaisHamedresh> BaisHamedreshes
 		{
 			get
 			{
 				return this.GetTable<BaisHamedresh>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Boy> Boys
+		{
+			get
+			{
+				return this.GetTable<Boy>();
 			}
 		}
 		
@@ -155,6 +149,22 @@ namespace DatingManagement.DAL
 			get
 			{
 				return this.GetTable<Duplicate>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Family> Families
+		{
+			get
+			{
+				return this.GetTable<Family>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Girl> Girls
+		{
+			get
+			{
+				return this.GetTable<Girl>();
 			}
 		}
 		
@@ -206,7 +216,7 @@ namespace DatingManagement.DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<Seminary> Seminaries
+		public System.Data.Linq.Table<Seminary> Seminarys
 		{
 			get
 			{
@@ -214,40 +224,16 @@ namespace DatingManagement.DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<Year> Years
+		public System.Data.Linq.Table<Yeshiva> Yeshivas
 		{
 			get
 			{
-				return this.GetTable<Year>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Family> Families
-		{
-			get
-			{
-				return this.GetTable<Family>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Girl> Girls
-		{
-			get
-			{
-				return this.GetTable<Girl>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Boy> Boys
-		{
-			get
-			{
-				return this.GetTable<Boy>();
+				return this.GetTable<Yeshiva>();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Age")]
+	[global::System.Data.Linq.Mapping.TableAttribute()]
 	public partial class Age : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -257,6 +243,10 @@ namespace DatingManagement.DAL
 		
 		private int _Age_Id;
 		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -265,6 +255,10 @@ namespace DatingManagement.DAL
     partial void OnAge1Changed();
     partial void OnAge_IdChanging(int value);
     partial void OnAge_IdChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
     #endregion
 		
 		public Age()
@@ -312,88 +306,42 @@ namespace DatingManagement.DAL
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Yeshivas")]
-	public partial class Yeshiva : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Yeshiva1;
-		
-		private int _Yeshiva_Id;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnYeshiva1Changing(string value);
-    partial void OnYeshiva1Changed();
-    partial void OnYeshiva_IdChanging(int value);
-    partial void OnYeshiva_IdChanged();
-    #endregion
-		
-		public Yeshiva()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Yeshiva", Storage="_Yeshiva1", DbType="NVarChar(50)")]
-		public string Yeshiva1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
 		{
 			get
 			{
-				return this._Yeshiva1;
+				return this._LastEditDate;
 			}
 			set
 			{
-				if ((this._Yeshiva1 != value))
+				if ((this._LastEditDate != value))
 				{
-					this.OnYeshiva1Changing(value);
+					this.OnLastEditDateChanging(value);
 					this.SendPropertyChanging();
-					this._Yeshiva1 = value;
-					this.SendPropertyChanged("Yeshiva1");
-					this.OnYeshiva1Changed();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Yeshiva_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Yeshiva_Id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
 		{
 			get
 			{
-				return this._Yeshiva_Id;
+				return this._CreationDate;
 			}
 			set
 			{
-				if ((this._Yeshiva_Id != value))
+				if ((this._CreationDate != value))
 				{
-					this.OnYeshiva_IdChanging(value);
+					this.OnCreationDateChanging(value);
 					this.SendPropertyChanging();
-					this._Yeshiva_Id = value;
-					this.SendPropertyChanged("Yeshiva_Id");
-					this.OnYeshiva_IdChanged();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
 				}
 			}
 		}
@@ -419,7 +367,7 @@ namespace DatingManagement.DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="BaisHamedresh")]
+	[global::System.Data.Linq.Mapping.TableAttribute()]
 	public partial class BaisHamedresh : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -429,6 +377,10 @@ namespace DatingManagement.DAL
 		
 		private int _BaisHamedresh_Id;
 		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -437,6 +389,10 @@ namespace DatingManagement.DAL
     partial void OnBaisHamedresh1Changed();
     partial void OnBaisHamedresh_IdChanging(int value);
     partial void OnBaisHamedresh_IdChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
     #endregion
 		
 		public BaisHamedresh()
@@ -484,6 +440,533 @@ namespace DatingManagement.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
+		{
+			get
+			{
+				return this._LastEditDate;
+			}
+			set
+			{
+				if ((this._LastEditDate != value))
+				{
+					this.OnLastEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Boys")]
+	public partial class Boy : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Nullable<int> _FathersID;
+		
+		private int _BoysID;
+		
+		private string _BoysName;
+		
+		private System.Nullable<int> _Age;
+		
+		private string _Height;
+		
+		private string _Yeshiva;
+		
+		private string _Note;
+		
+		private System.Data.Linq.Binary _Picture;
+		
+		private System.Nullable<int> _Gen_Picture;
+		
+		private System.Nullable<System.Guid> _S_GUID;
+		
+		private string _Email;
+		
+		private string _Email2;
+		
+		private string _Email3;
+		
+		private System.Nullable<System.DateTime> _BirthDate;
+		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
+		private string _Dor_Yeshurim;
+		
+		private EntityRef<Family> _Family;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnFathersIDChanging(System.Nullable<int> value);
+    partial void OnFathersIDChanged();
+    partial void OnBoysIDChanging(int value);
+    partial void OnBoysIDChanged();
+    partial void OnBoysNameChanging(string value);
+    partial void OnBoysNameChanged();
+    partial void OnAgeChanging(System.Nullable<int> value);
+    partial void OnAgeChanged();
+    partial void OnHeightChanging(string value);
+    partial void OnHeightChanged();
+    partial void OnYeshivaChanging(string value);
+    partial void OnYeshivaChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    partial void OnPictureChanging(System.Data.Linq.Binary value);
+    partial void OnPictureChanged();
+    partial void OnGen_PictureChanging(System.Nullable<int> value);
+    partial void OnGen_PictureChanged();
+    partial void OnS_GUIDChanging(System.Nullable<System.Guid> value);
+    partial void OnS_GUIDChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnEmail2Changing(string value);
+    partial void OnEmail2Changed();
+    partial void OnEmail3Changing(string value);
+    partial void OnEmail3Changed();
+    partial void OnBirthDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnBirthDateChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
+    partial void OnDor_YeshurimChanging(string value);
+    partial void OnDor_YeshurimChanged();
+    #endregion
+		
+		public Boy()
+		{
+			this._Family = default(EntityRef<Family>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FathersID", DbType="Int")]
+		public System.Nullable<int> FathersID
+		{
+			get
+			{
+				return this._FathersID;
+			}
+			set
+			{
+				if ((this._FathersID != value))
+				{
+					if (this._Family.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnFathersIDChanging(value);
+					this.SendPropertyChanging();
+					this._FathersID = value;
+					this.SendPropertyChanged("FathersID");
+					this.OnFathersIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BoysID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int BoysID
+		{
+			get
+			{
+				return this._BoysID;
+			}
+			set
+			{
+				if ((this._BoysID != value))
+				{
+					this.OnBoysIDChanging(value);
+					this.SendPropertyChanging();
+					this._BoysID = value;
+					this.SendPropertyChanged("BoysID");
+					this.OnBoysIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BoysName", DbType="NVarChar(30)")]
+		public string BoysName
+		{
+			get
+			{
+				return this._BoysName;
+			}
+			set
+			{
+				if ((this._BoysName != value))
+				{
+					this.OnBoysNameChanging(value);
+					this.SendPropertyChanging();
+					this._BoysName = value;
+					this.SendPropertyChanged("BoysName");
+					this.OnBoysNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Age", DbType="Int")]
+		public System.Nullable<int> Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this.OnAgeChanging(value);
+					this.SendPropertyChanging();
+					this._Age = value;
+					this.SendPropertyChanged("Age");
+					this.OnAgeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Height", DbType="NVarChar(4)")]
+		public string Height
+		{
+			get
+			{
+				return this._Height;
+			}
+			set
+			{
+				if ((this._Height != value))
+				{
+					this.OnHeightChanging(value);
+					this.SendPropertyChanging();
+					this._Height = value;
+					this.SendPropertyChanged("Height");
+					this.OnHeightChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Yeshiva", DbType="NVarChar(255)")]
+		public string Yeshiva
+		{
+			get
+			{
+				return this._Yeshiva;
+			}
+			set
+			{
+				if ((this._Yeshiva != value))
+				{
+					this.OnYeshivaChanging(value);
+					this.SendPropertyChanging();
+					this._Yeshiva = value;
+					this.SendPropertyChanged("Yeshiva");
+					this.OnYeshivaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(255)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Picture", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Picture
+		{
+			get
+			{
+				return this._Picture;
+			}
+			set
+			{
+				if ((this._Picture != value))
+				{
+					this.OnPictureChanging(value);
+					this.SendPropertyChanging();
+					this._Picture = value;
+					this.SendPropertyChanged("Picture");
+					this.OnPictureChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gen_Picture", DbType="Int")]
+		public System.Nullable<int> Gen_Picture
+		{
+			get
+			{
+				return this._Gen_Picture;
+			}
+			set
+			{
+				if ((this._Gen_Picture != value))
+				{
+					this.OnGen_PictureChanging(value);
+					this.SendPropertyChanging();
+					this._Gen_Picture = value;
+					this.SendPropertyChanged("Gen_Picture");
+					this.OnGen_PictureChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="s_GUID", Storage="_S_GUID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> S_GUID
+		{
+			get
+			{
+				return this._S_GUID;
+			}
+			set
+			{
+				if ((this._S_GUID != value))
+				{
+					this.OnS_GUIDChanging(value);
+					this.SendPropertyChanging();
+					this._S_GUID = value;
+					this.SendPropertyChanged("S_GUID");
+					this.OnS_GUIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(255)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email2", DbType="NVarChar(255)")]
+		public string Email2
+		{
+			get
+			{
+				return this._Email2;
+			}
+			set
+			{
+				if ((this._Email2 != value))
+				{
+					this.OnEmail2Changing(value);
+					this.SendPropertyChanging();
+					this._Email2 = value;
+					this.SendPropertyChanged("Email2");
+					this.OnEmail2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email3", DbType="NVarChar(255)")]
+		public string Email3
+		{
+			get
+			{
+				return this._Email3;
+			}
+			set
+			{
+				if ((this._Email3 != value))
+				{
+					this.OnEmail3Changing(value);
+					this.SendPropertyChanging();
+					this._Email3 = value;
+					this.SendPropertyChanged("Email3");
+					this.OnEmail3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BirthDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> BirthDate
+		{
+			get
+			{
+				return this._BirthDate;
+			}
+			set
+			{
+				if ((this._BirthDate != value))
+				{
+					this.OnBirthDateChanging(value);
+					this.SendPropertyChanging();
+					this._BirthDate = value;
+					this.SendPropertyChanged("BirthDate");
+					this.OnBirthDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
+		{
+			get
+			{
+				return this._LastEditDate;
+			}
+			set
+			{
+				if ((this._LastEditDate != value))
+				{
+					this.OnLastEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dor_Yeshurim", DbType="NVarChar(4000)")]
+		public string Dor_Yeshurim
+		{
+			get
+			{
+				return this._Dor_Yeshurim;
+			}
+			set
+			{
+				if ((this._Dor_Yeshurim != value))
+				{
+					this.OnDor_YeshurimChanging(value);
+					this.SendPropertyChanging();
+					this._Dor_Yeshurim = value;
+					this.SendPropertyChanged("Dor_Yeshurim");
+					this.OnDor_YeshurimChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Family_Boy", Storage="_Family", ThisKey="FathersID", OtherKey="FathersID", IsForeignKey=true)]
+		public Family Family
+		{
+			get
+			{
+				return this._Family.Entity;
+			}
+			set
+			{
+				Family previousValue = this._Family.Entity;
+				if (((previousValue != value) 
+							|| (this._Family.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Family.Entity = null;
+						previousValue.Boys.Remove(this);
+					}
+					this._Family.Entity = value;
+					if ((value != null))
+					{
+						value.Boys.Add(this);
+						this._FathersID = value.FathersID;
+					}
+					else
+					{
+						this._FathersID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Family");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -515,6 +998,10 @@ namespace DatingManagement.DAL
 		
 		private int _Camp_ID;
 		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -523,6 +1010,10 @@ namespace DatingManagement.DAL
     partial void OnCamp1Changed();
     partial void OnCamp_IDChanging(int value);
     partial void OnCamp_IDChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
     #endregion
 		
 		public Camp()
@@ -570,6 +1061,46 @@ namespace DatingManagement.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
+		{
+			get
+			{
+				return this._LastEditDate;
+			}
+			set
+			{
+				if ((this._LastEditDate != value))
+				{
+					this.OnLastEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -591,7 +1122,7 @@ namespace DatingManagement.DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Country")]
+	[global::System.Data.Linq.Mapping.TableAttribute()]
 	public partial class Country : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -601,6 +1132,10 @@ namespace DatingManagement.DAL
 		
 		private int _Country_Id;
 		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -609,6 +1144,10 @@ namespace DatingManagement.DAL
     partial void OnCountry1Changed();
     partial void OnCountry_IdChanging(int value);
     partial void OnCountry_IdChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
     #endregion
 		
 		public Country()
@@ -656,6 +1195,46 @@ namespace DatingManagement.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
+		{
+			get
+			{
+				return this._LastEditDate;
+			}
+			set
+			{
+				if ((this._LastEditDate != value))
+				{
+					this.OnLastEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -693,6 +1272,10 @@ namespace DatingManagement.DAL
 		
 		private int _Duplicates_Id;
 		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -707,6 +1290,10 @@ namespace DatingManagement.DAL
     partial void OnFathersIDChanged();
     partial void OnDuplicates_IdChanging(int value);
     partial void OnDuplicates_IdChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
     #endregion
 		
 		public Duplicate()
@@ -814,88 +1401,42 @@ namespace DatingManagement.DAL
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Heights")]
-	public partial class Height : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Height1;
-		
-		private int _Height_Id;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnHeight1Changing(string value);
-    partial void OnHeight1Changed();
-    partial void OnHeight_IdChanging(int value);
-    partial void OnHeight_IdChanged();
-    #endregion
-		
-		public Height()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Height", Storage="_Height1", DbType="NVarChar(50)")]
-		public string Height1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
 		{
 			get
 			{
-				return this._Height1;
+				return this._LastEditDate;
 			}
 			set
 			{
-				if ((this._Height1 != value))
+				if ((this._LastEditDate != value))
 				{
-					this.OnHeight1Changing(value);
+					this.OnLastEditDateChanging(value);
 					this.SendPropertyChanging();
-					this._Height1 = value;
-					this.SendPropertyChanged("Height1");
-					this.OnHeight1Changed();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Height_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Height_Id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
 		{
 			get
 			{
-				return this._Height_Id;
+				return this._CreationDate;
 			}
 			set
 			{
-				if ((this._Height_Id != value))
+				if ((this._CreationDate != value))
 				{
-					this.OnHeight_IdChanging(value);
+					this.OnCreationDateChanging(value);
 					this.SendPropertyChanging();
-					this._Height_Id = value;
-					this.SendPropertyChanged("Height_Id");
-					this.OnHeight_IdChanged();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
 				}
 			}
 		}
@@ -921,945 +1462,7 @@ namespace DatingManagement.DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="MadeShiduchim")]
-	public partial class MadeShiduchim : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MadeShiduchim_Id;
-		
-		private string _Month;
-		
-		private string _Year;
-		
-		private System.Nullable<int> _BoysSide;
-		
-		private System.Nullable<decimal> _AmountBoy;
-		
-		private System.Nullable<int> _GirlsSide;
-		
-		private System.Nullable<decimal> _AmountGirl;
-		
-		private System.Nullable<System.DateTime> _ShiduchimDate;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMadeShiduchim_IdChanging(int value);
-    partial void OnMadeShiduchim_IdChanged();
-    partial void OnMonthChanging(string value);
-    partial void OnMonthChanged();
-    partial void OnYearChanging(string value);
-    partial void OnYearChanged();
-    partial void OnBoysSideChanging(System.Nullable<int> value);
-    partial void OnBoysSideChanged();
-    partial void OnAmountBoyChanging(System.Nullable<decimal> value);
-    partial void OnAmountBoyChanged();
-    partial void OnGirlsSideChanging(System.Nullable<int> value);
-    partial void OnGirlsSideChanged();
-    partial void OnAmountGirlChanging(System.Nullable<decimal> value);
-    partial void OnAmountGirlChanged();
-    partial void OnShiduchimDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnShiduchimDateChanged();
-    #endregion
-		
-		public MadeShiduchim()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MadeShiduchim_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MadeShiduchim_Id
-		{
-			get
-			{
-				return this._MadeShiduchim_Id;
-			}
-			set
-			{
-				if ((this._MadeShiduchim_Id != value))
-				{
-					this.OnMadeShiduchim_IdChanging(value);
-					this.SendPropertyChanging();
-					this._MadeShiduchim_Id = value;
-					this.SendPropertyChanged("MadeShiduchim_Id");
-					this.OnMadeShiduchim_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Month", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Month
-		{
-			get
-			{
-				return this._Month;
-			}
-			set
-			{
-				if ((this._Month != value))
-				{
-					this.OnMonthChanging(value);
-					this.SendPropertyChanging();
-					this._Month = value;
-					this.SendPropertyChanged("Month");
-					this.OnMonthChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Year", DbType="NVarChar(50)")]
-		public string Year
-		{
-			get
-			{
-				return this._Year;
-			}
-			set
-			{
-				if ((this._Year != value))
-				{
-					this.OnYearChanging(value);
-					this.SendPropertyChanging();
-					this._Year = value;
-					this.SendPropertyChanged("Year");
-					this.OnYearChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BoysSide", DbType="Int")]
-		public System.Nullable<int> BoysSide
-		{
-			get
-			{
-				return this._BoysSide;
-			}
-			set
-			{
-				if ((this._BoysSide != value))
-				{
-					this.OnBoysSideChanging(value);
-					this.SendPropertyChanging();
-					this._BoysSide = value;
-					this.SendPropertyChanged("BoysSide");
-					this.OnBoysSideChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountBoy", DbType="Money")]
-		public System.Nullable<decimal> AmountBoy
-		{
-			get
-			{
-				return this._AmountBoy;
-			}
-			set
-			{
-				if ((this._AmountBoy != value))
-				{
-					this.OnAmountBoyChanging(value);
-					this.SendPropertyChanging();
-					this._AmountBoy = value;
-					this.SendPropertyChanged("AmountBoy");
-					this.OnAmountBoyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GirlsSide", DbType="Int")]
-		public System.Nullable<int> GirlsSide
-		{
-			get
-			{
-				return this._GirlsSide;
-			}
-			set
-			{
-				if ((this._GirlsSide != value))
-				{
-					this.OnGirlsSideChanging(value);
-					this.SendPropertyChanging();
-					this._GirlsSide = value;
-					this.SendPropertyChanged("GirlsSide");
-					this.OnGirlsSideChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountGirl", DbType="Money")]
-		public System.Nullable<decimal> AmountGirl
-		{
-			get
-			{
-				return this._AmountGirl;
-			}
-			set
-			{
-				if ((this._AmountGirl != value))
-				{
-					this.OnAmountGirlChanging(value);
-					this.SendPropertyChanging();
-					this._AmountGirl = value;
-					this.SendPropertyChanged("AmountGirl");
-					this.OnAmountGirlChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShiduchimDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ShiduchimDate
-		{
-			get
-			{
-				return this._ShiduchimDate;
-			}
-			set
-			{
-				if ((this._ShiduchimDate != value))
-				{
-					this.OnShiduchimDateChanging(value);
-					this.SendPropertyChanging();
-					this._ShiduchimDate = value;
-					this.SendPropertyChanged("ShiduchimDate");
-					this.OnShiduchimDateChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Mechitunem")]
-	public partial class Mechitunem : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _FathersID;
-		
-		private int _MechitenID;
-		
-		private string _LastName;
-		
-		private string _FirstName;
-		
-		private string _City;
-		
-		private string _BaisMedresh;
-		
-		private EntityRef<Family> _Family;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnFathersIDChanging(System.Nullable<int> value);
-    partial void OnFathersIDChanged();
-    partial void OnMechitenIDChanging(int value);
-    partial void OnMechitenIDChanged();
-    partial void OnLastNameChanging(string value);
-    partial void OnLastNameChanged();
-    partial void OnFirstNameChanging(string value);
-    partial void OnFirstNameChanged();
-    partial void OnCityChanging(string value);
-    partial void OnCityChanged();
-    partial void OnBaisMedreshChanging(string value);
-    partial void OnBaisMedreshChanged();
-    #endregion
-		
-		public Mechitunem()
-		{
-			this._Family = default(EntityRef<Family>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FathersID", DbType="Int")]
-		public System.Nullable<int> FathersID
-		{
-			get
-			{
-				return this._FathersID;
-			}
-			set
-			{
-				if ((this._FathersID != value))
-				{
-					if (this._Family.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnFathersIDChanging(value);
-					this.SendPropertyChanging();
-					this._FathersID = value;
-					this.SendPropertyChanged("FathersID");
-					this.OnFathersIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MechitenID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MechitenID
-		{
-			get
-			{
-				return this._MechitenID;
-			}
-			set
-			{
-				if ((this._MechitenID != value))
-				{
-					this.OnMechitenIDChanging(value);
-					this.SendPropertyChanging();
-					this._MechitenID = value;
-					this.SendPropertyChanged("MechitenID");
-					this.OnMechitenIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(50)")]
-		public string LastName
-		{
-			get
-			{
-				return this._LastName;
-			}
-			set
-			{
-				if ((this._LastName != value))
-				{
-					this.OnLastNameChanging(value);
-					this.SendPropertyChanging();
-					this._LastName = value;
-					this.SendPropertyChanged("LastName");
-					this.OnLastNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(50)")]
-		public string FirstName
-		{
-			get
-			{
-				return this._FirstName;
-			}
-			set
-			{
-				if ((this._FirstName != value))
-				{
-					this.OnFirstNameChanging(value);
-					this.SendPropertyChanging();
-					this._FirstName = value;
-					this.SendPropertyChanged("FirstName");
-					this.OnFirstNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(50)")]
-		public string City
-		{
-			get
-			{
-				return this._City;
-			}
-			set
-			{
-				if ((this._City != value))
-				{
-					this.OnCityChanging(value);
-					this.SendPropertyChanging();
-					this._City = value;
-					this.SendPropertyChanged("City");
-					this.OnCityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaisMedresh", DbType="NVarChar(50)")]
-		public string BaisMedresh
-		{
-			get
-			{
-				return this._BaisMedresh;
-			}
-			set
-			{
-				if ((this._BaisMedresh != value))
-				{
-					this.OnBaisMedreshChanging(value);
-					this.SendPropertyChanging();
-					this._BaisMedresh = value;
-					this.SendPropertyChanged("BaisMedresh");
-					this.OnBaisMedreshChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Family_Mechitunem", Storage="_Family", ThisKey="FathersID", OtherKey="FathersID", IsForeignKey=true)]
-		public Family Family
-		{
-			get
-			{
-				return this._Family.Entity;
-			}
-			set
-			{
-				Family previousValue = this._Family.Entity;
-				if (((previousValue != value) 
-							|| (this._Family.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Family.Entity = null;
-						previousValue.Mechitunems.Remove(this);
-					}
-					this._Family.Entity = value;
-					if ((value != null))
-					{
-						value.Mechitunems.Add(this);
-						this._FathersID = value.FathersID;
-					}
-					else
-					{
-						this._FathersID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Family");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Months")]
-	public partial class Month : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _ID;
-		
-		private string _Month1;
-		
-		private int _Months_Id;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(string value);
-    partial void OnIDChanged();
-    partial void OnMonth1Changing(string value);
-    partial void OnMonth1Changed();
-    partial void OnMonths_IdChanging(int value);
-    partial void OnMonths_IdChanged();
-    #endregion
-		
-		public Month()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="NVarChar(50)")]
-		public string ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Month", Storage="_Month1", DbType="NVarChar(50)")]
-		public string Month1
-		{
-			get
-			{
-				return this._Month1;
-			}
-			set
-			{
-				if ((this._Month1 != value))
-				{
-					this.OnMonth1Changing(value);
-					this.SendPropertyChanging();
-					this._Month1 = value;
-					this.SendPropertyChanged("Month1");
-					this.OnMonth1Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Months_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Months_Id
-		{
-			get
-			{
-				return this._Months_Id;
-			}
-			set
-			{
-				if ((this._Months_Id != value))
-				{
-					this.OnMonths_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Months_Id = value;
-					this.SendPropertyChanged("Months_Id");
-					this.OnMonths_IdChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Region")]
-	public partial class Region : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Region1;
-		
-		private int _Region_Id;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnRegion1Changing(string value);
-    partial void OnRegion1Changed();
-    partial void OnRegion_IdChanging(int value);
-    partial void OnRegion_IdChanged();
-    #endregion
-		
-		public Region()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Region", Storage="_Region1", DbType="NVarChar(50)")]
-		public string Region1
-		{
-			get
-			{
-				return this._Region1;
-			}
-			set
-			{
-				if ((this._Region1 != value))
-				{
-					this.OnRegion1Changing(value);
-					this.SendPropertyChanging();
-					this._Region1 = value;
-					this.SendPropertyChanged("Region1");
-					this.OnRegion1Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Region_Id
-		{
-			get
-			{
-				return this._Region_Id;
-			}
-			set
-			{
-				if ((this._Region_Id != value))
-				{
-					this.OnRegion_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Region_Id = value;
-					this.SendPropertyChanged("Region_Id");
-					this.OnRegion_IdChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Schools")]
-	public partial class School : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _School1;
-		
-		private int _School_Id;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSchool1Changing(string value);
-    partial void OnSchool1Changed();
-    partial void OnSchool_IdChanging(int value);
-    partial void OnSchool_IdChanged();
-    #endregion
-		
-		public School()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="School", Storage="_School1", DbType="NVarChar(50)")]
-		public string School1
-		{
-			get
-			{
-				return this._School1;
-			}
-			set
-			{
-				if ((this._School1 != value))
-				{
-					this.OnSchool1Changing(value);
-					this.SendPropertyChanging();
-					this._School1 = value;
-					this.SendPropertyChanged("School1");
-					this.OnSchool1Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_School_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int School_Id
-		{
-			get
-			{
-				return this._School_Id;
-			}
-			set
-			{
-				if ((this._School_Id != value))
-				{
-					this.OnSchool_IdChanging(value);
-					this.SendPropertyChanging();
-					this._School_Id = value;
-					this.SendPropertyChanged("School_Id");
-					this.OnSchool_IdChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Seminarys")]
-	public partial class Seminary : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Seminary1;
-		
-		private int _Seminary_Id;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSeminary1Changing(string value);
-    partial void OnSeminary1Changed();
-    partial void OnSeminary_IdChanging(int value);
-    partial void OnSeminary_IdChanged();
-    #endregion
-		
-		public Seminary()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Seminary", Storage="_Seminary1", DbType="NVarChar(50)")]
-		public string Seminary1
-		{
-			get
-			{
-				return this._Seminary1;
-			}
-			set
-			{
-				if ((this._Seminary1 != value))
-				{
-					this.OnSeminary1Changing(value);
-					this.SendPropertyChanging();
-					this._Seminary1 = value;
-					this.SendPropertyChanged("Seminary1");
-					this.OnSeminary1Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Seminary_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Seminary_Id
-		{
-			get
-			{
-				return this._Seminary_Id;
-			}
-			set
-			{
-				if ((this._Seminary_Id != value))
-				{
-					this.OnSeminary_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Seminary_Id = value;
-					this.SendPropertyChanged("Seminary_Id");
-					this.OnSeminary_IdChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Years")]
-	public partial class Year
-	{
-		
-		private string _ID;
-		
-		private string _Year1;
-		
-		private System.Data.Linq.Binary _s_ColLineage;
-		
-		private System.Nullable<int> _s_Generation;
-		
-		private System.Nullable<System.Guid> _s_GUID;
-		
-		private System.Data.Linq.Binary _s_Lineage;
-		
-		public Year()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="NVarChar(50)")]
-		public string ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Year", Storage="_Year1", DbType="NVarChar(50)")]
-		public string Year1
-		{
-			get
-			{
-				return this._Year1;
-			}
-			set
-			{
-				if ((this._Year1 != value))
-				{
-					this._Year1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_s_ColLineage", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary s_ColLineage
-		{
-			get
-			{
-				return this._s_ColLineage;
-			}
-			set
-			{
-				if ((this._s_ColLineage != value))
-				{
-					this._s_ColLineage = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_s_Generation", DbType="Int")]
-		public System.Nullable<int> s_Generation
-		{
-			get
-			{
-				return this._s_Generation;
-			}
-			set
-			{
-				if ((this._s_Generation != value))
-				{
-					this._s_Generation = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_s_GUID", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> s_GUID
-		{
-			get
-			{
-				return this._s_GUID;
-			}
-			set
-			{
-				if ((this._s_GUID != value))
-				{
-					this._s_GUID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_s_Lineage", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary s_Lineage
-		{
-			get
-			{
-				return this._s_Lineage;
-			}
-			set
-			{
-				if ((this._s_Lineage != value))
-				{
-					this._s_Lineage = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Family")]
+	[global::System.Data.Linq.Mapping.TableAttribute()]
 	public partial class Family : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -1887,11 +1490,25 @@ namespace DatingManagement.DAL
 		
 		private string _HomePhone2;
 		
+		private string _HomePhone3;
+		
 		private string _WorkPhone;
+		
+		private string _WorkPhone2;
+		
+		private string _CountryPhone1;
+		
+		private string _CountryPhone2;
 		
 		private string _Pager;
 		
+		private string _Pager2;
+		
+		private string _InternationalPhone;
+		
 		private string _Mobile;
+		
+		private string _Mobile2;
 		
 		private string _Fax;
 		
@@ -1913,19 +1530,15 @@ namespace DatingManagement.DAL
 		
 		private string _Email3;
 		
-		private string _HomePhone1_Descr;
+		private System.Nullable<System.DateTime> _LastEditDate;
 		
-		private string _HomePhone2_Descr;
+		private System.Nullable<System.DateTime> _CreationDate;
 		
-		private string _WorkPhone_Descr;
-		
-		private string _Mobile_Descr;
-		
-		private EntitySet<Mechitunem> _Mechitunems;
+		private EntitySet<Boy> _Boys;
 		
 		private EntitySet<Girl> _Girls;
 		
-		private EntitySet<Boy> _Boys;
+		private EntitySet<Mechitunem> _Mechitunems;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1953,12 +1566,26 @@ namespace DatingManagement.DAL
     partial void OnHomePhone1Changed();
     partial void OnHomePhone2Changing(string value);
     partial void OnHomePhone2Changed();
+    partial void OnHomePhone3Changing(string value);
+    partial void OnHomePhone3Changed();
     partial void OnWorkPhoneChanging(string value);
     partial void OnWorkPhoneChanged();
+    partial void OnWorkPhone2Changing(string value);
+    partial void OnWorkPhone2Changed();
+    partial void OnCountryPhone1Changing(string value);
+    partial void OnCountryPhone1Changed();
+    partial void OnCountryPhone2Changing(string value);
+    partial void OnCountryPhone2Changed();
     partial void OnPagerChanging(string value);
     partial void OnPagerChanged();
+    partial void OnPager2Changing(string value);
+    partial void OnPager2Changed();
+    partial void OnInternationalPhoneChanging(string value);
+    partial void OnInternationalPhoneChanged();
     partial void OnMobileChanging(string value);
     partial void OnMobileChanged();
+    partial void OnMobile2Changing(string value);
+    partial void OnMobile2Changed();
     partial void OnFaxChanging(string value);
     partial void OnFaxChanged();
     partial void OnBaisHamedreshChanging(string value);
@@ -1979,21 +1606,17 @@ namespace DatingManagement.DAL
     partial void OnEmail2Changed();
     partial void OnEmail3Changing(string value);
     partial void OnEmail3Changed();
-    partial void OnHomePhone1_DescrChanging(string value);
-    partial void OnHomePhone1_DescrChanged();
-    partial void OnHomePhone2_DescrChanging(string value);
-    partial void OnHomePhone2_DescrChanged();
-    partial void OnWorkPhone_DescrChanging(string value);
-    partial void OnWorkPhone_DescrChanged();
-    partial void OnMobile_DescrChanging(string value);
-    partial void OnMobile_DescrChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
     #endregion
 		
 		public Family()
 		{
-			this._Mechitunems = new EntitySet<Mechitunem>(new Action<Mechitunem>(this.attach_Mechitunems), new Action<Mechitunem>(this.detach_Mechitunems));
-			this._Girls = new EntitySet<Girl>(new Action<Girl>(this.attach_Girls), new Action<Girl>(this.detach_Girls));
 			this._Boys = new EntitySet<Boy>(new Action<Boy>(this.attach_Boys), new Action<Boy>(this.detach_Boys));
+			this._Girls = new EntitySet<Girl>(new Action<Girl>(this.attach_Girls), new Action<Girl>(this.detach_Girls));
+			this._Mechitunems = new EntitySet<Mechitunem>(new Action<Mechitunem>(this.attach_Mechitunems), new Action<Mechitunem>(this.detach_Mechitunems));
 			OnCreated();
 		}
 		
@@ -2217,6 +1840,26 @@ namespace DatingManagement.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePhone3", DbType="NVarChar(255)")]
+		public string HomePhone3
+		{
+			get
+			{
+				return this._HomePhone3;
+			}
+			set
+			{
+				if ((this._HomePhone3 != value))
+				{
+					this.OnHomePhone3Changing(value);
+					this.SendPropertyChanging();
+					this._HomePhone3 = value;
+					this.SendPropertyChanged("HomePhone3");
+					this.OnHomePhone3Changed();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkPhone", DbType="NVarChar(255)")]
 		public string WorkPhone
 		{
@@ -2233,6 +1876,66 @@ namespace DatingManagement.DAL
 					this._WorkPhone = value;
 					this.SendPropertyChanged("WorkPhone");
 					this.OnWorkPhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkPhone2", DbType="NVarChar(255)")]
+		public string WorkPhone2
+		{
+			get
+			{
+				return this._WorkPhone2;
+			}
+			set
+			{
+				if ((this._WorkPhone2 != value))
+				{
+					this.OnWorkPhone2Changing(value);
+					this.SendPropertyChanging();
+					this._WorkPhone2 = value;
+					this.SendPropertyChanged("WorkPhone2");
+					this.OnWorkPhone2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryPhone1", DbType="NVarChar(255)")]
+		public string CountryPhone1
+		{
+			get
+			{
+				return this._CountryPhone1;
+			}
+			set
+			{
+				if ((this._CountryPhone1 != value))
+				{
+					this.OnCountryPhone1Changing(value);
+					this.SendPropertyChanging();
+					this._CountryPhone1 = value;
+					this.SendPropertyChanged("CountryPhone1");
+					this.OnCountryPhone1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryPhone2", DbType="NVarChar(255)")]
+		public string CountryPhone2
+		{
+			get
+			{
+				return this._CountryPhone2;
+			}
+			set
+			{
+				if ((this._CountryPhone2 != value))
+				{
+					this.OnCountryPhone2Changing(value);
+					this.SendPropertyChanging();
+					this._CountryPhone2 = value;
+					this.SendPropertyChanged("CountryPhone2");
+					this.OnCountryPhone2Changed();
 				}
 			}
 		}
@@ -2257,6 +1960,46 @@ namespace DatingManagement.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pager2", DbType="NVarChar(255)")]
+		public string Pager2
+		{
+			get
+			{
+				return this._Pager2;
+			}
+			set
+			{
+				if ((this._Pager2 != value))
+				{
+					this.OnPager2Changing(value);
+					this.SendPropertyChanging();
+					this._Pager2 = value;
+					this.SendPropertyChanged("Pager2");
+					this.OnPager2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InternationalPhone", DbType="NVarChar(255)")]
+		public string InternationalPhone
+		{
+			get
+			{
+				return this._InternationalPhone;
+			}
+			set
+			{
+				if ((this._InternationalPhone != value))
+				{
+					this.OnInternationalPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._InternationalPhone = value;
+					this.SendPropertyChanged("InternationalPhone");
+					this.OnInternationalPhoneChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile", DbType="NVarChar(255)")]
 		public string Mobile
 		{
@@ -2273,6 +2016,26 @@ namespace DatingManagement.DAL
 					this._Mobile = value;
 					this.SendPropertyChanged("Mobile");
 					this.OnMobileChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile2", DbType="NVarChar(255)")]
+		public string Mobile2
+		{
+			get
+			{
+				return this._Mobile2;
+			}
+			set
+			{
+				if ((this._Mobile2 != value))
+				{
+					this.OnMobile2Changing(value);
+					this.SendPropertyChanging();
+					this._Mobile2 = value;
+					this.SendPropertyChanged("Mobile2");
+					this.OnMobile2Changed();
 				}
 			}
 		}
@@ -2317,7 +2080,7 @@ namespace DatingManagement.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Work]", Storage="_Work", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Work", DbType="NVarChar(50)")]
 		public string Work
 		{
 			get
@@ -2337,7 +2100,7 @@ namespace DatingManagement.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[E-Mail]", Storage="_E_Mail", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="E-Mail", Storage="_E_Mail", DbType="NVarChar(50)")]
 		public string E_Mail
 		{
 			get
@@ -2477,96 +2240,56 @@ namespace DatingManagement.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePhone1_Descr", DbType="NVarChar(255)")]
-		public string HomePhone1_Descr
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
 		{
 			get
 			{
-				return this._HomePhone1_Descr;
+				return this._LastEditDate;
 			}
 			set
 			{
-				if ((this._HomePhone1_Descr != value))
+				if ((this._LastEditDate != value))
 				{
-					this.OnHomePhone1_DescrChanging(value);
+					this.OnLastEditDateChanging(value);
 					this.SendPropertyChanging();
-					this._HomePhone1_Descr = value;
-					this.SendPropertyChanged("HomePhone1_Descr");
-					this.OnHomePhone1_DescrChanged();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePhone2_Descr", DbType="NVarChar(255)")]
-		public string HomePhone2_Descr
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
 		{
 			get
 			{
-				return this._HomePhone2_Descr;
+				return this._CreationDate;
 			}
 			set
 			{
-				if ((this._HomePhone2_Descr != value))
+				if ((this._CreationDate != value))
 				{
-					this.OnHomePhone2_DescrChanging(value);
+					this.OnCreationDateChanging(value);
 					this.SendPropertyChanging();
-					this._HomePhone2_Descr = value;
-					this.SendPropertyChanged("HomePhone2_Descr");
-					this.OnHomePhone2_DescrChanged();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkPhone_Descr", DbType="NVarChar(255)")]
-		public string WorkPhone_Descr
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Family_Boy", Storage="_Boys", ThisKey="FathersID", OtherKey="FathersID")]
+		public EntitySet<Boy> Boys
 		{
 			get
 			{
-				return this._WorkPhone_Descr;
+				return this._Boys;
 			}
 			set
 			{
-				if ((this._WorkPhone_Descr != value))
-				{
-					this.OnWorkPhone_DescrChanging(value);
-					this.SendPropertyChanging();
-					this._WorkPhone_Descr = value;
-					this.SendPropertyChanged("WorkPhone_Descr");
-					this.OnWorkPhone_DescrChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile_Descr", DbType="NVarChar(255)")]
-		public string Mobile_Descr
-		{
-			get
-			{
-				return this._Mobile_Descr;
-			}
-			set
-			{
-				if ((this._Mobile_Descr != value))
-				{
-					this.OnMobile_DescrChanging(value);
-					this.SendPropertyChanging();
-					this._Mobile_Descr = value;
-					this.SendPropertyChanged("Mobile_Descr");
-					this.OnMobile_DescrChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Family_Mechitunem", Storage="_Mechitunems", ThisKey="FathersID", OtherKey="FathersID")]
-		public EntitySet<Mechitunem> Mechitunems
-		{
-			get
-			{
-				return this._Mechitunems;
-			}
-			set
-			{
-				this._Mechitunems.Assign(value);
+				this._Boys.Assign(value);
 			}
 		}
 		
@@ -2583,16 +2306,16 @@ namespace DatingManagement.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Family_Boy", Storage="_Boys", ThisKey="FathersID", OtherKey="FathersID")]
-		public EntitySet<Boy> Boys
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Family_Mechitunem", Storage="_Mechitunems", ThisKey="FathersID", OtherKey="FathersID")]
+		public EntitySet<Mechitunem> Mechitunems
 		{
 			get
 			{
-				return this._Boys;
+				return this._Mechitunems;
 			}
 			set
 			{
-				this._Boys.Assign(value);
+				this._Mechitunems.Assign(value);
 			}
 		}
 		
@@ -2616,13 +2339,13 @@ namespace DatingManagement.DAL
 			}
 		}
 		
-		private void attach_Mechitunems(Mechitunem entity)
+		private void attach_Boys(Boy entity)
 		{
 			this.SendPropertyChanging();
 			entity.Family = this;
 		}
 		
-		private void detach_Mechitunems(Mechitunem entity)
+		private void detach_Boys(Boy entity)
 		{
 			this.SendPropertyChanging();
 			entity.Family = null;
@@ -2640,13 +2363,13 @@ namespace DatingManagement.DAL
 			entity.Family = null;
 		}
 		
-		private void attach_Boys(Boy entity)
+		private void attach_Mechitunems(Mechitunem entity)
 		{
 			this.SendPropertyChanging();
 			entity.Family = this;
 		}
 		
-		private void detach_Boys(Boy entity)
+		private void detach_Mechitunems(Mechitunem entity)
 		{
 			this.SendPropertyChanging();
 			entity.Family = null;
@@ -2691,6 +2414,10 @@ namespace DatingManagement.DAL
 		
 		private System.Nullable<System.DateTime> _BirthDate;
 		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
 		private string _Dor_Yeshurim;
 		
 		private EntityRef<Family> _Family;
@@ -2731,6 +2458,10 @@ namespace DatingManagement.DAL
     partial void OnEmail3Changed();
     partial void OnBirthDateChanging(System.Nullable<System.DateTime> value);
     partial void OnBirthDateChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
     partial void OnDor_YeshurimChanging(string value);
     partial void OnDor_YeshurimChanged();
     #endregion
@@ -2905,7 +2636,7 @@ namespace DatingManagement.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Work]", Storage="_Work", DbType="NVarChar(40)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Work", DbType="NVarChar(40)")]
 		public string Work
 		{
 			get
@@ -3065,6 +2796,46 @@ namespace DatingManagement.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
+		{
+			get
+			{
+				return this._LastEditDate;
+			}
+			set
+			{
+				if ((this._LastEditDate != value))
+				{
+					this.OnLastEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dor_Yeshurim", DbType="NVarChar(4000)")]
 		public string Dor_Yeshurim
 		{
@@ -3140,41 +2911,439 @@ namespace DatingManagement.DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Boys")]
-	public partial class Boy : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Heights")]
+	public partial class Height : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Height1;
+		
+		private int _Height_Id;
+		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnHeight1Changing(string value);
+    partial void OnHeight1Changed();
+    partial void OnHeight_IdChanging(int value);
+    partial void OnHeight_IdChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
+    #endregion
+		
+		public Height()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Height", Storage="_Height1", DbType="NVarChar(50)")]
+		public string Height1
+		{
+			get
+			{
+				return this._Height1;
+			}
+			set
+			{
+				if ((this._Height1 != value))
+				{
+					this.OnHeight1Changing(value);
+					this.SendPropertyChanging();
+					this._Height1 = value;
+					this.SendPropertyChanged("Height1");
+					this.OnHeight1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Height_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Height_Id
+		{
+			get
+			{
+				return this._Height_Id;
+			}
+			set
+			{
+				if ((this._Height_Id != value))
+				{
+					this.OnHeight_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Height_Id = value;
+					this.SendPropertyChanged("Height_Id");
+					this.OnHeight_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
+		{
+			get
+			{
+				return this._LastEditDate;
+			}
+			set
+			{
+				if ((this._LastEditDate != value))
+				{
+					this.OnLastEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute()]
+	public partial class MadeShiduchim : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MadeShiduchim_Id;
+		
+		private string _Month;
+		
+		private string _Year;
+		
+		private System.Nullable<int> _BoysSide;
+		
+		private System.Nullable<decimal> _AmountBoy;
+		
+		private System.Nullable<int> _GirlsSide;
+		
+		private System.Nullable<decimal> _AmountGirl;
+		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
+		private System.Nullable<System.DateTime> _ShiduchimDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMadeShiduchim_IdChanging(int value);
+    partial void OnMadeShiduchim_IdChanged();
+    partial void OnMonthChanging(string value);
+    partial void OnMonthChanged();
+    partial void OnYearChanging(string value);
+    partial void OnYearChanged();
+    partial void OnBoysSideChanging(System.Nullable<int> value);
+    partial void OnBoysSideChanged();
+    partial void OnAmountBoyChanging(System.Nullable<decimal> value);
+    partial void OnAmountBoyChanged();
+    partial void OnGirlsSideChanging(System.Nullable<int> value);
+    partial void OnGirlsSideChanged();
+    partial void OnAmountGirlChanging(System.Nullable<decimal> value);
+    partial void OnAmountGirlChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
+    partial void OnShiduchimDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnShiduchimDateChanged();
+    #endregion
+		
+		public MadeShiduchim()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MadeShiduchim_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MadeShiduchim_Id
+		{
+			get
+			{
+				return this._MadeShiduchim_Id;
+			}
+			set
+			{
+				if ((this._MadeShiduchim_Id != value))
+				{
+					this.OnMadeShiduchim_IdChanging(value);
+					this.SendPropertyChanging();
+					this._MadeShiduchim_Id = value;
+					this.SendPropertyChanged("MadeShiduchim_Id");
+					this.OnMadeShiduchim_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Month", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Month
+		{
+			get
+			{
+				return this._Month;
+			}
+			set
+			{
+				if ((this._Month != value))
+				{
+					this.OnMonthChanging(value);
+					this.SendPropertyChanging();
+					this._Month = value;
+					this.SendPropertyChanged("Month");
+					this.OnMonthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Year", DbType="NVarChar(50)")]
+		public string Year
+		{
+			get
+			{
+				return this._Year;
+			}
+			set
+			{
+				if ((this._Year != value))
+				{
+					this.OnYearChanging(value);
+					this.SendPropertyChanging();
+					this._Year = value;
+					this.SendPropertyChanged("Year");
+					this.OnYearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BoysSide", DbType="Int")]
+		public System.Nullable<int> BoysSide
+		{
+			get
+			{
+				return this._BoysSide;
+			}
+			set
+			{
+				if ((this._BoysSide != value))
+				{
+					this.OnBoysSideChanging(value);
+					this.SendPropertyChanging();
+					this._BoysSide = value;
+					this.SendPropertyChanged("BoysSide");
+					this.OnBoysSideChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountBoy", DbType="Money")]
+		public System.Nullable<decimal> AmountBoy
+		{
+			get
+			{
+				return this._AmountBoy;
+			}
+			set
+			{
+				if ((this._AmountBoy != value))
+				{
+					this.OnAmountBoyChanging(value);
+					this.SendPropertyChanging();
+					this._AmountBoy = value;
+					this.SendPropertyChanged("AmountBoy");
+					this.OnAmountBoyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GirlsSide", DbType="Int")]
+		public System.Nullable<int> GirlsSide
+		{
+			get
+			{
+				return this._GirlsSide;
+			}
+			set
+			{
+				if ((this._GirlsSide != value))
+				{
+					this.OnGirlsSideChanging(value);
+					this.SendPropertyChanging();
+					this._GirlsSide = value;
+					this.SendPropertyChanged("GirlsSide");
+					this.OnGirlsSideChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountGirl", DbType="Money")]
+		public System.Nullable<decimal> AmountGirl
+		{
+			get
+			{
+				return this._AmountGirl;
+			}
+			set
+			{
+				if ((this._AmountGirl != value))
+				{
+					this.OnAmountGirlChanging(value);
+					this.SendPropertyChanging();
+					this._AmountGirl = value;
+					this.SendPropertyChanged("AmountGirl");
+					this.OnAmountGirlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
+		{
+			get
+			{
+				return this._LastEditDate;
+			}
+			set
+			{
+				if ((this._LastEditDate != value))
+				{
+					this.OnLastEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShiduchimDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ShiduchimDate
+		{
+			get
+			{
+				return this._ShiduchimDate;
+			}
+			set
+			{
+				if ((this._ShiduchimDate != value))
+				{
+					this.OnShiduchimDateChanging(value);
+					this.SendPropertyChanging();
+					this._ShiduchimDate = value;
+					this.SendPropertyChanged("ShiduchimDate");
+					this.OnShiduchimDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute()]
+	public partial class Mechitunem : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private System.Nullable<int> _FathersID;
 		
-		private int _BoysID;
+		private int _MechitenID;
 		
-		private string _BoysName;
+		private string _LastName;
 		
-		private System.Nullable<int> _Age;
+		private string _FirstName;
 		
-		private string _Height;
+		private string _City;
 		
-		private string _Yeshiva;
+		private string _BaisMedresh;
 		
-		private string _Note;
+		private System.Nullable<System.DateTime> _LastEditDate;
 		
-		private System.Data.Linq.Binary _Picture;
-		
-		private System.Nullable<int> _Gen_Picture;
-		
-		private System.Nullable<System.Guid> _s_GUID;
-		
-		private string _Email;
-		
-		private string _Email2;
-		
-		private string _Email3;
-		
-		private System.Nullable<System.DateTime> _BirthDate;
-		
-		private string _Dor_Yeshurim;
+		private System.Nullable<System.DateTime> _CreationDate;
 		
 		private EntityRef<Family> _Family;
 		
@@ -3184,37 +3353,23 @@ namespace DatingManagement.DAL
     partial void OnCreated();
     partial void OnFathersIDChanging(System.Nullable<int> value);
     partial void OnFathersIDChanged();
-    partial void OnBoysIDChanging(int value);
-    partial void OnBoysIDChanged();
-    partial void OnBoysNameChanging(string value);
-    partial void OnBoysNameChanged();
-    partial void OnAgeChanging(System.Nullable<int> value);
-    partial void OnAgeChanged();
-    partial void OnHeightChanging(string value);
-    partial void OnHeightChanged();
-    partial void OnYeshivaChanging(string value);
-    partial void OnYeshivaChanged();
-    partial void OnNoteChanging(string value);
-    partial void OnNoteChanged();
-    partial void OnPictureChanging(System.Data.Linq.Binary value);
-    partial void OnPictureChanged();
-    partial void OnGen_PictureChanging(System.Nullable<int> value);
-    partial void OnGen_PictureChanged();
-    partial void Ons_GUIDChanging(System.Nullable<System.Guid> value);
-    partial void Ons_GUIDChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnEmail2Changing(string value);
-    partial void OnEmail2Changed();
-    partial void OnEmail3Changing(string value);
-    partial void OnEmail3Changed();
-    partial void OnBirthDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnBirthDateChanged();
-    partial void OnDor_YeshurimChanging(string value);
-    partial void OnDor_YeshurimChanged();
+    partial void OnMechitenIDChanging(int value);
+    partial void OnMechitenIDChanged();
+    partial void OnLastNameChanging(string value);
+    partial void OnLastNameChanged();
+    partial void OnFirstNameChanging(string value);
+    partial void OnFirstNameChanged();
+    partial void OnCityChanging(string value);
+    partial void OnCityChanged();
+    partial void OnBaisMedreshChanging(string value);
+    partial void OnBaisMedreshChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
     #endregion
 		
-		public Boy()
+		public Mechitunem()
 		{
 			this._Family = default(EntityRef<Family>);
 			OnCreated();
@@ -3244,287 +3399,147 @@ namespace DatingManagement.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BoysID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int BoysID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MechitenID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MechitenID
 		{
 			get
 			{
-				return this._BoysID;
+				return this._MechitenID;
 			}
 			set
 			{
-				if ((this._BoysID != value))
+				if ((this._MechitenID != value))
 				{
-					this.OnBoysIDChanging(value);
+					this.OnMechitenIDChanging(value);
 					this.SendPropertyChanging();
-					this._BoysID = value;
-					this.SendPropertyChanged("BoysID");
-					this.OnBoysIDChanged();
+					this._MechitenID = value;
+					this.SendPropertyChanged("MechitenID");
+					this.OnMechitenIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BoysName", DbType="NVarChar(30)")]
-		public string BoysName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="NVarChar(50)")]
+		public string LastName
 		{
 			get
 			{
-				return this._BoysName;
+				return this._LastName;
 			}
 			set
 			{
-				if ((this._BoysName != value))
+				if ((this._LastName != value))
 				{
-					this.OnBoysNameChanging(value);
+					this.OnLastNameChanging(value);
 					this.SendPropertyChanging();
-					this._BoysName = value;
-					this.SendPropertyChanged("BoysName");
-					this.OnBoysNameChanged();
+					this._LastName = value;
+					this.SendPropertyChanged("LastName");
+					this.OnLastNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Age", DbType="Int")]
-		public System.Nullable<int> Age
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="NVarChar(50)")]
+		public string FirstName
 		{
 			get
 			{
-				return this._Age;
+				return this._FirstName;
 			}
 			set
 			{
-				if ((this._Age != value))
+				if ((this._FirstName != value))
 				{
-					this.OnAgeChanging(value);
+					this.OnFirstNameChanging(value);
 					this.SendPropertyChanging();
-					this._Age = value;
-					this.SendPropertyChanged("Age");
-					this.OnAgeChanged();
+					this._FirstName = value;
+					this.SendPropertyChanged("FirstName");
+					this.OnFirstNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Height", DbType="NVarChar(4)")]
-		public string Height
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(50)")]
+		public string City
 		{
 			get
 			{
-				return this._Height;
+				return this._City;
 			}
 			set
 			{
-				if ((this._Height != value))
+				if ((this._City != value))
 				{
-					this.OnHeightChanging(value);
+					this.OnCityChanging(value);
 					this.SendPropertyChanging();
-					this._Height = value;
-					this.SendPropertyChanged("Height");
-					this.OnHeightChanged();
+					this._City = value;
+					this.SendPropertyChanged("City");
+					this.OnCityChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Yeshiva", DbType="NVarChar(255)")]
-		public string Yeshiva
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaisMedresh", DbType="NVarChar(50)")]
+		public string BaisMedresh
 		{
 			get
 			{
-				return this._Yeshiva;
+				return this._BaisMedresh;
 			}
 			set
 			{
-				if ((this._Yeshiva != value))
+				if ((this._BaisMedresh != value))
 				{
-					this.OnYeshivaChanging(value);
+					this.OnBaisMedreshChanging(value);
 					this.SendPropertyChanging();
-					this._Yeshiva = value;
-					this.SendPropertyChanged("Yeshiva");
-					this.OnYeshivaChanged();
+					this._BaisMedresh = value;
+					this.SendPropertyChanged("BaisMedresh");
+					this.OnBaisMedreshChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(255)")]
-		public string Note
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
 		{
 			get
 			{
-				return this._Note;
+				return this._LastEditDate;
 			}
 			set
 			{
-				if ((this._Note != value))
+				if ((this._LastEditDate != value))
 				{
-					this.OnNoteChanging(value);
+					this.OnLastEditDateChanging(value);
 					this.SendPropertyChanging();
-					this._Note = value;
-					this.SendPropertyChanged("Note");
-					this.OnNoteChanged();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Picture", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Picture
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
 		{
 			get
 			{
-				return this._Picture;
+				return this._CreationDate;
 			}
 			set
 			{
-				if ((this._Picture != value))
+				if ((this._CreationDate != value))
 				{
-					this.OnPictureChanging(value);
+					this.OnCreationDateChanging(value);
 					this.SendPropertyChanging();
-					this._Picture = value;
-					this.SendPropertyChanged("Picture");
-					this.OnPictureChanged();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gen_Picture", DbType="Int")]
-		public System.Nullable<int> Gen_Picture
-		{
-			get
-			{
-				return this._Gen_Picture;
-			}
-			set
-			{
-				if ((this._Gen_Picture != value))
-				{
-					this.OnGen_PictureChanging(value);
-					this.SendPropertyChanging();
-					this._Gen_Picture = value;
-					this.SendPropertyChanged("Gen_Picture");
-					this.OnGen_PictureChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_s_GUID", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> s_GUID
-		{
-			get
-			{
-				return this._s_GUID;
-			}
-			set
-			{
-				if ((this._s_GUID != value))
-				{
-					this.Ons_GUIDChanging(value);
-					this.SendPropertyChanging();
-					this._s_GUID = value;
-					this.SendPropertyChanged("s_GUID");
-					this.Ons_GUIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(255)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email2", DbType="NVarChar(255)")]
-		public string Email2
-		{
-			get
-			{
-				return this._Email2;
-			}
-			set
-			{
-				if ((this._Email2 != value))
-				{
-					this.OnEmail2Changing(value);
-					this.SendPropertyChanging();
-					this._Email2 = value;
-					this.SendPropertyChanged("Email2");
-					this.OnEmail2Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email3", DbType="NVarChar(255)")]
-		public string Email3
-		{
-			get
-			{
-				return this._Email3;
-			}
-			set
-			{
-				if ((this._Email3 != value))
-				{
-					this.OnEmail3Changing(value);
-					this.SendPropertyChanging();
-					this._Email3 = value;
-					this.SendPropertyChanged("Email3");
-					this.OnEmail3Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BirthDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> BirthDate
-		{
-			get
-			{
-				return this._BirthDate;
-			}
-			set
-			{
-				if ((this._BirthDate != value))
-				{
-					this.OnBirthDateChanging(value);
-					this.SendPropertyChanging();
-					this._BirthDate = value;
-					this.SendPropertyChanged("BirthDate");
-					this.OnBirthDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dor_Yeshurim", DbType="NVarChar(4000)")]
-		public string Dor_Yeshurim
-		{
-			get
-			{
-				return this._Dor_Yeshurim;
-			}
-			set
-			{
-				if ((this._Dor_Yeshurim != value))
-				{
-					this.OnDor_YeshurimChanging(value);
-					this.SendPropertyChanging();
-					this._Dor_Yeshurim = value;
-					this.SendPropertyChanged("Dor_Yeshurim");
-					this.OnDor_YeshurimChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Family_Boy", Storage="_Family", ThisKey="FathersID", OtherKey="FathersID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Family_Mechitunem", Storage="_Family", ThisKey="FathersID", OtherKey="FathersID", IsForeignKey=true)]
 		public Family Family
 		{
 			get
@@ -3541,12 +3556,12 @@ namespace DatingManagement.DAL
 					if ((previousValue != null))
 					{
 						this._Family.Entity = null;
-						previousValue.Boys.Remove(this);
+						previousValue.Mechitunems.Remove(this);
 					}
 					this._Family.Entity = value;
 					if ((value != null))
 					{
-						value.Boys.Add(this);
+						value.Mechitunems.Add(this);
 						this._FathersID = value.FathersID;
 					}
 					else
@@ -3554,6 +3569,700 @@ namespace DatingManagement.DAL
 						this._FathersID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Family");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Months")]
+	public partial class Month : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _ID;
+		
+		private string _Month1;
+		
+		private int _Months_Id;
+		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(string value);
+    partial void OnIDChanged();
+    partial void OnMonth1Changing(string value);
+    partial void OnMonth1Changed();
+    partial void OnMonths_IdChanging(int value);
+    partial void OnMonths_IdChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
+    #endregion
+		
+		public Month()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="NVarChar(50)")]
+		public string ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Month", Storage="_Month1", DbType="NVarChar(50)")]
+		public string Month1
+		{
+			get
+			{
+				return this._Month1;
+			}
+			set
+			{
+				if ((this._Month1 != value))
+				{
+					this.OnMonth1Changing(value);
+					this.SendPropertyChanging();
+					this._Month1 = value;
+					this.SendPropertyChanged("Month1");
+					this.OnMonth1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Months_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Months_Id
+		{
+			get
+			{
+				return this._Months_Id;
+			}
+			set
+			{
+				if ((this._Months_Id != value))
+				{
+					this.OnMonths_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Months_Id = value;
+					this.SendPropertyChanged("Months_Id");
+					this.OnMonths_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
+		{
+			get
+			{
+				return this._LastEditDate;
+			}
+			set
+			{
+				if ((this._LastEditDate != value))
+				{
+					this.OnLastEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute()]
+	public partial class Region : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Region1;
+		
+		private int _Region_Id;
+		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRegion1Changing(string value);
+    partial void OnRegion1Changed();
+    partial void OnRegion_IdChanging(int value);
+    partial void OnRegion_IdChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
+    #endregion
+		
+		public Region()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Region", Storage="_Region1", DbType="NVarChar(50)")]
+		public string Region1
+		{
+			get
+			{
+				return this._Region1;
+			}
+			set
+			{
+				if ((this._Region1 != value))
+				{
+					this.OnRegion1Changing(value);
+					this.SendPropertyChanging();
+					this._Region1 = value;
+					this.SendPropertyChanged("Region1");
+					this.OnRegion1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Region_Id
+		{
+			get
+			{
+				return this._Region_Id;
+			}
+			set
+			{
+				if ((this._Region_Id != value))
+				{
+					this.OnRegion_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Region_Id = value;
+					this.SendPropertyChanged("Region_Id");
+					this.OnRegion_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
+		{
+			get
+			{
+				return this._LastEditDate;
+			}
+			set
+			{
+				if ((this._LastEditDate != value))
+				{
+					this.OnLastEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Schools")]
+	public partial class School : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _School1;
+		
+		private int _School_Id;
+		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSchool1Changing(string value);
+    partial void OnSchool1Changed();
+    partial void OnSchool_IdChanging(int value);
+    partial void OnSchool_IdChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
+    #endregion
+		
+		public School()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="School", Storage="_School1", DbType="NVarChar(50)")]
+		public string School1
+		{
+			get
+			{
+				return this._School1;
+			}
+			set
+			{
+				if ((this._School1 != value))
+				{
+					this.OnSchool1Changing(value);
+					this.SendPropertyChanging();
+					this._School1 = value;
+					this.SendPropertyChanged("School1");
+					this.OnSchool1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_School_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int School_Id
+		{
+			get
+			{
+				return this._School_Id;
+			}
+			set
+			{
+				if ((this._School_Id != value))
+				{
+					this.OnSchool_IdChanging(value);
+					this.SendPropertyChanging();
+					this._School_Id = value;
+					this.SendPropertyChanged("School_Id");
+					this.OnSchool_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
+		{
+			get
+			{
+				return this._LastEditDate;
+			}
+			set
+			{
+				if ((this._LastEditDate != value))
+				{
+					this.OnLastEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Seminarys")]
+	public partial class Seminary : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Seminary1;
+		
+		private int _Seminary_Id;
+		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSeminary1Changing(string value);
+    partial void OnSeminary1Changed();
+    partial void OnSeminary_IdChanging(int value);
+    partial void OnSeminary_IdChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
+    #endregion
+		
+		public Seminary()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Seminary", Storage="_Seminary1", DbType="NVarChar(50)")]
+		public string Seminary1
+		{
+			get
+			{
+				return this._Seminary1;
+			}
+			set
+			{
+				if ((this._Seminary1 != value))
+				{
+					this.OnSeminary1Changing(value);
+					this.SendPropertyChanging();
+					this._Seminary1 = value;
+					this.SendPropertyChanged("Seminary1");
+					this.OnSeminary1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Seminary_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Seminary_Id
+		{
+			get
+			{
+				return this._Seminary_Id;
+			}
+			set
+			{
+				if ((this._Seminary_Id != value))
+				{
+					this.OnSeminary_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Seminary_Id = value;
+					this.SendPropertyChanged("Seminary_Id");
+					this.OnSeminary_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
+		{
+			get
+			{
+				return this._LastEditDate;
+			}
+			set
+			{
+				if ((this._LastEditDate != value))
+				{
+					this.OnLastEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Yeshivas")]
+	public partial class Yeshiva : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Yeshiva1;
+		
+		private int _Yeshiva_Id;
+		
+		private System.Nullable<System.DateTime> _LastEditDate;
+		
+		private System.Nullable<System.DateTime> _CreationDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnYeshiva1Changing(string value);
+    partial void OnYeshiva1Changed();
+    partial void OnYeshiva_IdChanging(int value);
+    partial void OnYeshiva_IdChanged();
+    partial void OnLastEditDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastEditDateChanged();
+    partial void OnCreationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreationDateChanged();
+    #endregion
+		
+		public Yeshiva()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Yeshiva", Storage="_Yeshiva1", DbType="NVarChar(50)")]
+		public string Yeshiva1
+		{
+			get
+			{
+				return this._Yeshiva1;
+			}
+			set
+			{
+				if ((this._Yeshiva1 != value))
+				{
+					this.OnYeshiva1Changing(value);
+					this.SendPropertyChanging();
+					this._Yeshiva1 = value;
+					this.SendPropertyChanged("Yeshiva1");
+					this.OnYeshiva1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Yeshiva_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Yeshiva_Id
+		{
+			get
+			{
+				return this._Yeshiva_Id;
+			}
+			set
+			{
+				if ((this._Yeshiva_Id != value))
+				{
+					this.OnYeshiva_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Yeshiva_Id = value;
+					this.SendPropertyChanged("Yeshiva_Id");
+					this.OnYeshiva_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastEditDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastEditDate
+		{
+			get
+			{
+				return this._LastEditDate;
+			}
+			set
+			{
+				if ((this._LastEditDate != value))
+				{
+					this.OnLastEditDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastEditDate = value;
+					this.SendPropertyChanged("LastEditDate");
+					this.OnLastEditDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
 				}
 			}
 		}

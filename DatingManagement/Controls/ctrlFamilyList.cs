@@ -61,7 +61,7 @@ namespace DatingManagement
 
         public void LoadDetails()
         {
-             presenter.LoadDetailsView(ctrlFamilyDetails1);
+            presenter.LoadDetailsView(ctrlFamilyDetails1);
         }
 
         public void FillListInGrid(string columntofillingrid, string displaycolumnname, string valuecolumn, object data)
@@ -78,17 +78,8 @@ namespace DatingManagement
             //Focusing the row
             if (focusLastRow)
             {
-                for (int row = 0; i < grvList.RowCount; row++)
-                {
-                    if (grvList.GetRow(row) != null)
-                    {
-                        if (((Family)grvList.GetRow(row)).FathersID == 0)
-                        {
-                            grvList.FocusedRowHandle = row;
-                            return;
-                        }
-                    }
-                }
+                grvList.FocusedRowHandle = grvList.RowCount - 1;
+                
             }
             else
                 grvList.FocusedRowHandle = i;
@@ -115,7 +106,7 @@ namespace DatingManagement
         {
 
             this.presenter = new FamilyListPresenter(this, ctrlFamilyDetails1);
-             
+
             this.ctrlFamilyDetails1.Presenter = presenter;
             this.ctrlFamilyDetails1.MoveRowFocus += new MoveGridFocusNext(ctrlFamilyDetails1_MoveRowFocus);
             ctrlFamilyDetails1.Enabled = false;
@@ -207,10 +198,10 @@ namespace DatingManagement
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SaveFileDialog savedlg = new SaveFileDialog();
-           // savedlg.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+            // savedlg.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
             savedlg.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
             List<Family> data = new List<Family>();
-           
+
             for (int i = 0; i < grvList.DataRowCount; i++)
             {
                 data.Add((Family)grvList.GetRow(i));
@@ -220,7 +211,7 @@ namespace DatingManagement
 
             if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                grcList.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
+                gridControlLite.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
             }
         }
 

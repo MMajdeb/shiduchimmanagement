@@ -53,7 +53,7 @@ namespace DatingManagement
             this.familyBindingSource.Clear();
             this.familyBindingSource.Add(detailObject);
             dataLayoutControl1.DataSource = detailObject;
-          
+
         }
 
         public void LoadPhoto(Bitmap bitmap)
@@ -254,7 +254,7 @@ namespace DatingManagement
                 BoysListPresenter presenterFamily = new BoysListPresenter(ctrl);
                 ctrl.Presenter = presenterFamily;
                 presenterFamily.LoadDetailsView(ctrl);
-                                presenterFamily.LoadDetails(((Boy)grvBoys.GetRow(grvBoys.FocusedRowHandle)).BoysID);
+                presenterFamily.LoadDetails(((Boy)grvBoys.GetRow(grvBoys.FocusedRowHandle)).BoysID);
                 frm = new BaseDetailsForm(ctrl);
                 frm.ShowDialog();
             }
@@ -278,6 +278,7 @@ namespace DatingManagement
 
         private void BaisHamedreshComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if (XtraMessageBox.Show("Do you want to add to selection?" + Environment.NewLine +
                                    "Press Yes to add, press No to replace.", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -285,6 +286,17 @@ namespace DatingManagement
             }
             else
                 presenter.ModifyBaisHamedresh(false, BaisHamedreshComboBoxEdit.Text);
+        }
+
+        private void CountryComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Do you want to add to selection?" + Environment.NewLine +
+                                   "Press Yes to add, press No to replace.", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                presenter.ModifyCountry(true, CountryComboBoxEdit.Text);
+            }
+            else
+                presenter.ModifyCountry(false, CountryComboBoxEdit.Text);
         }
     }
 }

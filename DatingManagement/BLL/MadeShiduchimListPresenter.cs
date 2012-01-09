@@ -165,9 +165,9 @@ namespace DatingManagement
 
             detailsView.LoadFormLayout();
             detailsView.SetPermissions();
-            detailsView.FillBoysList( "Name","FathersID", Dataclass.Families.ToList());
-            detailsView.FillGirlsList("Name","FathersID", Dataclass.Families.ToList());
-            detailsView.LoadMonth(Dataclass.Months.Select(R => R.Month1).Distinct().ToList());
+            detailsView.FillBoysList("Name", "FathersID", Dataclass.Families.ToList());
+            detailsView.FillGirlsList("Name", "FathersID", Dataclass.Families.ToList());
+            detailsView.FillMonthsList("Month1", "ID", Dataclass.Months.Distinct().ToList());
 
             // detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.Select(R => R.BaisHamedresh1).Distinct().ToList());
         }

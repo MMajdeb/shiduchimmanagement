@@ -179,8 +179,8 @@
             this.YeshivaComboBoxEdit.Size = new System.Drawing.Size(374, 20);
             this.YeshivaComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.YeshivaComboBoxEdit.TabIndex = 24;
-            this.YeshivaComboBoxEdit.EditValueChanged += new System.EventHandler(this.YeshivaComboBoxEdit_SelectedIndexChanged);
             this.YeshivaComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.YeshivaComboBoxEdit_SelectedIndexChanged);
+            this.YeshivaComboBoxEdit.EditValueChanged += new System.EventHandler(this.YeshivaComboBoxEdit_SelectedIndexChanged);
             // 
             // FathersIDLookUpEdit
             // 

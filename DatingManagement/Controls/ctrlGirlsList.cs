@@ -78,17 +78,7 @@ namespace DatingManagement
             //Focusing the row
             if (focusLastRow)
             {
-                for (int row = 0; i < grvList.RowCount; row++)
-                {
-                    if (grvList.GetRow(row) != null)
-                    {
-                        if (((Girl)grvList.GetRow(row)).FathersID == 0)
-                        {
-                            grvList.FocusedRowHandle = row;
-                            return;
-                        }
-                    }
-                }
+                grvList.FocusedRowHandle = grvList.RowCount - 1;
             }
             else
                 grvList.FocusedRowHandle = i;
@@ -109,6 +99,21 @@ namespace DatingManagement
                 Girl detail = (Girl)grvList.GetRow(grvList.FocusedRowHandle);
                 presenter.Remove(detail);
             }
+        }
+
+        private void grvList_DoubleClick(object sender, EventArgs e)
+        {
+            Girl detail = (Girl)grvList.GetRow(grvList.FocusedRowHandle);
+
+            BaseDetailsForm frm = new BaseDetailsForm();
+            ctrlFamilyDetails ctrl = new ctrlFamilyDetails();
+            FamilyListPresenter presenterFamily = new FamilyListPresenter(ctrl);
+            ctrl.Presenter = presenterFamily;
+            presenterFamily.LoadDetailsView(ctrl);
+            presenterFamily.LoadDetails((int)detail.FathersID);
+
+            frm = new BaseDetailsForm(ctrl);
+            frm.ShowDialog();
         }
 
         private void frmRoomDetails1_Load(object sender, EventArgs e)
@@ -218,7 +223,7 @@ namespace DatingManagement
 
             if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                grcList.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
+                gridControlLite.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
             }
         }
 

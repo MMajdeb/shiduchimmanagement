@@ -188,7 +188,7 @@ namespace DatingManagement
 
             detailsView.LoadHeight(Dataclass.Heights.Select(R => R.Height1).Distinct().ToList());
             detailsView.LoadSchools(Dataclass.Schools.Select(R => R.School1).Distinct().ToList());
-            detailsView.LoadSeminary(Dataclass.Seminaries.Select(R => R.Seminary1).Distinct().ToList());
+            detailsView.LoadSeminary(Dataclass.Seminarys.Select(R => R.Seminary1).Distinct().ToList());
             detailsView.LoadCamps(Dataclass.Camps.Select(R => R.Camp1).Distinct().ToList());
 
             //detailsView.LoadYeshiva(Dataclass.Yeshivas.Select(R => R.Yeshiva1).Distinct().ToList());

@@ -442,7 +442,7 @@
             // 
             // CampTextEdit
             // 
-            this.CampTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Camp", true));
+            this.CampTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Camps", true));
             this.CampTextEdit.Location = new System.Drawing.Point(557, 192);
             this.CampTextEdit.Name = "CampTextEdit";
             this.CampTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -756,11 +756,11 @@
             // ItemForCamp
             // 
             this.ItemForCamp.Control = this.CampTextEdit;
-            this.ItemForCamp.CustomizationFormText = "Camp";
+            this.ItemForCamp.CustomizationFormText = "Camps";
             this.ItemForCamp.Location = new System.Drawing.Point(478, 180);
             this.ItemForCamp.Name = "ItemForCamp";
             this.ItemForCamp.Size = new System.Drawing.Size(413, 24);
-            this.ItemForCamp.Text = "Camp";
+            this.ItemForCamp.Text = "Camps";
             this.ItemForCamp.TextSize = new System.Drawing.Size(63, 13);
             // 
             // layoutControlItem2

@@ -181,9 +181,9 @@ namespace DatingManagement
             Utils.LoadLookupList(ref GirlsSideLookUpEdit, p, p_2, list, false);
         }
 
-        public void LoadMonth(List<string> list)
+        public void FillMonthsList(string p, string p_2, List<Month> list)
         {
-            MonthComboBoxEdit.Properties.Items.AddRange(list);
+            Utils.LoadLookupList(ref MonthLookUpEdit, p, p_2, list, false);
         }
     }
 }

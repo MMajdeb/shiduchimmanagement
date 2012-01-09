@@ -28,7 +28,7 @@ namespace DatingManagement.DAL
                 return (this.Family.LastName == null ? "" : this.Family.LastName) + " ," + (this.Family.FatherName == null ? "" : this.Family.FatherName);
             }
         }
-       
+
         public string MotherName
         {
             get
@@ -98,4 +98,26 @@ namespace DatingManagement.DAL
         }
 
     }
+    public partial class MadeShiduchim
+    {
+        public string MonthName
+        {
+            get
+            {
+                if (this.Month == null)
+                    return string.Empty;
+
+
+                {
+                    var q = DataLayer.Dataclass.Months.Where(M => M.ID == this.Month);
+                    if (q.Count() > 0)
+                        return q.First().Month1;
+                    else
+                        return string.Empty;
+                }
+
+            }
+        }
+    }
+
 }

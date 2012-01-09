@@ -31,60 +31,72 @@
             this.components = new System.ComponentModel.Container();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.MadeShiduchim_IdSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.MonthComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.madeShiduchimBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.YearTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.BoysSideLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.AmountBoyTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.GirlsSideLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.AmountGirlTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.ShiduchimDateDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.ItemForMadeShiduchim_Id = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.madeShiduchimBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ItemForMonth = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForYear = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForBoysSide = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForAmountBoy = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForGirlsSide = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForAmountGirl = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForShiduchimDate = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ShiduchimDateDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.ItemForShiduchimDate = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForAmountGirl = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForGirlsSide = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForAmountBoy = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForBoysSide = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForYear = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForMonth = new DevExpress.XtraLayout.LayoutControlItem();
+            this.MonthLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
+            this.LastEditDateTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.ItemForLastEditDate = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.CreationDateTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.ItemForCreationDate = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MadeShiduchim_IdSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MonthComboBoxEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.madeShiduchimBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BoysSideLookUpEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountBoyTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GirlsSideLookUpEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountGirlTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShiduchimDateDateEdit.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShiduchimDateDateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForMadeShiduchim_Id)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.madeShiduchimBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForMonth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForYear)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForBoysSide)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForAmountBoy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForGirlsSide)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForAmountGirl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForShiduchimDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ShiduchimDateDateEdit.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ShiduchimDateDateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForShiduchimDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForAmountGirl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForGirlsSide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForAmountBoy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForBoysSide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForMonth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MonthLookUpEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LastEditDateTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForLastEditDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreationDateTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCreationDate)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControl1
             // 
             this.dataLayoutControl1.Controls.Add(this.MadeShiduchim_IdSpinEdit);
-            this.dataLayoutControl1.Controls.Add(this.MonthComboBoxEdit);
             this.dataLayoutControl1.Controls.Add(this.YearTextEdit);
             this.dataLayoutControl1.Controls.Add(this.BoysSideLookUpEdit);
             this.dataLayoutControl1.Controls.Add(this.AmountBoyTextEdit);
             this.dataLayoutControl1.Controls.Add(this.GirlsSideLookUpEdit);
             this.dataLayoutControl1.Controls.Add(this.AmountGirlTextEdit);
             this.dataLayoutControl1.Controls.Add(this.ShiduchimDateDateEdit);
+            this.dataLayoutControl1.Controls.Add(this.MonthLookUpEdit);
+            this.dataLayoutControl1.Controls.Add(this.LastEditDateTextEdit);
+            this.dataLayoutControl1.Controls.Add(this.CreationDateTextEdit);
             this.dataLayoutControl1.DataSource = this.madeShiduchimBindingSource;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -112,16 +124,9 @@
             this.MadeShiduchim_IdSpinEdit.StyleController = this.dataLayoutControl1;
             this.MadeShiduchim_IdSpinEdit.TabIndex = 4;
             // 
-            // MonthComboBoxEdit
+            // madeShiduchimBindingSource
             // 
-            this.MonthComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.madeShiduchimBindingSource, "Month", true));
-            this.MonthComboBoxEdit.Location = new System.Drawing.Point(89, 12);
-            this.MonthComboBoxEdit.Name = "MonthComboBoxEdit";
-            this.MonthComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.MonthComboBoxEdit.Size = new System.Drawing.Size(295, 20);
-            this.MonthComboBoxEdit.StyleController = this.dataLayoutControl1;
-            this.MonthComboBoxEdit.TabIndex = 5;
+            this.madeShiduchimBindingSource.DataSource = typeof(DatingManagement.DAL.MadeShiduchim);
             // 
             // YearTextEdit
             // 
@@ -172,6 +177,20 @@
             this.AmountGirlTextEdit.StyleController = this.dataLayoutControl1;
             this.AmountGirlTextEdit.TabIndex = 10;
             // 
+            // ShiduchimDateDateEdit
+            // 
+            this.ShiduchimDateDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.madeShiduchimBindingSource, "ShiduchimDate", true));
+            this.ShiduchimDateDateEdit.EditValue = null;
+            this.ShiduchimDateDateEdit.Location = new System.Drawing.Point(89, 156);
+            this.ShiduchimDateDateEdit.Name = "ShiduchimDateDateEdit";
+            this.ShiduchimDateDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ShiduchimDateDateEdit.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.ShiduchimDateDateEdit.Size = new System.Drawing.Size(295, 20);
+            this.ShiduchimDateDateEdit.StyleController = this.dataLayoutControl1;
+            this.ShiduchimDateDateEdit.TabIndex = 12;
+            // 
             // ItemForMadeShiduchim_Id
             // 
             this.ItemForMadeShiduchim_Id.Control = this.MadeShiduchim_IdSpinEdit;
@@ -189,7 +208,8 @@
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlGroup3});
+            this.layoutControlGroup3,
+            this.layoutControlGroup2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(666, 436);
@@ -213,62 +233,27 @@
             this.ItemForMonth});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "item0";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(646, 416);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(646, 168);
             this.layoutControlGroup3.Text = "item0";
             // 
-            // madeShiduchimBindingSource
+            // emptySpaceItem1
             // 
-            this.madeShiduchimBindingSource.DataSource = typeof(DatingManagement.DAL.MadeShiduchim);
+            this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
+            this.emptySpaceItem1.Location = new System.Drawing.Point(376, 0);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(270, 168);
+            this.emptySpaceItem1.Text = "emptySpaceItem1";
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // ItemForMonth
+            // ItemForShiduchimDate
             // 
-            this.ItemForMonth.Control = this.MonthComboBoxEdit;
-            this.ItemForMonth.CustomizationFormText = "Month";
-            this.ItemForMonth.Location = new System.Drawing.Point(0, 0);
-            this.ItemForMonth.Name = "ItemForMonth";
-            this.ItemForMonth.Size = new System.Drawing.Size(376, 24);
-            this.ItemForMonth.Text = "Month";
-            this.ItemForMonth.TextSize = new System.Drawing.Size(73, 13);
-            // 
-            // ItemForYear
-            // 
-            this.ItemForYear.Control = this.YearTextEdit;
-            this.ItemForYear.CustomizationFormText = "Year";
-            this.ItemForYear.Location = new System.Drawing.Point(0, 24);
-            this.ItemForYear.Name = "ItemForYear";
-            this.ItemForYear.Size = new System.Drawing.Size(376, 24);
-            this.ItemForYear.Text = "Year";
-            this.ItemForYear.TextSize = new System.Drawing.Size(73, 13);
-            // 
-            // ItemForBoysSide
-            // 
-            this.ItemForBoysSide.Control = this.BoysSideLookUpEdit;
-            this.ItemForBoysSide.CustomizationFormText = "Boys Side";
-            this.ItemForBoysSide.Location = new System.Drawing.Point(0, 48);
-            this.ItemForBoysSide.Name = "ItemForBoysSide";
-            this.ItemForBoysSide.Size = new System.Drawing.Size(376, 24);
-            this.ItemForBoysSide.Text = "Boys Side";
-            this.ItemForBoysSide.TextSize = new System.Drawing.Size(73, 13);
-            // 
-            // ItemForAmountBoy
-            // 
-            this.ItemForAmountBoy.Control = this.AmountBoyTextEdit;
-            this.ItemForAmountBoy.CustomizationFormText = "Amount Boy";
-            this.ItemForAmountBoy.Location = new System.Drawing.Point(0, 72);
-            this.ItemForAmountBoy.Name = "ItemForAmountBoy";
-            this.ItemForAmountBoy.Size = new System.Drawing.Size(376, 24);
-            this.ItemForAmountBoy.Text = "Amount Boy";
-            this.ItemForAmountBoy.TextSize = new System.Drawing.Size(73, 13);
-            // 
-            // ItemForGirlsSide
-            // 
-            this.ItemForGirlsSide.Control = this.GirlsSideLookUpEdit;
-            this.ItemForGirlsSide.CustomizationFormText = "Girls Side";
-            this.ItemForGirlsSide.Location = new System.Drawing.Point(0, 96);
-            this.ItemForGirlsSide.Name = "ItemForGirlsSide";
-            this.ItemForGirlsSide.Size = new System.Drawing.Size(376, 24);
-            this.ItemForGirlsSide.Text = "Girls Side";
-            this.ItemForGirlsSide.TextSize = new System.Drawing.Size(73, 13);
+            this.ItemForShiduchimDate.Control = this.ShiduchimDateDateEdit;
+            this.ItemForShiduchimDate.CustomizationFormText = "Shiduchim Date";
+            this.ItemForShiduchimDate.Location = new System.Drawing.Point(0, 144);
+            this.ItemForShiduchimDate.Name = "ItemForShiduchimDate";
+            this.ItemForShiduchimDate.Size = new System.Drawing.Size(376, 24);
+            this.ItemForShiduchimDate.Text = "Shiduchim Date";
+            this.ItemForShiduchimDate.TextSize = new System.Drawing.Size(73, 13);
             // 
             // ItemForAmountGirl
             // 
@@ -280,38 +265,117 @@
             this.ItemForAmountGirl.Text = "Amount Girl";
             this.ItemForAmountGirl.TextSize = new System.Drawing.Size(73, 13);
             // 
-            // ItemForShiduchimDate
+            // ItemForGirlsSide
             // 
-            this.ItemForShiduchimDate.Control = this.ShiduchimDateDateEdit;
-            this.ItemForShiduchimDate.CustomizationFormText = "Shiduchim Date";
-            this.ItemForShiduchimDate.Location = new System.Drawing.Point(0, 144);
-            this.ItemForShiduchimDate.Name = "ItemForShiduchimDate";
-            this.ItemForShiduchimDate.Size = new System.Drawing.Size(376, 272);
-            this.ItemForShiduchimDate.Text = "Shiduchim Date";
-            this.ItemForShiduchimDate.TextSize = new System.Drawing.Size(73, 13);
+            this.ItemForGirlsSide.Control = this.GirlsSideLookUpEdit;
+            this.ItemForGirlsSide.CustomizationFormText = "Girls Side";
+            this.ItemForGirlsSide.Location = new System.Drawing.Point(0, 96);
+            this.ItemForGirlsSide.Name = "ItemForGirlsSide";
+            this.ItemForGirlsSide.Size = new System.Drawing.Size(376, 24);
+            this.ItemForGirlsSide.Text = "Girls Side";
+            this.ItemForGirlsSide.TextSize = new System.Drawing.Size(73, 13);
             // 
-            // ShiduchimDateDateEdit
+            // ItemForAmountBoy
             // 
-            this.ShiduchimDateDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.madeShiduchimBindingSource, "ShiduchimDate", true));
-            this.ShiduchimDateDateEdit.EditValue = null;
-            this.ShiduchimDateDateEdit.Location = new System.Drawing.Point(89, 156);
-            this.ShiduchimDateDateEdit.Name = "ShiduchimDateDateEdit";
-            this.ShiduchimDateDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.ItemForAmountBoy.Control = this.AmountBoyTextEdit;
+            this.ItemForAmountBoy.CustomizationFormText = "Amount Boys";
+            this.ItemForAmountBoy.Location = new System.Drawing.Point(0, 72);
+            this.ItemForAmountBoy.Name = "ItemForAmountBoy";
+            this.ItemForAmountBoy.Size = new System.Drawing.Size(376, 24);
+            this.ItemForAmountBoy.Text = "Amount Boys";
+            this.ItemForAmountBoy.TextSize = new System.Drawing.Size(73, 13);
+            // 
+            // ItemForBoysSide
+            // 
+            this.ItemForBoysSide.Control = this.BoysSideLookUpEdit;
+            this.ItemForBoysSide.CustomizationFormText = "Boys Side";
+            this.ItemForBoysSide.Location = new System.Drawing.Point(0, 48);
+            this.ItemForBoysSide.Name = "ItemForBoysSide";
+            this.ItemForBoysSide.Size = new System.Drawing.Size(376, 24);
+            this.ItemForBoysSide.Text = "Boys Side";
+            this.ItemForBoysSide.TextSize = new System.Drawing.Size(73, 13);
+            // 
+            // ItemForYear
+            // 
+            this.ItemForYear.Control = this.YearTextEdit;
+            this.ItemForYear.CustomizationFormText = "Year";
+            this.ItemForYear.Location = new System.Drawing.Point(0, 24);
+            this.ItemForYear.Name = "ItemForYear";
+            this.ItemForYear.Size = new System.Drawing.Size(376, 24);
+            this.ItemForYear.Text = "Year";
+            this.ItemForYear.TextSize = new System.Drawing.Size(73, 13);
+            // 
+            // ItemForMonth
+            // 
+            this.ItemForMonth.Control = this.MonthLookUpEdit;
+            this.ItemForMonth.CustomizationFormText = "Month";
+            this.ItemForMonth.Location = new System.Drawing.Point(0, 0);
+            this.ItemForMonth.Name = "ItemForMonth";
+            this.ItemForMonth.Size = new System.Drawing.Size(376, 24);
+            this.ItemForMonth.Text = "Month";
+            this.ItemForMonth.TextSize = new System.Drawing.Size(73, 13);
+            // 
+            // MonthLookUpEdit
+            // 
+            this.MonthLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.madeShiduchimBindingSource, "Month", true));
+            this.MonthLookUpEdit.Location = new System.Drawing.Point(89, 12);
+            this.MonthLookUpEdit.Name = "MonthLookUpEdit";
+            this.MonthLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ShiduchimDateDateEdit.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.ShiduchimDateDateEdit.Size = new System.Drawing.Size(295, 20);
-            this.ShiduchimDateDateEdit.StyleController = this.dataLayoutControl1;
-            this.ShiduchimDateDateEdit.TabIndex = 12;
+            this.MonthLookUpEdit.Size = new System.Drawing.Size(295, 20);
+            this.MonthLookUpEdit.StyleController = this.dataLayoutControl1;
+            this.MonthLookUpEdit.TabIndex = 13;
             // 
-            // emptySpaceItem1
+            // LastEditDateTextEdit
             // 
-            this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(376, 0);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(270, 416);
-            this.emptySpaceItem1.Text = "emptySpaceItem1";
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.LastEditDateTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.madeShiduchimBindingSource, "LastEditDate", true));
+            this.LastEditDateTextEdit.Location = new System.Drawing.Point(89, 180);
+            this.LastEditDateTextEdit.Name = "LastEditDateTextEdit";
+            this.LastEditDateTextEdit.Size = new System.Drawing.Size(565, 20);
+            this.LastEditDateTextEdit.StyleController = this.dataLayoutControl1;
+            this.LastEditDateTextEdit.TabIndex = 14;
+            // 
+            // ItemForLastEditDate
+            // 
+            this.ItemForLastEditDate.Control = this.LastEditDateTextEdit;
+            this.ItemForLastEditDate.CustomizationFormText = "Last Edit Date";
+            this.ItemForLastEditDate.Location = new System.Drawing.Point(0, 0);
+            this.ItemForLastEditDate.Name = "ItemForLastEditDate";
+            this.ItemForLastEditDate.Size = new System.Drawing.Size(646, 24);
+            this.ItemForLastEditDate.Text = "Last Edit Date";
+            this.ItemForLastEditDate.TextSize = new System.Drawing.Size(73, 13);
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.AllowDrawBackground = false;
+            this.layoutControlGroup2.CustomizationFormText = "autoGeneratedGroup0";
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.ItemForLastEditDate,
+            this.ItemForCreationDate});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 168);
+            this.layoutControlGroup2.Name = "autoGeneratedGroup0";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(646, 248);
+            this.layoutControlGroup2.Text = "autoGeneratedGroup0";
+            // 
+            // CreationDateTextEdit
+            // 
+            this.CreationDateTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.madeShiduchimBindingSource, "CreationDate", true));
+            this.CreationDateTextEdit.Location = new System.Drawing.Point(89, 204);
+            this.CreationDateTextEdit.Name = "CreationDateTextEdit";
+            this.CreationDateTextEdit.Size = new System.Drawing.Size(565, 20);
+            this.CreationDateTextEdit.StyleController = this.dataLayoutControl1;
+            this.CreationDateTextEdit.TabIndex = 15;
+            // 
+            // ItemForCreationDate
+            // 
+            this.ItemForCreationDate.Control = this.CreationDateTextEdit;
+            this.ItemForCreationDate.CustomizationFormText = "Creation Date";
+            this.ItemForCreationDate.Location = new System.Drawing.Point(0, 24);
+            this.ItemForCreationDate.Name = "ItemForCreationDate";
+            this.ItemForCreationDate.Size = new System.Drawing.Size(646, 224);
+            this.ItemForCreationDate.Text = "Creation Date";
+            this.ItemForCreationDate.TextSize = new System.Drawing.Size(73, 13);
             // 
             // ctrlMadeShiduchimDetails
             // 
@@ -323,26 +387,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MadeShiduchim_IdSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MonthComboBoxEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.madeShiduchimBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BoysSideLookUpEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountBoyTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GirlsSideLookUpEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountGirlTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShiduchimDateDateEdit.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShiduchimDateDateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForMadeShiduchim_Id)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.madeShiduchimBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForMonth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForYear)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForBoysSide)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForAmountBoy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForGirlsSide)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForAmountGirl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForShiduchimDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ShiduchimDateDateEdit.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ShiduchimDateDateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForShiduchimDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForAmountGirl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForGirlsSide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForAmountBoy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForBoysSide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForMonth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MonthLookUpEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LastEditDateTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForLastEditDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreationDateTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForCreationDate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -352,7 +421,6 @@
         private DevExpress.XtraDataLayout.DataLayoutControl dataLayoutControl1;
         private DevExpress.XtraEditors.SpinEdit MadeShiduchim_IdSpinEdit;
         private System.Windows.Forms.BindingSource madeShiduchimBindingSource;
-        private DevExpress.XtraEditors.ComboBoxEdit MonthComboBoxEdit;
         private DevExpress.XtraEditors.TextEdit YearTextEdit;
         private DevExpress.XtraEditors.LookUpEdit BoysSideLookUpEdit;
         private DevExpress.XtraEditors.TextEdit AmountBoyTextEdit;
@@ -370,6 +438,12 @@
         private DevExpress.XtraLayout.LayoutControlItem ItemForShiduchimDate;
         private DevExpress.XtraEditors.DateEdit ShiduchimDateDateEdit;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraEditors.LookUpEdit MonthLookUpEdit;
+        private DevExpress.XtraEditors.TextEdit LastEditDateTextEdit;
+        private DevExpress.XtraEditors.TextEdit CreationDateTextEdit;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        private DevExpress.XtraLayout.LayoutControlItem ItemForLastEditDate;
+        private DevExpress.XtraLayout.LayoutControlItem ItemForCreationDate;
 
     }
 }

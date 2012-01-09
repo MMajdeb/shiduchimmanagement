@@ -268,5 +268,15 @@ namespace DatingManagement
 
             detailsView.LoadDetails(selectedDetail);
         }
+
+        internal void ModifyCountry(bool addtoCountry, string Country)
+        {
+            if (addtoCountry)
+                selectedDetail.Country += ", " + Country;
+            else
+                selectedDetail.Country = Country;
+
+            detailsView.LoadDetails(selectedDetail);
+        }
     }
 }

@@ -19,6 +19,8 @@ namespace DatingManagement
 
         void FillGirlsList(string p, string p_2, List<DAL.Family> list);
 
-        void LoadMonth(List<string> list);
+        
+
+        void FillMonthsList(string p, string p_2, List<DAL.Month> list);
     }
 }

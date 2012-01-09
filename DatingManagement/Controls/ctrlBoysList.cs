@@ -78,17 +78,8 @@ namespace DatingManagement
             //Focusing the row
             if (focusLastRow)
             {
-                for (int row = 0; i < grvList.RowCount; row++)
-                {
-                    if (grvList.GetRow(row) != null)
-                    {
-                        if (((Boy)grvList.GetRow(row)).FathersID == 0)
-                        {
-                            grvList.FocusedRowHandle = row;
-                            return;
-                        }
-                    }
-                }
+                grvList.FocusedRowHandle = grvList.RowCount - 1;
+
             }
             else
                 grvList.FocusedRowHandle = i;
@@ -115,7 +106,7 @@ namespace DatingManagement
         {
 
             this.presenter = new BoysListPresenter(this, ctrlBoysDetails1);
-           
+
             this.ctrlBoysDetails1.Presenter = presenter;
             this.ctrlBoysDetails1.MoveRowFocus += new MoveGridFocusNext(ctrlBoysDetails1_MoveRowFocus);
             ctrlBoysDetails1.Enabled = false;
@@ -126,7 +117,7 @@ namespace DatingManagement
         {
             grvList.MoveNext();
         }
-        
+
         private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             presenter.HandleLoadForm();
@@ -218,13 +209,28 @@ namespace DatingManagement
 
             if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                grcList.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
+                gridControlLite.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
             }
         }
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             presenter.Save();
+        }
+
+        private void grvList_DoubleClick(object sender, EventArgs e)
+        {
+            Boy detail = (Boy)grvList.GetRow(grvList.FocusedRowHandle);
+
+            BaseDetailsForm frm = new BaseDetailsForm();
+            ctrlFamilyDetails ctrl = new ctrlFamilyDetails();
+            FamilyListPresenter presenterFamily = new FamilyListPresenter(ctrl);
+            ctrl.Presenter = presenterFamily;
+            presenterFamily.LoadDetailsView(ctrl);
+            presenterFamily.LoadDetails((int)detail.FathersID);
+
+            frm = new BaseDetailsForm(ctrl);
+            frm.ShowDialog();
         }
 
 
