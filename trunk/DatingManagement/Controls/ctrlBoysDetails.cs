@@ -197,6 +197,8 @@ namespace DatingManagement
 
         private void YeshivaComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isLoading) return;
+
             if (XtraMessageBox.Show("Do you want to add to selection?" + Environment.NewLine +
                                     "Press Yes to add, press No to replace.", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -214,9 +216,9 @@ namespace DatingManagement
             FamilyListPresenter presenterFamily = new FamilyListPresenter(ctrl);
             ctrl.Presenter = presenterFamily;
             presenterFamily.LoadDetailsView(ctrl);
-            presenterFamily.LoadDetails((int)FathersIDLookUpEdit.EditValue);          
+            presenterFamily.LoadDetails((int)FathersIDLookUpEdit.EditValue);
 
-            
+
             frm = new BaseDetailsForm(ctrl);
             frm.ShowDialog();
         }

@@ -22,7 +22,7 @@ namespace DatingManagement
         {
             view = _view;
 
-            this.SeminaryList = this.Dataclass.Seminaries.ToList();
+            this.SeminaryList = this.Dataclass.Seminarys.ToList();
         }
 
         public void HandleLoadForm()
@@ -49,7 +49,7 @@ namespace DatingManagement
         {
             Seminary cs = new Seminary();
             this.SeminaryList.Add(cs);
-            this.Dataclass.Seminaries.InsertOnSubmit(cs);
+            this.Dataclass.Seminarys.InsertOnSubmit(cs);
             selectedDetail = cs;
         }
 
@@ -57,7 +57,7 @@ namespace DatingManagement
         {
             try
             {
-                Dataclass.Seminaries.DeleteOnSubmit(Seminary);
+                Dataclass.Seminarys.DeleteOnSubmit(Seminary);
                 Dataclass.SubmitChanges();
                 this.SeminaryList.Remove(Seminary);
                 RefreshForm();
@@ -96,7 +96,7 @@ namespace DatingManagement
                 }
             }
             //Search for the existing category in the the database
-            var acc = (from C in Dataclass.Seminaries
+            var acc = (from C in Dataclass.Seminarys
                        where C.Seminary1 == NameToCompare
                        && C.Seminary_Id != TbTehnicean.Seminary_Id
                        select C.Seminary_Id);
@@ -146,7 +146,7 @@ namespace DatingManagement
             if (q.Count() > 0)
             {
                 Seminary deletedObject = (Seminary)q.First();
-                Dataclass.Seminaries.DeleteOnSubmit(deletedObject);
+                Dataclass.Seminarys.DeleteOnSubmit(deletedObject);
                 SeminaryList.Remove(deletedObject);
             }
         }
