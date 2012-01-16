@@ -13,13 +13,14 @@ using DatingManagement.DAL;
 
 namespace DatingManagement
 {
-    public partial class ctrlFamilyDetails : BaseDetailCtrl, IFamilyDetailsView
+    public partial class frmBoysDetails : BaseDetailsForm, IBoyDetailsView
     {
-        DAL.Family detailObject;
-        FamilyListPresenter presenter;
+        DAL.Boy detailObject;
+        BoysListPresenter presenter;
         public event MoveGridFocusNext MoveRowFocus;
+        bool isLoading = false;
 
-        public FamilyListPresenter Presenter
+        public BoysListPresenter Presenter
         {
             get { return presenter; }
             set { presenter = value; }
@@ -27,16 +28,17 @@ namespace DatingManagement
 
         bool isChanged = false;
 
-        public ctrlFamilyDetails()
+        public frmBoysDetails()
         {
             InitializeComponent();
         }
 
-        public ctrlFamilyDetails(FamilyListPresenter _presenter)
+        public frmBoysDetails(BoysListPresenter _presenter)
         {
             InitializeComponent();
             presenter = _presenter;
             presenter.LoadDetailsView(this);
+
         }
 
 
@@ -47,13 +49,35 @@ namespace DatingManagement
 
         }
 
-        public void LoadDetails(Family _selectedDetail)
+        public void LoadDetails(Boy _selectedDetail, Family _selectedFamilyDetail)
         {
+            isLoading = true;
             detailObject = _selectedDetail;
-            this.familyBindingSource.Clear();
-            this.familyBindingSource.Add(detailObject);
+            this.boyBindingSource.Clear();
+            this.boyBindingSource.Add(detailObject);
             dataLayoutControl1.DataSource = detailObject;
 
+            this.familyBindingSource.Clear();
+            this.familyBindingSource.Add(_selectedFamilyDetail);
+            dataLayoutControl3.DataSource = _selectedFamilyDetail;
+
+            gridControl1.DataSource = _selectedFamilyDetail.Mechitunems;
+            this.panelControl1.Visible = true;
+            this.Text = "Boy Name: " + _selectedDetail.Name;
+
+            isLoading = false;
+        }
+
+        public void LoadDetails(Boy _selectedDetail)
+        {
+            isLoading = true;
+            detailObject = _selectedDetail;
+            this.boyBindingSource.Clear();
+            this.boyBindingSource.Add(detailObject);
+            dataLayoutControl1.DataSource = detailObject;
+
+
+            isLoading = false;
         }
 
         public void LoadPhoto(Bitmap bitmap)
@@ -81,7 +105,7 @@ namespace DatingManagement
 
         private void MoveFocus()
         {
-            FathersIDSpinEdit.Select();
+            FamilyTextEdit.Select();
         }
 
         private void barButtonItemSaveClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -171,22 +195,72 @@ namespace DatingManagement
 
         }
 
-
-        public void LoadMechitunem(System.Data.Linq.EntitySet<Mechitunem> entitySet)
+        public void LoadHeight(List<string> list)
         {
-            grcMechitunem.DataSource = entitySet;
+            HeightComboBoxEdit.Properties.Items.AddRange(list);
         }
 
-        public void LoadGirls(System.Data.Linq.EntitySet<Girl> entitySet)
+        public void LoadYeshiva(List<string> list)
         {
-            grcGirls.DataSource = entitySet;
+            YeshivaComboBoxEdit.Properties.Items.AddRange(list);
         }
 
-        public void LoadBoys(System.Data.Linq.EntitySet<Boy> entitySet)
+
+        private void BirthDateDateEdit_EditValueChanged(object sender, EventArgs e)
         {
-            grcBoys.DataSource = entitySet;
+            presenter.UpdateAge((DateTime)BirthDateDateEdit.EditValue);
         }
 
+        private void YeshivaComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isLoading) return;
+
+            if (XtraMessageBox.Show("Do you want to add to selection?" + Environment.NewLine +
+                                    "Press Yes to add, press No to replace.", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                presenter.ModifyYeshiva(true, YeshivaComboBoxEdit.Text);
+            }
+            else
+                presenter.ModifyYeshiva(false, YeshivaComboBoxEdit.Text);
+        }
+
+        private void btnOpenFamily_Click(object sender, EventArgs e)
+        {
+            BaseDetailsForm frm = new BaseDetailsForm();
+
+            ctrlFamilyDetails ctrl = new ctrlFamilyDetails();
+            FamilyListPresenter presenterFamily = new FamilyListPresenter(ctrl);
+            ctrl.Presenter = presenterFamily;
+            presenterFamily.LoadDetailsView(ctrl);
+
+
+
+            frm = new BaseDetailsForm(ctrl);
+            frm.ShowDialog();
+        }
+
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (presenter.Save())
+            {
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                this.Close();
+
+            }
+        }
+
+
+        public void ShowPanel()
+        {
+            panelControl1.Visible = true;
+        }
 
         public void LoadRegions(List<string> list)
         {
@@ -198,94 +272,20 @@ namespace DatingManagement
             CountryComboBoxEdit.Properties.Items.AddRange(list);
         }
 
+        public void LoadBaisHamedresh(List<string> list)
+        {
+            BaisHamedreshComboBoxEdit.Properties.Items.AddRange(list);
+        }
+
         public void LoadHamedresh(List<string> list)
         {
             BaisHamedreshComboBoxEdit.Properties.Items.AddRange(list);
         }
 
 
-        public void LoadHeight(List<string> list)
-        {
-            repositoryItemComboBoxHeight.Items.AddRange(list);
-            gridColumnBoyHeight.ColumnEdit = repositoryItemComboBoxHeight;
-        }
-
-        public void LoadYeshiva(List<string> list)
-        {
-            repositoryItemComboBoxYeshiva.Items.AddRange(list);
-            gridColumnYeshiva.ColumnEdit = repositoryItemComboBoxYeshiva;
-
-        }
-
-
-        public void LoadBaisHamedresh(List<string> list)
-        {
-            repositoryItemComboBoxBaisHamedresh.Items.AddRange(list);
-            gridColumnBaisMedresh.ColumnEdit = repositoryItemComboBoxYeshiva;
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.CloseForm(false);
-            presenter.CloseForm(false);
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (presenter.Save())
-            {
-                this.CloseForm(false);
-                presenter.CloseForm(false);
-            }
-        }
-
-
-        public void ShowPanel()
-        {
-            panelControl1.Visible = true;
-        }
-
-        private void btnOpenBoy_Click(object sender, EventArgs e)
-        {
-            if (grvBoys.GetRow(grvBoys.FocusedRowHandle) != null)
-            {
-                BaseDetailsForm frm = new BaseDetailsForm();
-                ctrlBoysDetails ctrl = new ctrlBoysDetails();
-                BoysListPresenter presenterFamily = new BoysListPresenter(ctrl);
-                ctrl.Presenter = presenterFamily;
-                presenterFamily.LoadDetailsView(ctrl);
-                presenterFamily.LoadDetails(((Boy)grvBoys.GetRow(grvBoys.FocusedRowHandle)).BoysID);
-                frm = new BaseDetailsForm(ctrl);
-                frm.ShowDialog();
-            }
-        }
-
-        private void btnOpenGirl_Click(object sender, EventArgs e)
-        {
-            if (grvGirls.GetRow(grvGirls.FocusedRowHandle) != null)
-            {
-                BaseDetailsForm frm = new BaseDetailsForm();
-                ctrlGirlDetails ctrl = new ctrlGirlDetails();
-                GirlsListPresenter presenterFamily = new GirlsListPresenter(ctrl);
-                ctrl.Presenter = presenterFamily;
-                presenterFamily.LoadDetailsView(ctrl);
-
-                presenterFamily.LoadDetails(((Girl)grvGirls.GetRow(grvGirls.FocusedRowHandle)).GirlsID);
-                frm = new BaseDetailsForm(ctrl);
-                frm.ShowDialog();
-            }
-        }
-
-        private void BaisHamedreshComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
+        public void FillFamilyList(string p, string p_2, List<Family> list)
         {
 
-            if (XtraMessageBox.Show("Do you want to add to selection?" + Environment.NewLine +
-                                   "Press Yes to add, press No to replace.", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                presenter.ModifyBaisHamedresh(true, BaisHamedreshComboBoxEdit.Text);
-            }
-            else
-                presenter.ModifyBaisHamedresh(false, BaisHamedreshComboBoxEdit.Text);
         }
 
         private void CountryComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
@@ -299,6 +299,17 @@ namespace DatingManagement
                 presenter.ModifyCountry(false, CountryComboBoxEdit.Text);
         }
 
-        
+        private void BaisHamedreshComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (XtraMessageBox.Show("Do you want to add to selection?" + Environment.NewLine +
+                                   "Press Yes to add, press No to replace.", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                presenter.ModifyBaisHamedresh(true, BaisHamedreshComboBoxEdit.Text);
+            }
+            else
+                presenter.ModifyBaisHamedresh(false, BaisHamedreshComboBoxEdit.Text);
+    
+        }
     }
 }

@@ -38,6 +38,8 @@ namespace DatingManagement
 
         public void HandleLoadForm()
         {
+            this.Dataclass = new ShiduchimDBDataContext(DataLayer.ConnectionString);
+            this.FamilyList = null;
             this.FamilyList = this.Dataclass.Families.ToList();
 
             view.SetDataSource(FamilyList, false);

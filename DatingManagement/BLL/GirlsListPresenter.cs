@@ -16,7 +16,7 @@ namespace DatingManagement
         private IGirlListView view;
         private IGirlDetailsView detailsView;
         private Girl selectedDetail;
-
+        Family _selectedFamily;
 
         public List<Girl> GirlList = new List<Girl>();
 
@@ -182,20 +182,36 @@ namespace DatingManagement
             detailsView.SetPermissions();
             detailsView.FillFamilyList("Name", "FathersID", Dataclass.Families.ToList());
 
-            //detailsView.LoadRegions(Dataclass.Regions.Select(R => R.Region1).Distinct().ToList());
-            //detailsView.LoadCountries(Dataclass.Countries.Select(R => R.Country1).Distinct().ToList());
-            //detailsView.LoadHamedresh(Dataclass.BaisHamedreshes.Select(R => R.BaisHamedresh1).Distinct().ToList());
+            detailsView.LoadRegions(Dataclass.Regions.Select(R => R.Region1).Distinct().ToList());
+            detailsView.LoadCountries(Dataclass.Countries.Select(R => R.Country1).Distinct().ToList());
+            detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.Select(R => R.BaisHamedresh1).Distinct().ToList());
+            detailsView.LoadYeshiva(Dataclass.Yeshivas.Select(R => R.Yeshiva1).Distinct().ToList());
 
             detailsView.LoadHeight(Dataclass.Heights.Select(R => R.Height1).Distinct().ToList());
             detailsView.LoadSchools(Dataclass.Schools.Select(R => R.School1).Distinct().ToList());
             detailsView.LoadSeminary(Dataclass.Seminarys.Select(R => R.Seminary1).Distinct().ToList());
             detailsView.LoadCamps(Dataclass.Camps.Select(R => R.Camp1).Distinct().ToList());
 
-            //detailsView.LoadYeshiva(Dataclass.Yeshivas.Select(R => R.Yeshiva1).Distinct().ToList());
+        }
+
+        public void LoadPopupDetailsView(IGirlDetailsView _detailsView)
+        {
+            detailsView = _detailsView;
+
+            detailsView.LoadFormLayout();
+            detailsView.SetPermissions();
+
+            detailsView.LoadRegions(Dataclass.Regions.Select(R => R.Region1).Distinct().ToList());
+            detailsView.LoadCountries(Dataclass.Countries.Select(R => R.Country1).Distinct().ToList());
+            detailsView.LoadHeight(Dataclass.Heights.Select(R => R.Height1).Distinct().ToList());
+            detailsView.LoadYeshiva(Dataclass.Yeshivas.Select(R => R.Yeshiva1).Distinct().ToList());
+            detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.Select(R => R.BaisHamedresh1).Distinct().ToList());
+
+            detailsView.LoadHeight(Dataclass.Heights.Select(R => R.Height1).Distinct().ToList());
+            detailsView.LoadYeshiva(Dataclass.Yeshivas.Select(R => R.Yeshiva1).Distinct().ToList());
 
             // detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.Select(R => R.BaisHamedresh1).Distinct().ToList());
         }
-
         private void RefreshDetailsForm()
         {
             detailsView.LoadDetails(selectedDetail);
@@ -299,6 +315,36 @@ namespace DatingManagement
                 selectedDetail.Seminary += ", " + Seminary;
             else
                 selectedDetail.Seminary = Seminary;
+
+            detailsView.LoadDetails(selectedDetail);
+        }
+
+
+
+        internal void LoadPopupDetailsForm(Girl detail)
+        {
+            selectedDetail = detail;
+            _selectedFamily = Dataclass.Families.Where(F => F.FathersID == detail.FathersID).First();
+            detailsView.LoadDetails(selectedDetail, _selectedFamily);
+        }
+
+        internal void ModifyBaisHamedresh(bool addtoBaisHamedresh, string BaisHamedresh)
+        {
+
+            if (addtoBaisHamedresh)
+                _selectedFamily.BaisHamedresh += ", " + BaisHamedresh;
+            else
+                _selectedFamily.BaisHamedresh = BaisHamedresh;
+
+            detailsView.LoadDetails(selectedDetail);
+        }
+
+        internal void ModifyCountry(bool addtoCountry, string Country)
+        {
+            if (addtoCountry)
+                _selectedFamily.Country += ", " + Country;
+            else
+                _selectedFamily.Country = Country;
 
             detailsView.LoadDetails(selectedDetail);
         }

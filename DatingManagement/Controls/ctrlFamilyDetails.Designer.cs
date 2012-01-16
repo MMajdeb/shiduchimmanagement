@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             this.txtFocus = new DevExpress.XtraEditors.TextEdit();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
-            this.CountryComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.BaisHamedreshComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.FathersIDSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.familyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MechitunimTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.CountryComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.BaisHamedreshComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnOpenGirl = new DevExpress.XtraEditors.SimpleButton();
             this.btnOpenBoy = new DevExpress.XtraEditors.SimpleButton();
             this.grcGirls = new DevExpress.XtraGrid.GridControl();
@@ -69,6 +69,8 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnBaisMedresh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBoxBaisHamedresh = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.LastEditDateTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.CreationDateTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.LastNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.FatherNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.MotherNameTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -98,8 +100,6 @@
             this.Pager2TextEdit = new DevExpress.XtraEditors.TextEdit();
             this.InternationalPhoneTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.Mobile2TextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.LastEditDateTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.CreationDateTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.ItemForFathersID = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForMechitunim = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForLastEditDate = new DevExpress.XtraLayout.LayoutControlItem();
@@ -156,11 +156,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFocus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CountryComboBoxEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BaisHamedreshComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FathersIDSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.familyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MechitunimTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CountryComboBoxEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BaisHamedreshComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcGirls)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvGirls)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -172,6 +172,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grcMechitunem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvMechitunem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxBaisHamedresh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LastEditDateTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreationDateTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LastNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FatherNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MotherNameTextEdit.Properties)).BeginInit();
@@ -201,8 +203,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pager2TextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InternationalPhoneTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mobile2TextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LastEditDateTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CreationDateTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFathersID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForMechitunim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForLastEditDate)).BeginInit();
@@ -267,10 +267,12 @@
             // 
             // dataLayoutControl1
             // 
-            this.dataLayoutControl1.Controls.Add(this.CountryComboBoxEdit);
-            this.dataLayoutControl1.Controls.Add(this.BaisHamedreshComboBoxEdit);
             this.dataLayoutControl1.Controls.Add(this.FathersIDSpinEdit);
             this.dataLayoutControl1.Controls.Add(this.MechitunimTextEdit);
+            this.dataLayoutControl1.Controls.Add(this.CountryComboBoxEdit);
+            this.dataLayoutControl1.Controls.Add(this.BaisHamedreshComboBoxEdit);
+            this.dataLayoutControl1.Controls.Add(this.LastEditDateTextEdit);
+            this.dataLayoutControl1.Controls.Add(this.CreationDateTextEdit);
             this.dataLayoutControl1.Controls.Add(this.btnOpenGirl);
             this.dataLayoutControl1.Controls.Add(this.btnOpenBoy);
             this.dataLayoutControl1.Controls.Add(this.grcGirls);
@@ -305,8 +307,6 @@
             this.dataLayoutControl1.Controls.Add(this.Pager2TextEdit);
             this.dataLayoutControl1.Controls.Add(this.InternationalPhoneTextEdit);
             this.dataLayoutControl1.Controls.Add(this.Mobile2TextEdit);
-            this.dataLayoutControl1.Controls.Add(this.LastEditDateTextEdit);
-            this.dataLayoutControl1.Controls.Add(this.CreationDateTextEdit);
             this.dataLayoutControl1.DataSource = this.familyBindingSource;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -320,29 +320,6 @@
             this.dataLayoutControl1.Size = new System.Drawing.Size(911, 431);
             this.dataLayoutControl1.TabIndex = 33;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
-            // 
-            // CountryComboBoxEdit
-            // 
-            this.CountryComboBoxEdit.Location = new System.Drawing.Point(123, 238);
-            this.CountryComboBoxEdit.Name = "CountryComboBoxEdit";
-            this.CountryComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
-            this.CountryComboBoxEdit.Size = new System.Drawing.Size(213, 20);
-            this.CountryComboBoxEdit.StyleController = this.dataLayoutControl1;
-            this.CountryComboBoxEdit.TabIndex = 35;
-            this.CountryComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.CountryComboBoxEdit_SelectedIndexChanged);
-            // 
-            // BaisHamedreshComboBoxEdit
-            // 
-            this.BaisHamedreshComboBoxEdit.Location = new System.Drawing.Point(123, 326);
-            this.BaisHamedreshComboBoxEdit.Name = "BaisHamedreshComboBoxEdit";
-            this.BaisHamedreshComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
-            this.BaisHamedreshComboBoxEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BaisHamedreshComboBoxEdit.Size = new System.Drawing.Size(213, 20);
-            this.BaisHamedreshComboBoxEdit.StyleController = this.dataLayoutControl1;
-            this.BaisHamedreshComboBoxEdit.TabIndex = 37;
-            this.BaisHamedreshComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.BaisHamedreshComboBoxEdit_SelectedIndexChanged);
             // 
             // FathersIDSpinEdit
             // 
@@ -372,6 +349,29 @@
             this.MechitunimTextEdit.StyleController = this.dataLayoutControl1;
             this.MechitunimTextEdit.TabIndex = 22;
             this.MechitunimTextEdit.Visible = false;
+            // 
+            // CountryComboBoxEdit
+            // 
+            this.CountryComboBoxEdit.Location = new System.Drawing.Point(123, 238);
+            this.CountryComboBoxEdit.Name = "CountryComboBoxEdit";
+            this.CountryComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
+            this.CountryComboBoxEdit.Size = new System.Drawing.Size(213, 20);
+            this.CountryComboBoxEdit.StyleController = this.dataLayoutControl1;
+            this.CountryComboBoxEdit.TabIndex = 35;
+            this.CountryComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.CountryComboBoxEdit_SelectedIndexChanged);
+            // 
+            // BaisHamedreshComboBoxEdit
+            // 
+            this.BaisHamedreshComboBoxEdit.Location = new System.Drawing.Point(123, 326);
+            this.BaisHamedreshComboBoxEdit.Name = "BaisHamedreshComboBoxEdit";
+            this.BaisHamedreshComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            this.BaisHamedreshComboBoxEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BaisHamedreshComboBoxEdit.Size = new System.Drawing.Size(213, 20);
+            this.BaisHamedreshComboBoxEdit.StyleController = this.dataLayoutControl1;
+            this.BaisHamedreshComboBoxEdit.TabIndex = 37;
+            this.BaisHamedreshComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.BaisHamedreshComboBoxEdit_SelectedIndexChanged);
             // 
             // btnOpenGirl
             // 
@@ -687,6 +687,24 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemComboBoxBaisHamedresh.Name = "repositoryItemComboBoxBaisHamedresh";
             // 
+            // LastEditDateTextEdit
+            // 
+            this.LastEditDateTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "LastEditDate", true));
+            this.LastEditDateTextEdit.Location = new System.Drawing.Point(0, 0);
+            this.LastEditDateTextEdit.Name = "LastEditDateTextEdit";
+            this.LastEditDateTextEdit.Size = new System.Drawing.Size(0, 20);
+            this.LastEditDateTextEdit.StyleController = this.dataLayoutControl1;
+            this.LastEditDateTextEdit.TabIndex = 53;
+            // 
+            // CreationDateTextEdit
+            // 
+            this.CreationDateTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "CreationDate", true));
+            this.CreationDateTextEdit.Location = new System.Drawing.Point(0, 0);
+            this.CreationDateTextEdit.Name = "CreationDateTextEdit";
+            this.CreationDateTextEdit.Size = new System.Drawing.Size(0, 20);
+            this.CreationDateTextEdit.StyleController = this.dataLayoutControl1;
+            this.CreationDateTextEdit.TabIndex = 54;
+            // 
             // LastNameTextEdit
             // 
             this.LastNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "LastName", true));
@@ -731,7 +749,7 @@
             this.RegionComboBoxEdit.Location = new System.Drawing.Point(123, 142);
             this.RegionComboBoxEdit.Name = "RegionComboBoxEdit";
             this.RegionComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.RegionComboBoxEdit.Size = new System.Drawing.Size(213, 20);
             this.RegionComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.RegionComboBoxEdit.TabIndex = 9;
@@ -953,24 +971,6 @@
             this.Mobile2TextEdit.StyleController = this.dataLayoutControl1;
             this.Mobile2TextEdit.TabIndex = 52;
             // 
-            // LastEditDateTextEdit
-            // 
-            this.LastEditDateTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "LastEditDate", true));
-            this.LastEditDateTextEdit.Location = new System.Drawing.Point(0, 0);
-            this.LastEditDateTextEdit.Name = "LastEditDateTextEdit";
-            this.LastEditDateTextEdit.Size = new System.Drawing.Size(0, 20);
-            this.LastEditDateTextEdit.StyleController = this.dataLayoutControl1;
-            this.LastEditDateTextEdit.TabIndex = 53;
-            // 
-            // CreationDateTextEdit
-            // 
-            this.CreationDateTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "CreationDate", true));
-            this.CreationDateTextEdit.Location = new System.Drawing.Point(0, 0);
-            this.CreationDateTextEdit.Name = "CreationDateTextEdit";
-            this.CreationDateTextEdit.Size = new System.Drawing.Size(0, 20);
-            this.CreationDateTextEdit.StyleController = this.dataLayoutControl1;
-            this.CreationDateTextEdit.TabIndex = 54;
-            // 
             // ItemForFathersID
             // 
             this.ItemForFathersID.Control = this.FathersIDSpinEdit;
@@ -1046,8 +1046,8 @@
             this.tabbedControlGroup1.CustomizationFormText = "tabbedControlGroup1";
             this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
-            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup3;
-            this.tabbedControlGroup1.SelectedTabPageIndex = 1;
+            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup4;
+            this.tabbedControlGroup1.SelectedTabPageIndex = 0;
             this.tabbedControlGroup1.Size = new System.Drawing.Size(891, 411);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup4,
@@ -1574,11 +1574,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFocus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CountryComboBoxEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BaisHamedreshComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FathersIDSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.familyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MechitunimTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CountryComboBoxEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BaisHamedreshComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcGirls)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvGirls)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -1590,6 +1590,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grcMechitunem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvMechitunem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxBaisHamedresh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LastEditDateTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreationDateTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LastNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FatherNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MotherNameTextEdit.Properties)).EndInit();
@@ -1619,8 +1621,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pager2TextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InternationalPhoneTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mobile2TextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LastEditDateTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CreationDateTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFathersID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForMechitunim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForLastEditDate)).EndInit();

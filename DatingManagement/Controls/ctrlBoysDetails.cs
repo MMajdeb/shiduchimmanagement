@@ -248,5 +248,31 @@ namespace DatingManagement
         {
             panelControl1.Visible = true;
         }
+
+
+        public void LoadRegions(List<string> list)
+        {
+             
+        }
+
+        public void LoadCountries(List<string> list)
+        {
+            
+        }
+
+        public void LoadBaisHamedresh(List<string> list)
+        {
+            
+        }
+
+        public void LoadHamedresh(List<string> list)
+        {
+             
+        }
+
+        public void LoadDetails(Boy selectedDetail, Family selectedFamily)
+        {
+           
+        }
     }
 }

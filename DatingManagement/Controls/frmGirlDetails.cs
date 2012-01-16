@@ -13,7 +13,7 @@ using DatingManagement.DAL;
 
 namespace DatingManagement
 {
-    public partial class ctrlGirlDetails : BaseDetailCtrl, IGirlDetailsView
+    public partial class frmGirlDetails : BaseDetailsForm, IGirlDetailsView
     {
         DAL.Girl detailObject;
         GirlsListPresenter presenter;
@@ -28,12 +28,12 @@ namespace DatingManagement
 
         bool isChanged = false;
 
-        public ctrlGirlDetails()
+        public frmGirlDetails()
         {
             InitializeComponent();
         }
 
-        public ctrlGirlDetails(GirlsListPresenter _presenter)
+        public frmGirlDetails(GirlsListPresenter _presenter)
         {
             InitializeComponent();
             presenter = _presenter;
@@ -55,10 +55,28 @@ namespace DatingManagement
             this.girlBindingSource.Clear();
             this.girlBindingSource.Add(detailObject);
             dataLayoutControl1.DataSource = detailObject;
-          
+
             isLoading = false;
         }
 
+        public void LoadDetails(Girl _selectedDetail, Family _selectedFamilyDetail)
+        {
+            isLoading = true;
+            detailObject = _selectedDetail;
+            this.girlBindingSource.Clear();
+            this.girlBindingSource.Add(detailObject);
+            dataLayoutControl1.DataSource = detailObject;
+
+            this.familyBindingSource.Clear();
+            this.familyBindingSource.Add(_selectedFamilyDetail);
+            dataLayoutControl3.DataSource = _selectedFamilyDetail;
+
+            gridControl1.DataSource = _selectedFamilyDetail.Mechitunems;
+            this.panelControl1.Visible = true;
+            this.Text = "Girl Name: " + _selectedDetail.Name;
+
+            isLoading = false;
+        }
         public void LoadPhoto(Bitmap bitmap)
         {
         }
@@ -186,7 +204,7 @@ namespace DatingManagement
 
         public void FillFamilyList(string p, string p_2, List<Family> list)
         {
-            Utils.LoadLookupList(ref FathersIDLookUpEdit, p, p_2, list, false);
+
         }
 
 
@@ -213,29 +231,14 @@ namespace DatingManagement
         private void FathersIDLookUpEdit_EditValueChanged(object sender, EventArgs e)
         {
             if (isLoading) return;
-            presenter.LoadFamily((int)FathersIDLookUpEdit.EditValue);
+
         }
-
-        private void btnOpenFamily_Click(object sender, EventArgs e)
-        {
-            BaseDetailsForm frm = new BaseDetailsForm();
-            ctrlFamilyDetails ctrl = new ctrlFamilyDetails();
-            FamilyListPresenter presenterFamily = new FamilyListPresenter(ctrl);
-            ctrl.Presenter = presenterFamily;
-            presenterFamily.LoadDetailsView(ctrl);
-            presenterFamily.LoadDetails((int)FathersIDLookUpEdit.EditValue);          
-
-            frm = new BaseDetailsForm(ctrl);
-            frm.ShowDialog();
-        }
-
-       
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (presenter.Save())
             {
-                this.CloseForm(false);
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
                 presenter.CloseForm(false);
             }
         }
@@ -247,7 +250,8 @@ namespace DatingManagement
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.CloseForm(false);
+            this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Close();
         }
 
         private void CampComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
@@ -284,26 +288,42 @@ namespace DatingManagement
                 presenter.ModifySeminary(false, SeminaryComboBoxEdit.Text);
         }
 
-
         public void LoadRegions(List<string> list)
         {
-            
+            RegionComboBoxEdit.Properties.Items.AddRange(list);
         }
 
         public void LoadCountries(List<string> list)
         {
-             
+            CountryComboBoxEdit.Properties.Items.AddRange(list);
         }
 
         public void LoadBaisHamedresh(List<string> list)
         {
-            
+            BaisHamedreshComboBoxEdit.Properties.Items.AddRange(list);
         }
 
-
-        public void LoadDetails(Girl selectedDetail, Family selectedFamily)
+        private void CountryComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
         {
-             
+            if (XtraMessageBox.Show("Do you want to add to selection?" + Environment.NewLine +
+                                             "Press Yes to add, press No to replace.", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                presenter.ModifyCountry(true, CountryComboBoxEdit.Text);
+            }
+            else
+                presenter.ModifyCountry(false, CountryComboBoxEdit.Text);
         }
+
+        private void BaisHamedreshComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Do you want to add to selection?" + Environment.NewLine +
+                                  "Press Yes to add, press No to replace.", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                presenter.ModifyBaisHamedresh(true, BaisHamedreshComboBoxEdit.Text);
+            }
+            else
+                presenter.ModifyBaisHamedresh(false, BaisHamedreshComboBoxEdit.Text);
+        }
+
     }
 }
