@@ -220,20 +220,15 @@ namespace DatingManagement
 
         private void grvList_DoubleClick(object sender, EventArgs e)
         {
+            
             Boy detail = (Boy)grvList.GetRow(grvList.FocusedRowHandle);
-
-            BaseDetailsForm frm = new BaseDetailsForm();
-            ctrlFamilyDetails ctrl = new ctrlFamilyDetails();
-            FamilyListPresenter presenterFamily = new FamilyListPresenter(ctrl);
-            ctrl.Presenter = presenterFamily;
-            presenterFamily.LoadDetailsView(ctrl);
-            presenterFamily.LoadDetails((int)detail.FathersID);
-
-            frm = new BaseDetailsForm(ctrl);
+            frmBoysDetails frm = new frmBoysDetails();
+            frm.Presenter = presenter;
+            presenter.LoadDetailsView(frm);
+            presenter.LoadPopupDetailsForm(detail);
             frm.ShowDialog();
+            
         }
-
-
-
+          
     }
 }

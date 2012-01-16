@@ -27,5 +27,15 @@ namespace DatingManagement
         void LoadCamps(List<string> list);
 
         void ShowPanel();
+
+        void LoadRegions(List<string> list);
+
+        void LoadCountries(List<string> list);
+
+        void LoadBaisHamedresh(List<string> list);
+
+        void LoadYeshiva(List<string> list);
+
+        void LoadDetails(DAL.Girl selectedDetail, DAL.Family selectedFamily);
     }
 }

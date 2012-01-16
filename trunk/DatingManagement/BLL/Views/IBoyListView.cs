@@ -21,9 +21,9 @@ namespace DatingManagement
         void enableSave();
 
         void LoadDetails();
-
-
-
+         
         void SetDataSource(List<DAL.Boy> BoyList, bool p);
+
+         
     }
 }

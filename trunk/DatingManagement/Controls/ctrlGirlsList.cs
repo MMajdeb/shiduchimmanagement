@@ -105,15 +105,13 @@ namespace DatingManagement
         {
             Girl detail = (Girl)grvList.GetRow(grvList.FocusedRowHandle);
 
-            BaseDetailsForm frm = new BaseDetailsForm();
-            ctrlFamilyDetails ctrl = new ctrlFamilyDetails();
-            FamilyListPresenter presenterFamily = new FamilyListPresenter(ctrl);
-            ctrl.Presenter = presenterFamily;
-            presenterFamily.LoadDetailsView(ctrl);
-            presenterFamily.LoadDetails((int)detail.FathersID);
 
-            frm = new BaseDetailsForm(ctrl);
+            frmGirlDetails frm = new frmGirlDetails();
+            frm.Presenter = presenter;
+            presenter.LoadDetailsView(frm);
+            presenter.LoadPopupDetailsForm(detail);
             frm.ShowDialog();
+
         }
 
         private void frmRoomDetails1_Load(object sender, EventArgs e)

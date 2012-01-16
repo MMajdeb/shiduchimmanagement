@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18.25, 12.875" name="ShiduchimDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18.25, 15.75" name="ShiduchimDB">
   <DataContextMoniker Name="/ShiduchimDBDataContext" />
   <nestedChildShapes>
     <classShape Id="e3c1522b-19b7-4943-88a6-af0805207e59" absoluteBounds="6.75, 0.75, 2, 1.5785953776041666">
@@ -62,10 +62,10 @@
         <elementListCompartment Id="cbf3959d-ac8c-4e7c-9b97-26ce4ecc79ba" absoluteBounds="3.765, 10.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7f7bdb7b-917a-4f08-bc29-31ee6b3b7efc" absoluteBounds="5.375, 2.5, 2, 4.4631168619791666">
+    <classShape Id="7f7bdb7b-917a-4f08-bc29-31ee6b3b7efc" absoluteBounds="7.375, 11, 2, 4.4631168619791666">
       <DataClassMoniker Name="/ShiduchimDBDataContext/Girl" />
       <nestedChildShapes>
-        <elementListCompartment Id="05a959a0-551f-4399-ad81-eb7adf95f07e" absoluteBounds="5.39, 2.96, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="05a959a0-551f-4399-ad81-eb7adf95f07e" absoluteBounds="7.3900000000000006, 11.46, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="7a26e972-85a7-419d-ba0d-0f48820ee3a0" absoluteBounds="2.5, 1.625, 2, 1.5785953776041666">
@@ -105,7 +105,7 @@
         <classShapeMoniker Id="2a5b4df6-400d-4ab3-8615-d5e2f7224c51" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(16 : 8.28925699869792); (6 : 8.28925699869792); (6 : 6.96311686197917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(16 : 11.7651684570312); (9.375 : 11.7651684570312)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ShiduchimDBDataContext/Family/Family_Girl" />
       <nodes>
         <classShapeMoniker Id="d62a6dee-1f94-4412-adf3-e945c18c210f" />
