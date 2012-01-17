@@ -63,6 +63,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2E6E38AAA53F9CF943706FDADE07FA0F"
+        "OwnerKey" = "8:_FBA1F9DCD8EA0E785278328BC0A33764"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_37E21CAB585D48118F5FED04C2F6F49E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -129,13 +135,25 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_4E4E180487DD2DD4EB13ED17903D844A"
+        "OwnerKey" = "8:_76B0AD31430D2B6F20A2C370B7B5A4CE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4E4E180487DD2DD4EB13ED17903D844A"
+        "OwnerKey" = "8:_1308E05FB6B548ADB0A2D4968E9E9529"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_519A56BC36E44429B7C422B2E9B21D67"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_5F973E05CAE029FC6283257376B617D1"
+        "MsmKey" = "8:_64D0824468B20E7F24CBBEC22E0BA1AE"
         "OwnerKey" = "8:_1308E05FB6B548ADB0A2D4968E9E9529"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -143,6 +161,36 @@
         {
         "MsmKey" = "8:_6AD9910DE90F42538AC323C3E4E7C49A"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_71F62BCB7C60F8E1AEAF7794555DF3D4"
+        "OwnerKey" = "8:_1308E05FB6B548ADB0A2D4968E9E9529"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_76B0AD31430D2B6F20A2C370B7B5A4CE"
+        "OwnerKey" = "8:_1308E05FB6B548ADB0A2D4968E9E9529"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_76B0AD31430D2B6F20A2C370B7B5A4CE"
+        "OwnerKey" = "8:_7B631BBF553416E63F86D3CE0401E337"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_76B0AD31430D2B6F20A2C370B7B5A4CE"
+        "OwnerKey" = "8:_71F62BCB7C60F8E1AEAF7794555DF3D4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7B631BBF553416E63F86D3CE0401E337"
+        "OwnerKey" = "8:_1308E05FB6B548ADB0A2D4968E9E9529"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -214,6 +262,12 @@
         "Entry"
         {
         "MsmKey" = "8:_ACD7D65B3DC12E548B1BF672031F84FE"
+        "OwnerKey" = "8:_7B631BBF553416E63F86D3CE0401E337"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_ACD7D65B3DC12E548B1BF672031F84FE"
         "OwnerKey" = "8:_1308E05FB6B548ADB0A2D4968E9E9529"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -249,6 +303,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_FBA1F9DCD8EA0E785278328BC0A33764"
+        "OwnerKey" = "8:_1308E05FB6B548ADB0A2D4968E9E9529"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_FE4DE91595224EE19476D5CDCD697380"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -262,13 +322,43 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5F973E05CAE029FC6283257376B617D1"
+        "OwnerKey" = "8:_FBA1F9DCD8EA0E785278328BC0A33764"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_64D0824468B20E7F24CBBEC22E0BA1AE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_7B631BBF553416E63F86D3CE0401E337"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_ACD7D65B3DC12E548B1BF672031F84FE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_71F62BCB7C60F8E1AEAF7794555DF3D4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_76B0AD31430D2B6F20A2C370B7B5A4CE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4E4E180487DD2DD4EB13ED17903D844A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -506,6 +596,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2E6E38AAA53F9CF943706FDADE07FA0F"
+            {
+            "SourcePath" = "8:sqlceca35.dll"
+            "TargetName" = "8:sqlceca35.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_37E21CAB585D48118F5FED04C2F6F49E"
             {
             "SourcePath" = "8:..\\ref\\sqlceme35.dll"
@@ -588,6 +698,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4E4E180487DD2DD4EB13ED17903D844A"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.Synchronization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_4E4E180487DD2DD4EB13ED17903D844A"
+                    {
+                    "Name" = "8:Microsoft.Synchronization.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.Synchronization.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_519A56BC36E44429B7C422B2E9B21D67"
             {
             "SourcePath" = "8:..\\ref\\sqlcecompact35.dll"
@@ -608,14 +749,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5F973E05CAE029FC6283257376B617D1"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_64D0824468B20E7F24CBBEC22E0BA1AE"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_5F973E05CAE029FC6283257376B617D1"
+                    "_64D0824468B20E7F24CBBEC22E0BA1AE"
                     {
                     "Name" = "8:log4net.dll"
                     "Attributes" = "3:512"
@@ -657,6 +798,99 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_71F62BCB7C60F8E1AEAF7794555DF3D4"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.Synchronization.Data.Server, Version=2.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_71F62BCB7C60F8E1AEAF7794555DF3D4"
+                    {
+                    "Name" = "8:Microsoft.Synchronization.Data.Server.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.Synchronization.Data.Server.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_76B0AD31430D2B6F20A2C370B7B5A4CE"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.Synchronization.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_76B0AD31430D2B6F20A2C370B7B5A4CE"
+                    {
+                    "Name" = "8:Microsoft.Synchronization.Data.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.Synchronization.Data.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7B631BBF553416E63F86D3CE0401E337"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.Synchronization.Data.SqlServerCe, Version=2.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_7B631BBF553416E63F86D3CE0401E337"
+                    {
+                    "Name" = "8:Microsoft.Synchronization.Data.SqlServerCe.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.Synchronization.Data.SqlServerCe.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7BBA3E644D833DD7CB38681E1F588D6B"
@@ -894,6 +1128,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FBA1F9DCD8EA0E785278328BC0A33764"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Interop.SSCE, Version=3.5.0.0, Culture=neutral, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_FBA1F9DCD8EA0E785278328BC0A33764"
+                    {
+                    "Name" = "8:Interop.SSCE.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Interop.SSCE.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FE4DE91595224EE19476D5CDCD697380"
             {
             "SourcePath" = "8:..\\ref\\sqlceqp35.dll"
@@ -971,7 +1236,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup"
         "ProductCode" = "8:{0431A0D4-1CDA-460C-BF47-AF3DCEC24157}"
-        "PackageCode" = "8:{F0271323-6D46-448D-8D6F-DAE1950F0E7C}"
+        "PackageCode" = "8:{33888098-8D65-45BB-BC7A-73BF5FB07320}"
         "UpgradeCode" = "8:{A1DEEEBF-3EBB-471F-A59E-0212A15F7262}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

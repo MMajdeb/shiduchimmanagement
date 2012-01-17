@@ -502,6 +502,8 @@
             this.BirthDateDateEdit.EditValue = new System.DateTime(2012, 1, 4, 0, 0, 0, 0);
             this.BirthDateDateEdit.Location = new System.Drawing.Point(79, 36);
             this.BirthDateDateEdit.Name = "BirthDateDateEdit";
+            this.BirthDateDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
             this.BirthDateDateEdit.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.BirthDateDateEdit.Size = new System.Drawing.Size(216, 20);

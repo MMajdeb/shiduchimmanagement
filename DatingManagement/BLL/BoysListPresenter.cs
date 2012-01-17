@@ -46,6 +46,33 @@ namespace DatingManagement
 
         }
 
+        public void Add(Family Family)
+        {
+            if (IsUnsavedDataExists())
+            {
+                if (view != null)
+                    view.DisplayMessage("Save first the new Boy",
+                                    Definitions.MESSAGEBOXTITLE.WARNING);
+                return;
+            }
+            Boy cs = AddNewBoy();
+            cs.FathersID = Family.FathersID;
+            this.Dataclass.Boys.InsertOnSubmit(cs);
+            this.BoyList.Add(cs);
+
+            _selectedFamily = Family;
+
+            selectedDetail = cs;
+            detailsView.LoadDetails(selectedDetail, _selectedFamily);
+        }
+
+        private Boy AddNewBoy()
+        {
+            Boy cs = new Boy();
+            cs.BoysName = string.Empty;
+            return cs;
+        }
+
         public void Add()
         {
             if (IsUnsavedDataExists())
@@ -57,18 +84,22 @@ namespace DatingManagement
             }
 
             AddNew();
-            view.SetDataSource(BoyList, true);
-
+            detailsView.LoadDetails(selectedDetail, _selectedFamily);
         }
 
         private void AddNew()
         {
             Boy cs = new Boy();
             cs.BoysName = string.Empty;
-
-
             this.BoyList.Add(cs);
-            this.Dataclass.Boys.InsertOnSubmit(cs);
+            //this.Dataclass.Boys.InsertOnSubmit(cs);
+
+            Family newFamily = new Family();
+            newFamily.MotherName = string.Empty;
+            newFamily.FatherName = string.Empty;
+            newFamily.Boys.Add(cs);
+            _selectedFamily = newFamily;
+            this.Dataclass.Families.InsertOnSubmit(newFamily);
             selectedDetail = cs;
         }
 
@@ -144,7 +175,8 @@ namespace DatingManagement
 
         public override void RefreshForm()
         {
-            view.ResetChange();
+            if (view != null)
+                view.ResetChange();
 
         }
 
@@ -282,7 +314,7 @@ namespace DatingManagement
             else
                 selectedDetail.Yeshiva = Yeshiva;
 
-            detailsView.LoadDetails(selectedDetail);
+            detailsView.LoadDetails(selectedDetail, _selectedFamily);
         }
 
         internal void LoadFamily(int p)

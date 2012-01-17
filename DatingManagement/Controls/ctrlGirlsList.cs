@@ -89,7 +89,11 @@ namespace DatingManagement
 
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            frmGirlDetails frm = new frmGirlDetails();
+            frm.Presenter = presenter;
+            presenter.LoadDetailsView(frm);
             presenter.Add();
+            frm.ShowDialog();
         }
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -219,10 +223,12 @@ namespace DatingManagement
 
             gridControlLite.DataSource = data;
 
-            if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                gridControlLite.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
-            }
+            gridControlLite.ShowPrintPreview();
+
+            //if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    gridControlLite.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
+            //}
         }
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

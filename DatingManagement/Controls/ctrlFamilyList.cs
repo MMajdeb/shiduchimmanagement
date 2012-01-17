@@ -79,7 +79,7 @@ namespace DatingManagement
             if (focusLastRow)
             {
                 grvList.FocusedRowHandle = grvList.RowCount - 1;
-                
+
             }
             else
                 grvList.FocusedRowHandle = i;
@@ -208,11 +208,12 @@ namespace DatingManagement
             }
 
             gridControlLite.DataSource = data;
+            gridControlLite.ShowPrintPreview();
 
-            if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                gridControlLite.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
-            }
+            //if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    gridControlLite.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
+            //}
         }
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -220,7 +221,37 @@ namespace DatingManagement
             presenter.Save();
         }
 
+        private void btnAddBoys_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Family client = (Family)grvList.GetRow(grvList.FocusedRowHandle);
 
+            if (client != null)
+            {
+                frmBoysDetails frm = new frmBoysDetails();
+                BoysListPresenter boysPresenter = new BoysListPresenter(frm);
+                frm.Presenter = boysPresenter;
+                boysPresenter.LoadDetailsView(frm);
+                boysPresenter.Add(client);
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    presenter.HandleLoadForm();
+            }
 
+        }
+
+        private void btnAddGirls_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Family client = (Family)grvList.GetRow(grvList.FocusedRowHandle);
+
+            if (client != null)
+            {
+                frmGirlDetails frm = new frmGirlDetails();
+                GirlsListPresenter girlsPresenter = new GirlsListPresenter(frm);
+                frm.Presenter = girlsPresenter;
+                girlsPresenter.LoadDetailsView(frm);
+                girlsPresenter.Add(client);
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    presenter.HandleLoadForm();
+            }
+        }
     }
 }
