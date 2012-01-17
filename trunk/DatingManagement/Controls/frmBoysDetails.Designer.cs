@@ -328,7 +328,6 @@
             this.YeshivaComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.YeshivaComboBoxEdit.TabIndex = 24;
             this.YeshivaComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.YeshivaComboBoxEdit_SelectedIndexChanged);
-            this.YeshivaComboBoxEdit.EditValueChanged += new System.EventHandler(this.YeshivaComboBoxEdit_SelectedIndexChanged);
             // 
             // BoysIDSpinEdit
             // 

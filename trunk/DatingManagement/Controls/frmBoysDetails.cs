@@ -309,7 +309,7 @@ namespace DatingManagement
             }
             else
                 presenter.ModifyBaisHamedresh(false, BaisHamedreshComboBoxEdit.Text);
-    
+
         }
     }
 }

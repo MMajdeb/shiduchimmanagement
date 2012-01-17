@@ -16,7 +16,8 @@ namespace DatingManagement
         private IFamilyListView view;
         private IFamilyDetailsView detailsView;
         private Family selectedDetail;
-
+        IGirlDetailsView detailsGirlView;
+        IBoyDetailsView detailsBoyView;
 
         public List<Family> FamilyList = new List<Family>();
 
@@ -279,6 +280,32 @@ namespace DatingManagement
                 selectedDetail.Country = Country;
 
             detailsView.LoadDetails(selectedDetail);
+        }
+
+        internal void LoadGirlsDetailsView(IGirlDetailsView _detailsGirlView)
+        {
+            detailsGirlView = _detailsGirlView;
+            _detailsGirlView.LoadRegions(Dataclass.Regions.Select(R => R.Region1).Distinct().ToList());
+            _detailsGirlView.LoadCountries(Dataclass.Countries.Select(R => R.Country1).Distinct().ToList());
+            _detailsGirlView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.Select(R => R.BaisHamedresh1).Distinct().ToList());
+            _detailsGirlView.LoadYeshiva(Dataclass.Yeshivas.Select(R => R.Yeshiva1).Distinct().ToList());
+
+            _detailsGirlView.LoadHeight(Dataclass.Heights.Select(R => R.Height1).Distinct().ToList());
+            _detailsGirlView.LoadSchools(Dataclass.Schools.Select(R => R.School1).Distinct().ToList());
+            _detailsGirlView.LoadSeminary(Dataclass.Seminarys.Select(R => R.Seminary1).Distinct().ToList());
+            _detailsGirlView.LoadCamps(Dataclass.Camps.Select(R => R.Camp1).Distinct().ToList());
+
+        }
+
+        internal void AddGirl(Family selectedFamily)
+        {
+            Girl cs = new Girl();
+            cs.GirlsName = string.Empty;
+
+            selectedFamily.Girls.Add(cs);
+            selectedDetail = selectedFamily;
+
+            detailsGirlView.LoadDetails(cs, selectedFamily);
         }
     }
 }

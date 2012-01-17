@@ -28,6 +28,8 @@ namespace DatingManagement
             this.GirlList = new List<Girl>();
         }
 
+
+
         public GirlsListPresenter(IGirlDetailsView _detailsView)
             : base(_detailsView)
         {
@@ -47,6 +49,26 @@ namespace DatingManagement
 
         }
 
+        public void Add(Family Family)
+        {
+            if (IsUnsavedDataExists())
+            {
+                if (view != null)
+                    view.DisplayMessage("Save first the new Girl",
+                                    Definitions.MESSAGEBOXTITLE.WARNING);
+                return;
+            }
+            Girl cs = AddNewGirl();
+            cs.FathersID = Family.FathersID;
+            this.Dataclass.Girls.InsertOnSubmit(cs);
+            this.GirlList.Add(cs);
+
+            _selectedFamily = Family;
+
+            selectedDetail = cs;
+            detailsView.LoadDetails(selectedDetail, _selectedFamily);
+        }
+
         public void Add()
         {
             if (IsUnsavedDataExists())
@@ -56,21 +78,25 @@ namespace DatingManagement
                                     Definitions.MESSAGEBOXTITLE.WARNING);
                 return;
             }
+            Girl cs = AddNewGirl();
 
-            AddNew();
-            view.SetDataSource(GirlList, true);
-
+            this.GirlList.Add(cs);
+            Family newFamily = new Family();
+            newFamily.MotherName = string.Empty;
+            newFamily.FatherName = string.Empty;
+            newFamily.Girls.Add(cs);
+            _selectedFamily = newFamily;
+            this.Dataclass.Families.InsertOnSubmit(newFamily);
+            selectedDetail = cs;
+            detailsView.LoadDetails(selectedDetail, _selectedFamily);
         }
 
-        private void AddNew()
+        private Girl AddNewGirl()
         {
             Girl cs = new Girl();
             cs.GirlsName = string.Empty;
+            return cs;
 
-
-            this.GirlList.Add(cs);
-            this.Dataclass.Girls.InsertOnSubmit(cs);
-            selectedDetail = cs;
         }
 
         public void Remove(Girl Girl)
@@ -145,7 +171,8 @@ namespace DatingManagement
 
         public override void RefreshForm()
         {
-            view.ResetChange();
+            if (view != null)
+                view.ResetChange();
 
         }
 
@@ -221,7 +248,7 @@ namespace DatingManagement
         {
             if (detailsView != null)
             {
-                AddNew();
+                Add();
                 detailsView.LoadDetails(selectedDetail);
             }
         }

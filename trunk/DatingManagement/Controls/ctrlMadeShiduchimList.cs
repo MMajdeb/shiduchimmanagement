@@ -72,7 +72,7 @@ namespace DatingManagement
 
         public void SetDataSource(List<DAL.MadeShiduchim> MadeShiduchimList, bool focusLastRow)
         {
-            
+
             int i = grvList.FocusedRowHandle;
             grcList.DataSource = null;
             grcList.DataSource = MadeShiduchimList;
@@ -116,7 +116,7 @@ namespace DatingManagement
         {
 
             this.presenter = new MadeShiduchimsListPresenter(this, ctrlMadeShiduchimDetails1);
-            
+
             this.ctrlMadeShiduchimDetails1.Presenter = presenter;
             this.ctrlMadeShiduchimDetails1.MoveRowFocus += new MoveGridFocusNext(ctrlMadeShiduchimDetails1_MoveRowFocus);
             ctrlMadeShiduchimDetails1.Enabled = false;
@@ -127,7 +127,7 @@ namespace DatingManagement
         {
             grvList.MoveNext();
         }
-        
+
         private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             presenter.HandleLoadForm();
@@ -205,7 +205,7 @@ namespace DatingManagement
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-             
+
             SaveFileDialog savedlg = new SaveFileDialog();
             // savedlg.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
             savedlg.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
@@ -217,11 +217,12 @@ namespace DatingManagement
             }
 
             gridControlLite.DataSource = data;
+            gridControlLite.ShowPrintPreview();
 
-            if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                grcList.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
-            }
+            //if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    grcList.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
+            //}
         }
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
