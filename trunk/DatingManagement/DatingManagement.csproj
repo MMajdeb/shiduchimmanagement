@@ -138,7 +138,7 @@
       <DependentUpon>frmBoysDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ctrlMadeShiduchimDetails.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controls\ctrlMadeShiduchimDetails.Designer.cs">
       <DependentUpon>ctrlMadeShiduchimDetails.cs</DependentUpon>
@@ -448,7 +448,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="shiduchim.sdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

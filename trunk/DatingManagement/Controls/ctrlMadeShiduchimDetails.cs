@@ -13,7 +13,7 @@ using DatingManagement.DAL;
 
 namespace DatingManagement
 {
-    public partial class ctrlMadeShiduchimDetails : XtraUserControl, IMadeShiduchimDetailsView
+    public partial class ctrlMadeShiduchimDetails : BaseDetailsForm, IMadeShiduchimDetailsView
     {
         DAL.MadeShiduchim detailObject;
         MadeShiduchimsListPresenter presenter;
@@ -80,7 +80,7 @@ namespace DatingManagement
 
         private void MoveFocus()
         {
-            YearTextEdit.Select();
+            YearComboBoxEdit.Select();
         }
 
         private void barButtonItemSaveClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -184,6 +184,21 @@ namespace DatingManagement
         public void FillMonthsList(string p, string p_2, List<Month> list)
         {
             Utils.LoadLookupList(ref MonthLookUpEdit, p, p_2, list, false);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (presenter.Save())
+            {
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                this.Close();
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.Close();
         }
     }
 }

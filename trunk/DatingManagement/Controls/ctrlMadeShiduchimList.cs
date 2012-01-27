@@ -61,7 +61,7 @@ namespace DatingManagement
 
         public void LoadDetails()
         {
-            presenter.LoadDetailsView(ctrlMadeShiduchimDetails1);
+
         }
 
         public void FillListInGrid(string columntofillingrid, string displaycolumnname, string valuecolumn, object data)
@@ -115,11 +115,7 @@ namespace DatingManagement
         private void frmRoomDetails1_Load(object sender, EventArgs e)
         {
 
-            this.presenter = new MadeShiduchimsListPresenter(this, ctrlMadeShiduchimDetails1);
-
-            this.ctrlMadeShiduchimDetails1.Presenter = presenter;
-            this.ctrlMadeShiduchimDetails1.MoveRowFocus += new MoveGridFocusNext(ctrlMadeShiduchimDetails1_MoveRowFocus);
-            ctrlMadeShiduchimDetails1.Enabled = false;
+            this.presenter = new MadeShiduchimsListPresenter(this);
             presenter.HandleLoadForm();
         }
 
@@ -136,15 +132,7 @@ namespace DatingManagement
         private void grvList_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
 
-            MadeShiduchim client = (MadeShiduchim)grvList.GetRow(grvList.FocusedRowHandle);
 
-            if (client == null)
-                ctrlMadeShiduchimDetails1.Enabled = false;
-            else
-            {
-                ctrlMadeShiduchimDetails1.Enabled = true;
-                presenter.LoadDetails(client);
-            }
         }
 
 
@@ -230,7 +218,48 @@ namespace DatingManagement
             presenter.Save();
         }
 
+        private void grvList_DoubleClick(object sender, EventArgs e)
+        {
+            ctrlMadeShiduchimDetails ctrlMadeShiduchimDetails1 = new ctrlMadeShiduchimDetails();
+
+            ctrlMadeShiduchimDetails1.Presenter = presenter;
+            presenter.LoadDetailsView(ctrlMadeShiduchimDetails1);
+
+            MadeShiduchim client = (MadeShiduchim)grvList.GetRow(grvList.FocusedRowHandle);
+
+            if (client == null)
+                ctrlMadeShiduchimDetails1.Enabled = false;
+            else
+            {
+                ctrlMadeShiduchimDetails1.Enabled = true;
+                presenter.LoadDetails(client);
+            }
+            if (ctrlMadeShiduchimDetails1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                RefreshData();
+            }
+
+        }
+
+        public void LoadNewData(MadeShiduchim selectedDetail)
+        {
+            ctrlMadeShiduchimDetails ctrlMadeShiduchimDetails1 = new ctrlMadeShiduchimDetails();
+
+            ctrlMadeShiduchimDetails1.Presenter = presenter;
+            presenter.LoadDetailsView(ctrlMadeShiduchimDetails1);
 
 
+            if (selectedDetail == null)
+                ctrlMadeShiduchimDetails1.Enabled = false;
+            else
+            {
+                ctrlMadeShiduchimDetails1.Enabled = true;
+                presenter.LoadDetails(selectedDetail);
+            }
+            if (ctrlMadeShiduchimDetails1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                RefreshData();
+            }
+        }
     }
 }

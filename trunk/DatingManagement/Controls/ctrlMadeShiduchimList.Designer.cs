@@ -31,7 +31,6 @@ namespace DatingManagement
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.grcList = new DevExpress.XtraGrid.GridControl();
             this.grvList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,7 +44,7 @@ namespace DatingManagement
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
@@ -56,10 +55,7 @@ namespace DatingManagement
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.ctrlMadeShiduchimDetails1 = new DatingManagement.ctrlMadeShiduchimDetails();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.gridControlLite = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -81,8 +77,6 @@ namespace DatingManagement
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
-            this.dockPanel1.SuspendLayout();
-            this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlLite)).BeginInit();
@@ -105,7 +99,7 @@ namespace DatingManagement
             this.repositoryItemLookUpEditBoysSide,
             this.repositoryItemLookUpEditGirlsSide});
             this.grcList.ShowOnlyPredefinedDetails = true;
-            this.grcList.Size = new System.Drawing.Size(889, 356);
+            this.grcList.Size = new System.Drawing.Size(889, 739);
             this.grcList.TabIndex = 0;
             this.grcList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvList});
@@ -130,6 +124,7 @@ namespace DatingManagement
             this.grvList.OptionsView.ShowFooter = true;
             this.grvList.OptionsView.ShowGroupPanel = false;
             this.grvList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grvList_FocusedRowChanged);
+            this.grvList.DoubleClick += new System.EventHandler(this.grvList_DoubleClick);
             // 
             // gridColumn1
             // 
@@ -340,45 +335,12 @@ namespace DatingManagement
             // dockManager1
             // 
             this.dockManager1.Form = this;
-            this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel1});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
             "System.Windows.Forms.StatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonControl"});
-            // 
-            // dockPanel1
-            // 
-            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
-            this.dockPanel1.ID = new System.Guid("bbfe2b2a-bf08-4cbe-b0e9-2aee23d135c9");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 398);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.Options.AllowFloating = false;
-            this.dockPanel1.Options.FloatOnDblClick = false;
-            this.dockPanel1.Options.ShowCloseButton = false;
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(670, 383);
-            this.dockPanel1.Size = new System.Drawing.Size(889, 383);
-            this.dockPanel1.Text = "Details";
-            // 
-            // dockPanel1_Container
-            // 
-            this.dockPanel1_Container.Controls.Add(this.ctrlMadeShiduchimDetails1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
-            this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(883, 355);
-            this.dockPanel1_Container.TabIndex = 0;
-            // 
-            // ctrlMadeShiduchimDetails1
-            // 
-            this.ctrlMadeShiduchimDetails1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctrlMadeShiduchimDetails1.Location = new System.Drawing.Point(0, 0);
-            this.ctrlMadeShiduchimDetails1.Name = "ctrlMadeShiduchimDetails1";
-            this.ctrlMadeShiduchimDetails1.Presenter = null;
-            this.ctrlMadeShiduchimDetails1.Size = new System.Drawing.Size(883, 355);
-            this.ctrlMadeShiduchimDetails1.TabIndex = 0;
             // 
             // repositoryItemDateEdit1
             // 
@@ -401,7 +363,7 @@ namespace DatingManagement
             this.repositoryItemLookUpEdit1,
             this.repositoryItemLookUpEdit2});
             this.gridControlLite.ShowOnlyPredefinedDetails = true;
-            this.gridControlLite.Size = new System.Drawing.Size(889, 356);
+            this.gridControlLite.Size = new System.Drawing.Size(889, 739);
             this.gridControlLite.TabIndex = 6;
             this.gridControlLite.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -517,7 +479,6 @@ namespace DatingManagement
             this.ClientSize = new System.Drawing.Size(889, 781);
             this.Controls.Add(this.grcList);
             this.Controls.Add(this.gridControlLite);
-            this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -532,8 +493,6 @@ namespace DatingManagement
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
-            this.dockPanel1.ResumeLayout(false);
-            this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlLite)).EndInit();
@@ -560,15 +519,12 @@ namespace DatingManagement
         private DevExpress.XtraBars.BarButtonItem btnDelete;
         private DevExpress.XtraBars.BarButtonItem barButtonItemRefresh;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
-        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraBars.BarButtonItem barButtonItemClienti;
         private ctrlFamilyDetails ctrlContactDetails1;
         private DevExpress.XtraBars.BarButtonItem btnSave;
-        private ctrlMadeShiduchimDetails ctrlMadeShiduchimDetails1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;

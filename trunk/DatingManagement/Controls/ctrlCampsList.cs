@@ -86,8 +86,11 @@ namespace DatingManagement
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Camp detail = (Camp)grvList.GetRow(grvList.FocusedRowHandle);
-            presenter.Remove(detail);
+            if (XtraMessageBox.Show("Are you sure you want to delete this Camp", "Delete", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Camp detail = (Camp)grvList.GetRow(grvList.FocusedRowHandle);
+                presenter.Remove(detail);
+            }
         }
         
         private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

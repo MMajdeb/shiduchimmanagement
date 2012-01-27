@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             this.txtFocus = new DevExpress.XtraEditors.TextEdit();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.FathersIDSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.familyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.familyBindingSource = new System.Windows.Forms.BindingSource();
             this.MechitunimTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.CountryComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.BaisHamedreshComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.LastEditDateTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.CreationDateTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.btnOpenGirl = new DevExpress.XtraEditors.SimpleButton();
             this.btnOpenBoy = new DevExpress.XtraEditors.SimpleButton();
             this.grcGirls = new DevExpress.XtraGrid.GridControl();
@@ -69,8 +70,6 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnBaisMedresh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBoxBaisHamedresh = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.LastEditDateTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.CreationDateTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.LastNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.FatherNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.MotherNameTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -161,6 +160,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MechitunimTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountryComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BaisHamedreshComboBoxEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LastEditDateTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreationDateTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcGirls)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvGirls)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -172,8 +173,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grcMechitunem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvMechitunem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxBaisHamedresh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LastEditDateTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CreationDateTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LastNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FatherNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MotherNameTextEdit.Properties)).BeginInit();
@@ -366,12 +365,30 @@
             this.BaisHamedreshComboBoxEdit.Location = new System.Drawing.Point(123, 326);
             this.BaisHamedreshComboBoxEdit.Name = "BaisHamedreshComboBoxEdit";
             this.BaisHamedreshComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.BaisHamedreshComboBoxEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BaisHamedreshComboBoxEdit.Size = new System.Drawing.Size(213, 20);
             this.BaisHamedreshComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.BaisHamedreshComboBoxEdit.TabIndex = 37;
             this.BaisHamedreshComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.BaisHamedreshComboBoxEdit_SelectedIndexChanged);
+            // 
+            // LastEditDateTextEdit
+            // 
+            this.LastEditDateTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "LastEditDate", true));
+            this.LastEditDateTextEdit.Location = new System.Drawing.Point(0, 0);
+            this.LastEditDateTextEdit.Name = "LastEditDateTextEdit";
+            this.LastEditDateTextEdit.Size = new System.Drawing.Size(0, 20);
+            this.LastEditDateTextEdit.StyleController = this.dataLayoutControl1;
+            this.LastEditDateTextEdit.TabIndex = 53;
+            // 
+            // CreationDateTextEdit
+            // 
+            this.CreationDateTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "CreationDate", true));
+            this.CreationDateTextEdit.Location = new System.Drawing.Point(0, 0);
+            this.CreationDateTextEdit.Name = "CreationDateTextEdit";
+            this.CreationDateTextEdit.Size = new System.Drawing.Size(0, 20);
+            this.CreationDateTextEdit.StyleController = this.dataLayoutControl1;
+            this.CreationDateTextEdit.TabIndex = 54;
             // 
             // btnOpenGirl
             // 
@@ -687,24 +704,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemComboBoxBaisHamedresh.Name = "repositoryItemComboBoxBaisHamedresh";
             // 
-            // LastEditDateTextEdit
-            // 
-            this.LastEditDateTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "LastEditDate", true));
-            this.LastEditDateTextEdit.Location = new System.Drawing.Point(0, 0);
-            this.LastEditDateTextEdit.Name = "LastEditDateTextEdit";
-            this.LastEditDateTextEdit.Size = new System.Drawing.Size(0, 20);
-            this.LastEditDateTextEdit.StyleController = this.dataLayoutControl1;
-            this.LastEditDateTextEdit.TabIndex = 53;
-            // 
-            // CreationDateTextEdit
-            // 
-            this.CreationDateTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "CreationDate", true));
-            this.CreationDateTextEdit.Location = new System.Drawing.Point(0, 0);
-            this.CreationDateTextEdit.Name = "CreationDateTextEdit";
-            this.CreationDateTextEdit.Size = new System.Drawing.Size(0, 20);
-            this.CreationDateTextEdit.StyleController = this.dataLayoutControl1;
-            this.CreationDateTextEdit.TabIndex = 54;
-            // 
             // LastNameTextEdit
             // 
             this.LastNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "LastName", true));
@@ -749,7 +748,7 @@
             this.RegionComboBoxEdit.Location = new System.Drawing.Point(123, 142);
             this.RegionComboBoxEdit.Name = "RegionComboBoxEdit";
             this.RegionComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.RegionComboBoxEdit.Size = new System.Drawing.Size(213, 20);
             this.RegionComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.RegionComboBoxEdit.TabIndex = 9;
@@ -847,7 +846,7 @@
             // E_MailTextEdit
             // 
             this.E_MailTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "E_Mail", true));
-            this.E_MailTextEdit.Location = new System.Drawing.Point(461, 246);
+            this.E_MailTextEdit.Location = new System.Drawing.Point(362, 246);
             this.E_MailTextEdit.Name = "E_MailTextEdit";
             this.E_MailTextEdit.Size = new System.Drawing.Size(414, 20);
             this.E_MailTextEdit.StyleController = this.dataLayoutControl1;
@@ -865,7 +864,7 @@
             // EmailTextEdit
             // 
             this.EmailTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Email", true));
-            this.EmailTextEdit.Location = new System.Drawing.Point(461, 270);
+            this.EmailTextEdit.Location = new System.Drawing.Point(362, 270);
             this.EmailTextEdit.Name = "EmailTextEdit";
             this.EmailTextEdit.Size = new System.Drawing.Size(414, 20);
             this.EmailTextEdit.StyleController = this.dataLayoutControl1;
@@ -874,7 +873,7 @@
             // Email2TextEdit
             // 
             this.Email2TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Email2", true));
-            this.Email2TextEdit.Location = new System.Drawing.Point(461, 294);
+            this.Email2TextEdit.Location = new System.Drawing.Point(362, 294);
             this.Email2TextEdit.Name = "Email2TextEdit";
             this.Email2TextEdit.Size = new System.Drawing.Size(414, 20);
             this.Email2TextEdit.StyleController = this.dataLayoutControl1;
@@ -883,7 +882,7 @@
             // Email3TextEdit
             // 
             this.Email3TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Email3", true));
-            this.Email3TextEdit.Location = new System.Drawing.Point(461, 318);
+            this.Email3TextEdit.Location = new System.Drawing.Point(362, 318);
             this.Email3TextEdit.Name = "Email3TextEdit";
             this.Email3TextEdit.Size = new System.Drawing.Size(414, 20);
             this.Email3TextEdit.StyleController = this.dataLayoutControl1;
@@ -1215,6 +1214,7 @@
             this.ItemForE_Mail.Name = "ItemForE_Mail";
             this.ItemForE_Mail.Size = new System.Drawing.Size(517, 24);
             this.ItemForE_Mail.Text = "E_Mail";
+            this.ItemForE_Mail.TextLocation = DevExpress.Utils.Locations.Right;
             this.ItemForE_Mail.TextSize = new System.Drawing.Size(95, 13);
             // 
             // ItemForHomePhone2
@@ -1245,6 +1245,7 @@
             this.ItemForEmail2.Name = "ItemForEmail2";
             this.ItemForEmail2.Size = new System.Drawing.Size(517, 24);
             this.ItemForEmail2.Text = "Email2";
+            this.ItemForEmail2.TextLocation = DevExpress.Utils.Locations.Right;
             this.ItemForEmail2.TextSize = new System.Drawing.Size(95, 13);
             // 
             // ItemForEmail3
@@ -1255,6 +1256,7 @@
             this.ItemForEmail3.Name = "ItemForEmail3";
             this.ItemForEmail3.Size = new System.Drawing.Size(517, 44);
             this.ItemForEmail3.Text = "Email3";
+            this.ItemForEmail3.TextLocation = DevExpress.Utils.Locations.Right;
             this.ItemForEmail3.TextSize = new System.Drawing.Size(95, 13);
             // 
             // ItemForEmail
@@ -1265,6 +1267,7 @@
             this.ItemForEmail.Name = "ItemForEmail";
             this.ItemForEmail.Size = new System.Drawing.Size(517, 24);
             this.ItemForEmail.Text = "Email";
+            this.ItemForEmail.TextLocation = DevExpress.Utils.Locations.Right;
             this.ItemForEmail.TextSize = new System.Drawing.Size(95, 13);
             // 
             // ItemForHomePhone3
@@ -1579,6 +1582,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MechitunimTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountryComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BaisHamedreshComboBoxEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LastEditDateTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreationDateTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcGirls)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvGirls)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -1590,8 +1595,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grcMechitunem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvMechitunem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxBaisHamedresh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LastEditDateTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CreationDateTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LastNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FatherNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MotherNameTextEdit.Properties)).EndInit();

@@ -31,8 +31,7 @@ namespace DatingManagement
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
@@ -43,7 +42,7 @@ namespace DatingManagement
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.ctrlGirlDetails1 = new DatingManagement.ctrlGirlDetails();
@@ -290,6 +289,7 @@ namespace DatingManagement
             this.grvList.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.grvList.OptionsBehavior.Editable = false;
             this.grvList.OptionsView.ShowAutoFilterRow = true;
+            this.grvList.OptionsView.ShowFooter = true;
             this.grvList.OptionsView.ShowGroupPanel = false;
             this.grvList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grvList_FocusedRowChanged);
             this.grvList.DoubleClick += new System.EventHandler(this.grvList_DoubleClick);
@@ -301,6 +301,8 @@ namespace DatingManagement
             this.gridColumn1.Caption = "Last Name";
             this.gridColumn1.FieldName = "Name";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.SummaryItem.DisplayFormat = "Total Girls:";
+            this.gridColumn1.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Custom;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
@@ -319,6 +321,7 @@ namespace DatingManagement
             this.gridColumn3.Caption = "Girls Name";
             this.gridColumn3.FieldName = "GirlsName";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 1;
             // 

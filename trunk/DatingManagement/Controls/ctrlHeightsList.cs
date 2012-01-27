@@ -86,8 +86,11 @@ namespace DatingManagement
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Height detail = (Height)grvList.GetRow(grvList.FocusedRowHandle);
-            presenter.Remove(detail);
+            if (XtraMessageBox.Show("Are you sure you want to delete this Height", "Delete", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Height detail = (Height)grvList.GetRow(grvList.FocusedRowHandle);
+                presenter.Remove(detail);
+            }
         }
 
 

@@ -20,11 +20,10 @@ namespace DatingManagement
 
         public List<MadeShiduchim> MadeShiduchimList = new List<MadeShiduchim>();
 
-        public MadeShiduchimsListPresenter(IMadeShiduchimListView _view, IMadeShiduchimDetailsView _detailsView)
+        public MadeShiduchimsListPresenter(IMadeShiduchimListView _view)
             : base(_view)
         {
             view = _view;
-            detailsView = _detailsView;
             this.MadeShiduchimList = new List<MadeShiduchim>();
         }
 
@@ -55,7 +54,7 @@ namespace DatingManagement
             }
 
             AddNew();
-            view.SetDataSource(MadeShiduchimList, true);
+            view.LoadNewData(selectedDetail);
 
         }
 

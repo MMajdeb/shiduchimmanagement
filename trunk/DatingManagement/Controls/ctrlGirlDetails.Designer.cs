@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -39,16 +38,13 @@
             this.CampComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnOpenFamily = new DevExpress.XtraEditors.SimpleButton();
             this.FathersIDLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
-            this.girlBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.girlBindingSource = new System.Windows.Forms.BindingSource();
             this.BoysIDSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.boyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.boyBindingSource = new System.Windows.Forms.BindingSource();
             this.AgeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.PictureTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.Gen_PictureTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.s_GUIDTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.EmailTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.Email2TextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.Email3TextEdit = new DevExpress.XtraEditors.TextEdit();
             this.BirthDateDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.FamilyTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.HeightComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -70,12 +66,8 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForFathersID = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForHeight = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForEmail = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForEmail2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForBirthDate = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.ItemForEmail3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForGirlsName = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForSeminary = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForWork = new DevExpress.XtraLayout.LayoutControlItem();
@@ -83,15 +75,17 @@
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.ItemForAge = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForSchool = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForDor_Yeshurim = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForCamp = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForDor_Yeshurim = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.familyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.familyBindingSource = new System.Windows.Forms.BindingSource();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -109,9 +103,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Gen_PictureTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.s_GUIDTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmailTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Email2TextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Email3TextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthDateDateEdit.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthDateDateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FamilyTextEdit.Properties)).BeginInit();
@@ -134,12 +125,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFathersID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForHeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForBirthDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForGirlsName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForSeminary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForWork)).BeginInit();
@@ -147,12 +134,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForSchool)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForDor_Yeshurim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCamp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForDor_Yeshurim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.familyBindingSource)).BeginInit();
@@ -180,9 +169,6 @@
             this.dataLayoutControl1.Controls.Add(this.PictureTextEdit);
             this.dataLayoutControl1.Controls.Add(this.Gen_PictureTextEdit);
             this.dataLayoutControl1.Controls.Add(this.s_GUIDTextEdit);
-            this.dataLayoutControl1.Controls.Add(this.EmailTextEdit);
-            this.dataLayoutControl1.Controls.Add(this.Email2TextEdit);
-            this.dataLayoutControl1.Controls.Add(this.Email3TextEdit);
             this.dataLayoutControl1.Controls.Add(this.BirthDateDateEdit);
             this.dataLayoutControl1.Controls.Add(this.FamilyTextEdit);
             this.dataLayoutControl1.Controls.Add(this.HeightComboBoxEdit);
@@ -327,33 +313,6 @@
             this.s_GUIDTextEdit.TabIndex = 13;
             this.s_GUIDTextEdit.Visible = false;
             // 
-            // EmailTextEdit
-            // 
-            this.EmailTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Email", true));
-            this.EmailTextEdit.Location = new System.Drawing.Point(79, 108);
-            this.EmailTextEdit.Name = "EmailTextEdit";
-            this.EmailTextEdit.Size = new System.Drawing.Size(407, 20);
-            this.EmailTextEdit.StyleController = this.dataLayoutControl1;
-            this.EmailTextEdit.TabIndex = 14;
-            // 
-            // Email2TextEdit
-            // 
-            this.Email2TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Email2", true));
-            this.Email2TextEdit.Location = new System.Drawing.Point(79, 132);
-            this.Email2TextEdit.Name = "Email2TextEdit";
-            this.Email2TextEdit.Size = new System.Drawing.Size(407, 20);
-            this.Email2TextEdit.StyleController = this.dataLayoutControl1;
-            this.Email2TextEdit.TabIndex = 15;
-            // 
-            // Email3TextEdit
-            // 
-            this.Email3TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Email3", true));
-            this.Email3TextEdit.Location = new System.Drawing.Point(79, 192);
-            this.Email3TextEdit.Name = "Email3TextEdit";
-            this.Email3TextEdit.Size = new System.Drawing.Size(407, 20);
-            this.Email3TextEdit.StyleController = this.dataLayoutControl1;
-            this.Email3TextEdit.TabIndex = 16;
-            // 
             // BirthDateDateEdit
             // 
             this.BirthDateDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "BirthDate", true));
@@ -434,7 +393,7 @@
             // Dor_YeshurimTextEdit
             // 
             this.Dor_YeshurimTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Dor_Yeshurim", true));
-            this.Dor_YeshurimTextEdit.Location = new System.Drawing.Point(79, 216);
+            this.Dor_YeshurimTextEdit.Location = new System.Drawing.Point(79, 108);
             this.Dor_YeshurimTextEdit.Name = "Dor_YeshurimTextEdit";
             this.Dor_YeshurimTextEdit.Size = new System.Drawing.Size(407, 20);
             this.Dor_YeshurimTextEdit.StyleController = this.dataLayoutControl1;
@@ -560,12 +519,8 @@
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.ItemForFathersID,
             this.ItemForHeight,
-            this.ItemForEmail,
-            this.ItemForEmail2,
             this.ItemForBirthDate,
-            this.emptySpaceItem2,
             this.emptySpaceItem1,
-            this.ItemForEmail3,
             this.ItemForGirlsName,
             this.ItemForSeminary,
             this.ItemForWork,
@@ -578,7 +533,9 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.ItemForDor_Yeshurim});
+            this.ItemForDor_Yeshurim,
+            this.emptySpaceItem4,
+            this.emptySpaceItem2});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
             this.layoutControlGroup2.Size = new System.Drawing.Size(891, 265);
@@ -604,26 +561,6 @@
             this.ItemForHeight.Text = "Height";
             this.ItemForHeight.TextSize = new System.Drawing.Size(63, 13);
             // 
-            // ItemForEmail
-            // 
-            this.ItemForEmail.Control = this.EmailTextEdit;
-            this.ItemForEmail.CustomizationFormText = "Email";
-            this.ItemForEmail.Location = new System.Drawing.Point(0, 96);
-            this.ItemForEmail.Name = "ItemForEmail";
-            this.ItemForEmail.Size = new System.Drawing.Size(478, 24);
-            this.ItemForEmail.Text = "Email";
-            this.ItemForEmail.TextSize = new System.Drawing.Size(63, 13);
-            // 
-            // ItemForEmail2
-            // 
-            this.ItemForEmail2.Control = this.Email2TextEdit;
-            this.ItemForEmail2.CustomizationFormText = "Email2";
-            this.ItemForEmail2.Location = new System.Drawing.Point(0, 120);
-            this.ItemForEmail2.Name = "ItemForEmail2";
-            this.ItemForEmail2.Size = new System.Drawing.Size(478, 60);
-            this.ItemForEmail2.Text = "Email2";
-            this.ItemForEmail2.TextSize = new System.Drawing.Size(63, 13);
-            // 
             // ItemForBirthDate
             // 
             this.ItemForBirthDate.Control = this.BirthDateDateEdit;
@@ -634,15 +571,6 @@
             this.ItemForBirthDate.Text = "Birth Date";
             this.ItemForBirthDate.TextSize = new System.Drawing.Size(63, 13);
             // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 228);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(891, 37);
-            this.emptySpaceItem2.Text = "emptySpaceItem2";
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
@@ -651,16 +579,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(351, 10);
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // ItemForEmail3
-            // 
-            this.ItemForEmail3.Control = this.Email3TextEdit;
-            this.ItemForEmail3.CustomizationFormText = "Email3";
-            this.ItemForEmail3.Location = new System.Drawing.Point(0, 180);
-            this.ItemForEmail3.Name = "ItemForEmail3";
-            this.ItemForEmail3.Size = new System.Drawing.Size(478, 24);
-            this.ItemForEmail3.Text = "Email3";
-            this.ItemForEmail3.TextSize = new System.Drawing.Size(63, 13);
             // 
             // ItemForGirlsName
             // 
@@ -731,16 +649,6 @@
             this.ItemForSchool.Text = "School";
             this.ItemForSchool.TextSize = new System.Drawing.Size(63, 13);
             // 
-            // ItemForDor_Yeshurim
-            // 
-            this.ItemForDor_Yeshurim.Control = this.Dor_YeshurimTextEdit;
-            this.ItemForDor_Yeshurim.CustomizationFormText = "Dor Yeshurim";
-            this.ItemForDor_Yeshurim.Location = new System.Drawing.Point(0, 204);
-            this.ItemForDor_Yeshurim.Name = "ItemForDor_Yeshurim";
-            this.ItemForDor_Yeshurim.Size = new System.Drawing.Size(478, 24);
-            this.ItemForDor_Yeshurim.Text = "Dor Yeshurim";
-            this.ItemForDor_Yeshurim.TextSize = new System.Drawing.Size(63, 13);
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnOpenFamily;
@@ -792,6 +700,34 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(351, 24);
             this.layoutControlItem4.Text = " ";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(63, 13);
+            // 
+            // ItemForDor_Yeshurim
+            // 
+            this.ItemForDor_Yeshurim.Control = this.Dor_YeshurimTextEdit;
+            this.ItemForDor_Yeshurim.CustomizationFormText = "Dor Yeshurim";
+            this.ItemForDor_Yeshurim.Location = new System.Drawing.Point(0, 96);
+            this.ItemForDor_Yeshurim.Name = "ItemForDor_Yeshurim";
+            this.ItemForDor_Yeshurim.Size = new System.Drawing.Size(478, 24);
+            this.ItemForDor_Yeshurim.Text = "Dor Yeshurim";
+            this.ItemForDor_Yeshurim.TextSize = new System.Drawing.Size(63, 13);
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.CustomizationFormText = "emptySpaceItem4";
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 228);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(891, 37);
+            this.emptySpaceItem4.Text = "emptySpaceItem4";
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 120);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(478, 108);
+            this.emptySpaceItem2.Text = "emptySpaceItem2";
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup3
             // 
@@ -870,9 +806,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Gen_PictureTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.s_GUIDTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmailTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Email2TextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Email3TextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthDateDateEdit.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthDateDateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FamilyTextEdit.Properties)).EndInit();
@@ -895,12 +828,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFathersID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForHeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForBirthDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForGirlsName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForSeminary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForWork)).EndInit();
@@ -908,12 +837,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForSchool)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForDor_Yeshurim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCamp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForDor_Yeshurim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.familyBindingSource)).EndInit();
@@ -934,9 +865,6 @@
         private DevExpress.XtraEditors.TextEdit PictureTextEdit;
         private DevExpress.XtraEditors.TextEdit Gen_PictureTextEdit;
         private DevExpress.XtraEditors.TextEdit s_GUIDTextEdit;
-        private DevExpress.XtraEditors.TextEdit EmailTextEdit;
-        private DevExpress.XtraEditors.TextEdit Email2TextEdit;
-        private DevExpress.XtraEditors.TextEdit Email3TextEdit;
         private DevExpress.XtraEditors.DateEdit BirthDateDateEdit;
         private DevExpress.XtraEditors.TextEdit FamilyTextEdit;
         private DevExpress.XtraEditors.ComboBoxEdit HeightComboBoxEdit;
@@ -950,12 +878,9 @@
         private DevExpress.XtraLayout.LayoutControlItem ItemForFathersID;
         private DevExpress.XtraLayout.LayoutControlItem ItemForAge;
         private DevExpress.XtraLayout.LayoutControlItem ItemForHeight;
-        private DevExpress.XtraLayout.LayoutControlItem ItemForEmail;
-        private DevExpress.XtraLayout.LayoutControlItem ItemForEmail2;
         private DevExpress.XtraLayout.LayoutControlItem ItemForBirthDate;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.LayoutControlItem ItemForEmail3;
         private System.Windows.Forms.BindingSource girlBindingSource;
         private DevExpress.XtraEditors.SpinEdit GirlsIDSpinEdit;
         private DevExpress.XtraEditors.TextEdit GirlsNameTextEdit;
@@ -988,5 +913,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.TextEdit SchoolTextEdit;
         private DevExpress.XtraEditors.TextEdit SeminaryTextEdit;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
     }
 }
