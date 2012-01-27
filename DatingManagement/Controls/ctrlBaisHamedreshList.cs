@@ -86,8 +86,11 @@ namespace DatingManagement
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            BaisHamedresh detail = (BaisHamedresh)grvList.GetRow(grvList.FocusedRowHandle);
-            presenter.Remove(detail);
+            if (XtraMessageBox.Show("Are you sure you want to delete this Bais Hamedresh", "Delete", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                BaisHamedresh detail = (BaisHamedresh)grvList.GetRow(grvList.FocusedRowHandle);
+                presenter.Remove(detail);
+            }
         }
          
         private void barButtonItemRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

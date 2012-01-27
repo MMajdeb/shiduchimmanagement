@@ -324,6 +324,15 @@ namespace DatingManagement
             detailsView.LoadDetails(selectedDetail);
         }
 
+        internal void LoadFamilyDetails(int p)
+        {
+            selectedDetail.Family = Dataclass.Families.Where(F => F.FathersID == p).First();
+            selectedDetail.FathersID = p;
+            _selectedFamily = Dataclass.Families.Where(F => F.FathersID == p).First();
+
+            detailsView.LoadDetails(selectedDetail, _selectedFamily);
+        }
+
         internal void LoadPopupDetailsForm(Boy detail)
         {
             selectedDetail = detail;

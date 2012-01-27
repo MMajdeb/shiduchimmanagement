@@ -24,5 +24,7 @@ namespace DatingManagement
 
 
         void SetDataSource(List<DAL.MadeShiduchim> MadeShiduchimList, bool p);
+
+        void LoadNewData(DAL.MadeShiduchim selectedDetail);
     }
 }

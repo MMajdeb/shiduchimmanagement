@@ -204,7 +204,7 @@ namespace DatingManagement
 
         public void FillFamilyList(string p, string p_2, List<Family> list)
         {
-
+            Utils.LoadLookupList(ref FathersIDLookUpEdit, p, p_2, list, false);
         }
 
 
@@ -231,7 +231,7 @@ namespace DatingManagement
         private void FathersIDLookUpEdit_EditValueChanged(object sender, EventArgs e)
         {
             if (isLoading) return;
-
+            presenter.LoadFamilyDetails((int)FathersIDLookUpEdit.EditValue);
         }
 
         private void btnSave_Click(object sender, EventArgs e)

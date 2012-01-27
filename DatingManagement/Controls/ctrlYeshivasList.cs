@@ -86,8 +86,11 @@ namespace DatingManagement
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Yeshiva detail = (Yeshiva)grvList.GetRow(grvList.FocusedRowHandle);
-            presenter.Remove(detail);
+            if (XtraMessageBox.Show("Are you sure you want to delete this Yeshiva", "Delete", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Yeshiva detail = (Yeshiva)grvList.GetRow(grvList.FocusedRowHandle);
+                presenter.Remove(detail);
+            }
         }
 
 

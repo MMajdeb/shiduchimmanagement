@@ -285,8 +285,9 @@ namespace DatingManagement
 
         public void FillFamilyList(string p, string p_2, List<Family> list)
         {
-
+            Utils.LoadLookupList(ref FathersIDLookUpEdit, p, p_2, list, false);
         }
+
 
         private void CountryComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -311,5 +312,12 @@ namespace DatingManagement
                 presenter.ModifyBaisHamedresh(false, BaisHamedreshComboBoxEdit.Text);
 
         }
+
+        private void FathersIDLookUpEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            if (isLoading) return;
+            presenter.LoadFamilyDetails((int)FathersIDLookUpEdit.EditValue);
+        }
+         
     }
 }
