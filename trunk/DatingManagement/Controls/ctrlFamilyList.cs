@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Diagnostics;
 using DatingManagement.DAL;
+using System.IO;
 
 
 namespace DatingManagement
@@ -197,23 +198,24 @@ namespace DatingManagement
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveFileDialog savedlg = new SaveFileDialog();
-            // savedlg.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
-            savedlg.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
-            List<Family> data = new List<Family>();
-
-            for (int i = 0; i < grvList.DataRowCount; i++)
+            if (File.Exists(Utils.GetReportPath(DatingManagement.Utils.Reports.FamilyReport)))
             {
-                data.Add((Family)grvList.GetRow(i));
+                SaveFileDialog savedlg = new SaveFileDialog();
+                // savedlg.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+                savedlg.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                List<Family> data = new List<Family>();
+
+                for (int i = 0; i < grvList.DataRowCount; i++)
+                {
+                    data.Add((Family)grvList.GetRow(i));
+                }
+
+                XtraReport1 XReport = new XtraReport1();
+                XReport.LoadLayout(Utils.GetReportPath(DatingManagement.Utils.Reports.FamilyReport));
+                XReport.DataSource = data;
+                XReport.ExportToPdf(savedlg.FileName);
+
             }
-
-            gridControlLite.DataSource = data;
-            gridControlLite.ShowPrintPreview();
-
-            //if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            //{
-            //    gridControlLite.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
-            //}
         }
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -251,6 +253,26 @@ namespace DatingManagement
                 girlsPresenter.Add(client);
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     presenter.HandleLoadForm();
+            }
+        }
+
+        private void barButtonItemPreview_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (File.Exists(Utils.GetReportPath(DatingManagement.Utils.Reports.FamilyReport)))
+            {
+
+                List<Family> data = new List<Family>();
+
+                for (int i = 0; i < grvList.DataRowCount; i++)
+                {
+                    data.Add((Family)grvList.GetRow(i));
+                }
+
+                XtraReport1 XReport = new XtraReport1();
+                XReport.LoadLayout(Utils.GetReportPath(DatingManagement.Utils.Reports.FamilyReport));
+                XReport.DataSource = data;
+                XReport.ShowPreview();
+
             }
         }
     }

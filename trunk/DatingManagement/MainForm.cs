@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 using DevExpress.XtraTabbedMdi;
+using DatingManagement.Controls;
 
 namespace DatingManagement
 {
@@ -116,6 +117,12 @@ namespace DatingManagement
         {
             ctrlMadeShiduchimList frm = new ctrlMadeShiduchimList();
             LoadControl(frm, "Made Shiduchim List");
+        }
+
+        private void barButtonItemReportDesigner_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ctrlReportDesigner frm = new ctrlReportDesigner();
+            LoadControl(frm, "Report Designer");
         }
     }
 }

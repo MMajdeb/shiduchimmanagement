@@ -23,6 +23,14 @@ namespace DatingManagement
 {
     public static class Utils
     {
+        public enum Reports
+        {
+            FamilyReport,
+            BoysReport,
+            GirlsReport,
+            MadeShiduchim
+
+        }
         public static DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
             LoadGridList(string displayColumn, string valueColumn, object columnData, bool IsReadOnly)
         {
@@ -628,8 +636,14 @@ namespace DatingManagement
         //    ri.Buttons[0].Caption = caption;
         //    return ri;
         //}
-         
-      
+
+
+
+        internal static string GetReportPath(Reports reports)
+        {
+            return Application.StartupPath + "\\Reports" + reports.ToString() + ".rpx";
+             
+        }
     }
 
     public class MenuInfo

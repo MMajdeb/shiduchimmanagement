@@ -47,6 +47,7 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.TabManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.barButtonItemReportDesigner = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabManager)).BeginInit();
             this.SuspendLayout();
@@ -73,15 +74,16 @@
             this.btnSeminarys,
             this.btnYeshivas,
             this.btnBaisHamedresh,
-            this.btnMadeShiduchim});
+            this.btnMadeShiduchim,
+            this.barButtonItemReportDesigner});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 13;
+            this.ribbon.MaxItemId = 14;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.ribbon.SelectedPage = this.ribbonPage1;
-            this.ribbon.Size = new System.Drawing.Size(1033, 144);
+            this.ribbon.Size = new System.Drawing.Size(1133, 144);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnFamilies
@@ -216,6 +218,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btnHeights);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnSeminarys);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnBaisHamedresh);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItemReportDesigner);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Others";
             // 
@@ -224,17 +227,25 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 610);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1033, 25);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1133, 25);
             // 
             // TabManager
             // 
             this.TabManager.MdiParent = this;
             // 
+            // barButtonItemReportDesigner
+            // 
+            this.barButtonItemReportDesigner.Caption = "Report Designer";
+            this.barButtonItemReportDesigner.Id = 13;
+            this.barButtonItemReportDesigner.LargeGlyph = global::DatingManagement.Properties.Resources.notepad_32;
+            this.barButtonItemReportDesigner.Name = "barButtonItemReportDesigner";
+            this.barButtonItemReportDesigner.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemReportDesigner_ItemClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 635);
+            this.ClientSize = new System.Drawing.Size(1133, 635);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
@@ -270,5 +281,6 @@
         private DevExpress.XtraBars.BarButtonItem btnYeshivas;
         private DevExpress.XtraBars.BarButtonItem btnBaisHamedresh;
         private DevExpress.XtraBars.BarButtonItem btnMadeShiduchim;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemReportDesigner;
     }
 }

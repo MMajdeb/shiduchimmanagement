@@ -31,7 +31,8 @@ namespace DatingManagement
         /// </summary>
         private void InitializeComponent()
         {
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.components = new System.ComponentModel.Container();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnAdd = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelete = new DevExpress.XtraBars.BarButtonItem();
@@ -42,7 +43,7 @@ namespace DatingManagement
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.ctrlGirlDetails1 = new DatingManagement.ctrlGirlDetails();
@@ -75,6 +76,7 @@ namespace DatingManagement
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.barButtonItemPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
@@ -106,9 +108,10 @@ namespace DatingManagement
             this.btnDelete,
             this.barButtonItemRefresh,
             this.barButtonItemClienti,
-            this.btnSave});
+            this.btnSave,
+            this.barButtonItemPrintPreview});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 8;
+            this.barManager1.MaxItemId = 9;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1});
             // 
@@ -123,7 +126,8 @@ namespace DatingManagement
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDelete),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSave),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemClienti)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemClienti, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemPrintPreview)});
             this.bar2.OptionsBar.AllowQuickCustomization = false;
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
@@ -536,6 +540,13 @@ namespace DatingManagement
             this.repositoryItemCheckEdit2.AutoHeight = false;
             this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
             // 
+            // barButtonItemPrintPreview
+            // 
+            this.barButtonItemPrintPreview.Caption = "Print Preview";
+            this.barButtonItemPrintPreview.Id = 8;
+            this.barButtonItemPrintPreview.Name = "barButtonItemPrintPreview";
+            this.barButtonItemPrintPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPrintPreview_ItemClick);
+            // 
             // ctrlGirlsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -615,6 +626,7 @@ namespace DatingManagement
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemPrintPreview;
          
     }
 }
