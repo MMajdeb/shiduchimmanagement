@@ -52,6 +52,9 @@ namespace DatingManagement
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnSave = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemClienti = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemPreview = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddBoys = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddGirls = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -77,8 +80,6 @@ namespace DatingManagement
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.btnAddBoys = new DevExpress.XtraBars.BarButtonItem();
-            this.btnAddGirls = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.grcList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -245,9 +246,10 @@ namespace DatingManagement
             this.barButtonItemClienti,
             this.btnSave,
             this.btnAddBoys,
-            this.btnAddGirls});
+            this.btnAddGirls,
+            this.barButtonItemPreview});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 10;
+            this.barManager1.MaxItemId = 11;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1});
             // 
@@ -263,6 +265,7 @@ namespace DatingManagement
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSave),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemClienti, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemPreview),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAddBoys, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAddGirls)});
             this.bar2.OptionsBar.AllowQuickCustomization = false;
@@ -309,6 +312,30 @@ namespace DatingManagement
             this.barButtonItemClienti.Id = 5;
             this.barButtonItemClienti.Name = "barButtonItemClienti";
             this.barButtonItemClienti.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItemPreview
+            // 
+            this.barButtonItemPreview.Caption = "Print Preview";
+            this.barButtonItemPreview.Glyph = global::DatingManagement.Properties.Resources.printer_32;
+            this.barButtonItemPreview.Id = 10;
+            this.barButtonItemPreview.Name = "barButtonItemPreview";
+            this.barButtonItemPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPreview_ItemClick);
+            // 
+            // btnAddBoys
+            // 
+            this.btnAddBoys.Caption = "Add Boys";
+            this.btnAddBoys.Glyph = global::DatingManagement.Properties.Resources.admin_2_32;
+            this.btnAddBoys.Id = 8;
+            this.btnAddBoys.Name = "btnAddBoys";
+            this.btnAddBoys.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddBoys_ItemClick);
+            // 
+            // btnAddGirls
+            // 
+            this.btnAddGirls.Caption = "Add Girls";
+            this.btnAddGirls.Glyph = global::DatingManagement.Properties.Resources.student_2_32;
+            this.btnAddGirls.Id = 9;
+            this.btnAddGirls.Name = "btnAddGirls";
+            this.btnAddGirls.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddGirls_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -555,22 +582,6 @@ namespace DatingManagement
             this.repositoryItemCheckEdit2.AutoHeight = false;
             this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
             // 
-            // btnAddBoys
-            // 
-            this.btnAddBoys.Caption = "Add Boys";
-            this.btnAddBoys.Glyph = global::DatingManagement.Properties.Resources.admin_2_32;
-            this.btnAddBoys.Id = 8;
-            this.btnAddBoys.Name = "btnAddBoys";
-            this.btnAddBoys.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddBoys_ItemClick);
-            // 
-            // btnAddGirls
-            // 
-            this.btnAddGirls.Caption = "Add Girls";
-            this.btnAddGirls.Glyph = global::DatingManagement.Properties.Resources.student_2_32;
-            this.btnAddGirls.Id = 9;
-            this.btnAddGirls.Name = "btnAddGirls";
-            this.btnAddGirls.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddGirls_ItemClick);
-            // 
             // ctrlFamilyList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -653,6 +664,7 @@ namespace DatingManagement
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraBars.BarButtonItem btnAddBoys;
         private DevExpress.XtraBars.BarButtonItem btnAddGirls;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemPreview;
          
     }
 }

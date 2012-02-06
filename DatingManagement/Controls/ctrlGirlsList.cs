@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Diagnostics;
 using DatingManagement.DAL;
+using System.IO;
 
 
 namespace DatingManagement
@@ -211,29 +213,47 @@ namespace DatingManagement
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveFileDialog savedlg = new SaveFileDialog();
-            // savedlg.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
-            savedlg.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
-            List<Girl> data = new List<Girl>();
-
-            for (int i = 0; i < grvList.DataRowCount; i++)
+            if (File.Exists(Utils.GetReportPath(DatingManagement.Utils.Reports.MadeShiduchim)))
             {
-                data.Add((Girl)grvList.GetRow(i));
+                SaveFileDialog savedlg = new SaveFileDialog();
+                // savedlg.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+                savedlg.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
+                List<Girl> data = new List<Girl>();
+
+                for (int i = 0; i < grvList.DataRowCount; i++)
+                {
+                    data.Add((Girl)grvList.GetRow(i));
+                }
+
+                XtraReport1 XReport = new XtraReport1();
+                XReport.LoadLayout(Utils.GetReportPath(DatingManagement.Utils.Reports.GirlsReport));
+                XReport.DataSource = data;
+                XReport.ExportToPdf(savedlg.FileName);
             }
-
-            gridControlLite.DataSource = data;
-
-            gridControlLite.ShowPrintPreview();
-
-            //if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            //{
-            //    gridControlLite.ExportToXls(savedlg.FileName, new DevExpress.XtraPrinting.XlsExportOptions(DevExpress.XtraPrinting.TextExportMode.Value));
-            //}
         }
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             presenter.Save();
+        }
+
+        private void barButtonItemPrintPreview_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (File.Exists(Utils.GetReportPath(DatingManagement.Utils.Reports.MadeShiduchim)))
+            {
+
+                List<Girl> data = new List<Girl>();
+
+                for (int i = 0; i < grvList.DataRowCount; i++)
+                {
+                    data.Add((Girl)grvList.GetRow(i));
+                }
+
+                XtraReport1 XReport = new XtraReport1();
+                XReport.LoadLayout(Utils.GetReportPath(DatingManagement.Utils.Reports.GirlsReport));
+                XReport.DataSource = data;
+                XReport.ShowPreview();
+            }
         }
 
 

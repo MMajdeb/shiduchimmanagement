@@ -172,6 +172,13 @@ namespace DatingManagement.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap printer_32 {
+            get {
+                object obj = ResourceManager.GetObject("printer_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap refresh_32 {
             get {
                 object obj = ResourceManager.GetObject("refresh_32", resourceCulture);

@@ -98,6 +98,7 @@ namespace DatingManagement.DAL
         }
 
     }
+ 
     public partial class MadeShiduchim
     {
         public string MonthName
@@ -118,6 +119,45 @@ namespace DatingManagement.DAL
 
             }
         }
+
+        public string BoySideName
+        {
+            get
+            {
+                if (this.BoysSide == null)
+                    return string.Empty;
+
+
+                {
+                    var q = DataLayer.Dataclass.Families.Where(M => M.FathersID == this.BoysSide);
+                    if (q.Count() > 0)
+                        return q.First().Name;
+                    else
+                        return string.Empty;
+                }
+
+            }
+        }
+
+        public string GirlSideName
+        {
+            get
+            {
+                if (this.GirlsSide == null)
+                    return string.Empty;
+
+
+                {
+                    var q = DataLayer.Dataclass.Families.Where(M => M.FathersID == this.GirlsSide);
+                    if (q.Count() > 0)
+                        return q.First().Name;
+                    else
+                        return string.Empty;
+                }
+
+            }
+        }
     }
 
+     
 }
