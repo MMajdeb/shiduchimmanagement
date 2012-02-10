@@ -62,5 +62,26 @@ namespace DatingManagement.Properties {
                 return ((string)(this["ClienttestConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DEOHOME-PC\\MSSQLSERVER08;Initial Catalog=curentDating;Integrated Secu" +
+            "rity=True")]
+        public string ServercurentDatingConnectionString {
+            get {
+                return ((string)(this["ServercurentDatingConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\curentDating.sdf;Max Database Size=2047")]
+        public string ClientcurentDatingConnectionString {
+            get {
+                return ((string)(this["ClientcurentDatingConnectionString"]));
+            }
+        }
     }
 }

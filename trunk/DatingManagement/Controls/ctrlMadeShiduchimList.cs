@@ -268,17 +268,20 @@ namespace DatingManagement
                 SaveFileDialog savedlg = new SaveFileDialog();
                 // savedlg.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
                 savedlg.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
-                List<MadeShiduchim> data = new List<MadeShiduchim>();
-
-                for (int i = 0; i < grvList.DataRowCount; i++)
+                if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    data.Add((MadeShiduchim)grvList.GetRow(i));
-                }
+                    List<MadeShiduchim> data = new List<MadeShiduchim>();
 
-                XtraReport1 XReport = new XtraReport1();
-                XReport.LoadLayout(Utils.GetReportPath(DatingManagement.Utils.Reports.MadeShiduchim));
-                XReport.DataSource = data;
-                XReport.ExportToPdf(savedlg.FileName);
+                    for (int i = 0; i < grvList.DataRowCount; i++)
+                    {
+                        data.Add((MadeShiduchim)grvList.GetRow(i));
+                    }
+
+                    XtraReport1 XReport = new XtraReport1();
+                    XReport.LoadLayout(Utils.GetReportPath(DatingManagement.Utils.Reports.MadeShiduchim));
+                    XReport.DataSource = data;
+                    XReport.ExportToPdf(savedlg.FileName);
+                }
             }
         }
     }
