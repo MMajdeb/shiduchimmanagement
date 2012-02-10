@@ -42,12 +42,12 @@
             this.btnYeshivas = new DevExpress.XtraBars.BarButtonItem();
             this.btnBaisHamedresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnMadeShiduchim = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemReportDesigner = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.TabManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.barButtonItemReportDesigner = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabManager)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +60,6 @@
             // 
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.ExpandCollapseItem.Name = "";
-            this.ribbon.ExpandCollapseItem.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.btnFamilies,
@@ -83,7 +82,7 @@
             this.ribbonPage1});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.ribbon.SelectedPage = this.ribbonPage1;
-            this.ribbon.Size = new System.Drawing.Size(1133, 144);
+            this.ribbon.Size = new System.Drawing.Size(1133, 145);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnFamilies
@@ -192,6 +191,14 @@
             this.btnMadeShiduchim.Name = "btnMadeShiduchim";
             this.btnMadeShiduchim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMadeShiduchim_ItemClick);
             // 
+            // barButtonItemReportDesigner
+            // 
+            this.barButtonItemReportDesigner.Caption = "Report Designer";
+            this.barButtonItemReportDesigner.Id = 13;
+            this.barButtonItemReportDesigner.LargeGlyph = global::DatingManagement.Properties.Resources.notepad_32;
+            this.barButtonItemReportDesigner.Name = "barButtonItemReportDesigner";
+            this.barButtonItemReportDesigner.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemReportDesigner_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -224,22 +231,14 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 610);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 604);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1133, 25);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1133, 31);
             // 
             // TabManager
             // 
             this.TabManager.MdiParent = this;
-            // 
-            // barButtonItemReportDesigner
-            // 
-            this.barButtonItemReportDesigner.Caption = "Report Designer";
-            this.barButtonItemReportDesigner.Id = 13;
-            this.barButtonItemReportDesigner.LargeGlyph = global::DatingManagement.Properties.Resources.notepad_32;
-            this.barButtonItemReportDesigner.Name = "barButtonItemReportDesigner";
-            this.barButtonItemReportDesigner.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemReportDesigner_ItemClick);
             // 
             // MainForm
             // 
@@ -254,6 +253,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Shiduchim Management";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabManager)).EndInit();
