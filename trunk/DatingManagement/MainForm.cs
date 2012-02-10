@@ -56,7 +56,10 @@ namespace DatingManagement
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            btnFamilies.PerformClick();
+            // btnFamilies.PerformClick();
+            btnBoys.PerformClick();
+            btnGirls.PerformClick();
+                
         }
 
         private void btnBoys_ItemClick(object sender, ItemClickEventArgs e)

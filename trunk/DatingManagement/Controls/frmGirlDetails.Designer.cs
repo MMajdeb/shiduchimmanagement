@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -39,15 +40,12 @@
             this.SchoolComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.CampComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.BoysIDSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.boyBindingSource = new System.Windows.Forms.BindingSource();
+            this.boyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AgeTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.girlBindingSource = new System.Windows.Forms.BindingSource();
+            this.girlBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PictureTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.Gen_PictureTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.s_GUIDTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.EmailTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.Email2TextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.Email3TextEdit = new DevExpress.XtraEditors.TextEdit();
             this.BirthDateDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.FamilyTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.HeightComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -68,7 +66,6 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForHeight = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForEmail2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForBirthDate = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.ItemForGirlsName = new DevExpress.XtraLayout.LayoutControlItem();
@@ -83,12 +80,10 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.ItemForDor_Yeshurim = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForEmail3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForEmail = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForAge = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.familyBindingSource = new System.Windows.Forms.BindingSource();
+            this.familyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -193,9 +188,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Gen_PictureTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.s_GUIDTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmailTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Email2TextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Email3TextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthDateDateEdit.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthDateDateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FamilyTextEdit.Properties)).BeginInit();
@@ -217,7 +209,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForHeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForBirthDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForGirlsName)).BeginInit();
@@ -232,8 +223,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForDor_Yeshurim)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
@@ -345,9 +334,6 @@
             this.dataLayoutControl1.Controls.Add(this.PictureTextEdit);
             this.dataLayoutControl1.Controls.Add(this.Gen_PictureTextEdit);
             this.dataLayoutControl1.Controls.Add(this.s_GUIDTextEdit);
-            this.dataLayoutControl1.Controls.Add(this.EmailTextEdit);
-            this.dataLayoutControl1.Controls.Add(this.Email2TextEdit);
-            this.dataLayoutControl1.Controls.Add(this.Email3TextEdit);
             this.dataLayoutControl1.Controls.Add(this.BirthDateDateEdit);
             this.dataLayoutControl1.Controls.Add(this.FamilyTextEdit);
             this.dataLayoutControl1.Controls.Add(this.HeightComboBoxEdit);
@@ -472,33 +458,6 @@
             this.s_GUIDTextEdit.TabIndex = 13;
             this.s_GUIDTextEdit.Visible = false;
             // 
-            // EmailTextEdit
-            // 
-            this.EmailTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Email", true));
-            this.EmailTextEdit.Location = new System.Drawing.Point(12, 100);
-            this.EmailTextEdit.Name = "EmailTextEdit";
-            this.EmailTextEdit.Size = new System.Drawing.Size(131, 20);
-            this.EmailTextEdit.StyleController = this.dataLayoutControl1;
-            this.EmailTextEdit.TabIndex = 14;
-            // 
-            // Email2TextEdit
-            // 
-            this.Email2TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Email2", true));
-            this.Email2TextEdit.Location = new System.Drawing.Point(147, 100);
-            this.Email2TextEdit.Name = "Email2TextEdit";
-            this.Email2TextEdit.Size = new System.Drawing.Size(115, 20);
-            this.Email2TextEdit.StyleController = this.dataLayoutControl1;
-            this.Email2TextEdit.TabIndex = 15;
-            // 
-            // Email3TextEdit
-            // 
-            this.Email3TextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Email3", true));
-            this.Email3TextEdit.Location = new System.Drawing.Point(266, 100);
-            this.Email3TextEdit.Name = "Email3TextEdit";
-            this.Email3TextEdit.Size = new System.Drawing.Size(144, 20);
-            this.Email3TextEdit.StyleController = this.dataLayoutControl1;
-            this.Email3TextEdit.TabIndex = 16;
-            // 
             // BirthDateDateEdit
             // 
             this.BirthDateDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "BirthDate", true));
@@ -581,7 +540,7 @@
             // Dor_YeshurimTextEdit
             // 
             this.Dor_YeshurimTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Dor_Yeshurim", true));
-            this.Dor_YeshurimTextEdit.Location = new System.Drawing.Point(79, 124);
+            this.Dor_YeshurimTextEdit.Location = new System.Drawing.Point(79, 84);
             this.Dor_YeshurimTextEdit.Name = "Dor_YeshurimTextEdit";
             this.Dor_YeshurimTextEdit.Size = new System.Drawing.Size(331, 20);
             this.Dor_YeshurimTextEdit.StyleController = this.dataLayoutControl1;
@@ -706,7 +665,6 @@
             this.layoutControlGroup2.GroupBordersVisible = false;
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.ItemForHeight,
-            this.ItemForEmail2,
             this.ItemForBirthDate,
             this.emptySpaceItem1,
             this.ItemForGirlsName,
@@ -721,8 +679,6 @@
             this.layoutControlItem2,
             this.emptySpaceItem2,
             this.ItemForDor_Yeshurim,
-            this.ItemForEmail3,
-            this.ItemForEmail,
             this.ItemForAge});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
@@ -738,17 +694,6 @@
             this.ItemForHeight.Size = new System.Drawing.Size(239, 24);
             this.ItemForHeight.Text = "Height";
             this.ItemForHeight.TextSize = new System.Drawing.Size(63, 13);
-            // 
-            // ItemForEmail2
-            // 
-            this.ItemForEmail2.Control = this.Email2TextEdit;
-            this.ItemForEmail2.CustomizationFormText = "Email2";
-            this.ItemForEmail2.Location = new System.Drawing.Point(135, 72);
-            this.ItemForEmail2.Name = "ItemForEmail2";
-            this.ItemForEmail2.Size = new System.Drawing.Size(119, 40);
-            this.ItemForEmail2.Text = "Email2";
-            this.ItemForEmail2.TextLocation = DevExpress.Utils.Locations.Top;
-            this.ItemForEmail2.TextSize = new System.Drawing.Size(63, 13);
             // 
             // ItemForBirthDate
             // 
@@ -871,9 +816,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 136);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 96);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(402, 44);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(402, 84);
             this.emptySpaceItem2.Text = "emptySpaceItem2";
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -881,33 +826,11 @@
             // 
             this.ItemForDor_Yeshurim.Control = this.Dor_YeshurimTextEdit;
             this.ItemForDor_Yeshurim.CustomizationFormText = "Dor Yeshurim";
-            this.ItemForDor_Yeshurim.Location = new System.Drawing.Point(0, 112);
+            this.ItemForDor_Yeshurim.Location = new System.Drawing.Point(0, 72);
             this.ItemForDor_Yeshurim.Name = "ItemForDor_Yeshurim";
             this.ItemForDor_Yeshurim.Size = new System.Drawing.Size(402, 24);
             this.ItemForDor_Yeshurim.Text = "Dor Yeshurim";
             this.ItemForDor_Yeshurim.TextSize = new System.Drawing.Size(63, 13);
-            // 
-            // ItemForEmail3
-            // 
-            this.ItemForEmail3.Control = this.Email3TextEdit;
-            this.ItemForEmail3.CustomizationFormText = "Email3";
-            this.ItemForEmail3.Location = new System.Drawing.Point(254, 72);
-            this.ItemForEmail3.Name = "ItemForEmail3";
-            this.ItemForEmail3.Size = new System.Drawing.Size(148, 40);
-            this.ItemForEmail3.Text = "Email3";
-            this.ItemForEmail3.TextLocation = DevExpress.Utils.Locations.Top;
-            this.ItemForEmail3.TextSize = new System.Drawing.Size(63, 13);
-            // 
-            // ItemForEmail
-            // 
-            this.ItemForEmail.Control = this.EmailTextEdit;
-            this.ItemForEmail.CustomizationFormText = "Email";
-            this.ItemForEmail.Location = new System.Drawing.Point(0, 72);
-            this.ItemForEmail.Name = "ItemForEmail";
-            this.ItemForEmail.Size = new System.Drawing.Size(135, 40);
-            this.ItemForEmail.Text = "Email";
-            this.ItemForEmail.TextLocation = DevExpress.Utils.Locations.Top;
-            this.ItemForEmail.TextSize = new System.Drawing.Size(63, 13);
             // 
             // ItemForAge
             // 
@@ -1083,7 +1006,7 @@
             // 
             // CountryComboBoxEdit
             // 
-            this.CountryComboBoxEdit.Location = new System.Drawing.Point(461, 223);
+            this.CountryComboBoxEdit.Location = new System.Drawing.Point(461, 222);
             this.CountryComboBoxEdit.Name = "CountryComboBoxEdit";
             this.CountryComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
@@ -1094,7 +1017,7 @@
             // 
             // BaisHamedreshComboBoxEdit
             // 
-            this.BaisHamedreshComboBoxEdit.Location = new System.Drawing.Point(460, 287);
+            this.BaisHamedreshComboBoxEdit.Location = new System.Drawing.Point(460, 286);
             this.BaisHamedreshComboBoxEdit.Name = "BaisHamedreshComboBoxEdit";
             this.BaisHamedreshComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
@@ -1106,12 +1029,12 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(29, 360);
+            this.gridControl1.Location = new System.Drawing.Point(29, 359);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1});
-            this.gridControl1.Size = new System.Drawing.Size(660, 181);
+            this.gridControl1.Size = new System.Drawing.Size(660, 182);
             this.gridControl1.TabIndex = 25;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1179,7 +1102,7 @@
             // textEdit7
             // 
             this.textEdit7.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "LastName", true));
-            this.textEdit7.Location = new System.Drawing.Point(104, 79);
+            this.textEdit7.Location = new System.Drawing.Point(104, 78);
             this.textEdit7.Name = "textEdit7";
             this.textEdit7.Size = new System.Drawing.Size(187, 20);
             this.textEdit7.StyleController = this.dataLayoutControl3;
@@ -1188,7 +1111,7 @@
             // textEdit8
             // 
             this.textEdit8.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "FatherName", true));
-            this.textEdit8.Location = new System.Drawing.Point(375, 79);
+            this.textEdit8.Location = new System.Drawing.Point(375, 78);
             this.textEdit8.Name = "textEdit8";
             this.textEdit8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textEdit8.Size = new System.Drawing.Size(243, 20);
@@ -1198,7 +1121,7 @@
             // textEdit9
             // 
             this.textEdit9.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "MotherName", true));
-            this.textEdit9.Location = new System.Drawing.Point(104, 103);
+            this.textEdit9.Location = new System.Drawing.Point(104, 102);
             this.textEdit9.Name = "textEdit9";
             this.textEdit9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textEdit9.Size = new System.Drawing.Size(514, 20);
@@ -1208,7 +1131,7 @@
             // textEdit10
             // 
             this.textEdit10.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Address", true));
-            this.textEdit10.Location = new System.Drawing.Point(104, 175);
+            this.textEdit10.Location = new System.Drawing.Point(104, 174);
             this.textEdit10.Name = "textEdit10";
             this.textEdit10.Size = new System.Drawing.Size(514, 20);
             this.textEdit10.StyleController = this.dataLayoutControl3;
@@ -1217,7 +1140,7 @@
             // RegionComboBoxEdit
             // 
             this.RegionComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Region", true));
-            this.RegionComboBoxEdit.Location = new System.Drawing.Point(104, 151);
+            this.RegionComboBoxEdit.Location = new System.Drawing.Point(104, 150);
             this.RegionComboBoxEdit.Name = "RegionComboBoxEdit";
             this.RegionComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true)});
@@ -1228,7 +1151,7 @@
             // textEdit11
             // 
             this.textEdit11.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "City", true));
-            this.textEdit11.Location = new System.Drawing.Point(104, 199);
+            this.textEdit11.Location = new System.Drawing.Point(104, 198);
             this.textEdit11.Name = "textEdit11";
             this.textEdit11.Size = new System.Drawing.Size(514, 20);
             this.textEdit11.StyleController = this.dataLayoutControl3;
@@ -1237,7 +1160,7 @@
             // textEdit12
             // 
             this.textEdit12.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "State", true));
-            this.textEdit12.Location = new System.Drawing.Point(24, 263);
+            this.textEdit12.Location = new System.Drawing.Point(24, 262);
             this.textEdit12.Name = "textEdit12";
             this.textEdit12.Size = new System.Drawing.Size(145, 20);
             this.textEdit12.StyleController = this.dataLayoutControl3;
@@ -1246,7 +1169,7 @@
             // textEdit13
             // 
             this.textEdit13.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Zip", true));
-            this.textEdit13.Location = new System.Drawing.Point(173, 263);
+            this.textEdit13.Location = new System.Drawing.Point(173, 262);
             this.textEdit13.Name = "textEdit13";
             this.textEdit13.Size = new System.Drawing.Size(445, 20);
             this.textEdit13.StyleController = this.dataLayoutControl3;
@@ -1255,7 +1178,7 @@
             // textEdit14
             // 
             this.textEdit14.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "HomePhone1", true));
-            this.textEdit14.Location = new System.Drawing.Point(809, 111);
+            this.textEdit14.Location = new System.Drawing.Point(809, 110);
             this.textEdit14.Name = "textEdit14";
             this.textEdit14.Size = new System.Drawing.Size(133, 20);
             this.textEdit14.StyleController = this.dataLayoutControl3;
@@ -1264,7 +1187,7 @@
             // textEdit15
             // 
             this.textEdit15.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "HomePhone2", true));
-            this.textEdit15.Location = new System.Drawing.Point(809, 135);
+            this.textEdit15.Location = new System.Drawing.Point(809, 134);
             this.textEdit15.Name = "textEdit15";
             this.textEdit15.Size = new System.Drawing.Size(133, 20);
             this.textEdit15.StyleController = this.dataLayoutControl3;
@@ -1273,7 +1196,7 @@
             // textEdit16
             // 
             this.textEdit16.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "WorkPhone", true));
-            this.textEdit16.Location = new System.Drawing.Point(809, 303);
+            this.textEdit16.Location = new System.Drawing.Point(809, 302);
             this.textEdit16.Name = "textEdit16";
             this.textEdit16.Size = new System.Drawing.Size(133, 20);
             this.textEdit16.StyleController = this.dataLayoutControl3;
@@ -1282,7 +1205,7 @@
             // textEdit17
             // 
             this.textEdit17.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Pager", true));
-            this.textEdit17.Location = new System.Drawing.Point(809, 231);
+            this.textEdit17.Location = new System.Drawing.Point(809, 230);
             this.textEdit17.Name = "textEdit17";
             this.textEdit17.Size = new System.Drawing.Size(133, 20);
             this.textEdit17.StyleController = this.dataLayoutControl3;
@@ -1291,7 +1214,7 @@
             // textEdit18
             // 
             this.textEdit18.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Mobile", true));
-            this.textEdit18.Location = new System.Drawing.Point(809, 183);
+            this.textEdit18.Location = new System.Drawing.Point(809, 182);
             this.textEdit18.Name = "textEdit18";
             this.textEdit18.Size = new System.Drawing.Size(133, 20);
             this.textEdit18.StyleController = this.dataLayoutControl3;
@@ -1300,7 +1223,7 @@
             // textEdit19
             // 
             this.textEdit19.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Fax", true));
-            this.textEdit19.Location = new System.Drawing.Point(809, 399);
+            this.textEdit19.Location = new System.Drawing.Point(809, 398);
             this.textEdit19.Name = "textEdit19";
             this.textEdit19.Size = new System.Drawing.Size(133, 20);
             this.textEdit19.StyleController = this.dataLayoutControl3;
@@ -1309,7 +1232,7 @@
             // textEdit20
             // 
             this.textEdit20.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Work", true));
-            this.textEdit20.Location = new System.Drawing.Point(104, 127);
+            this.textEdit20.Location = new System.Drawing.Point(104, 126);
             this.textEdit20.Name = "textEdit20";
             this.textEdit20.Size = new System.Drawing.Size(514, 20);
             this.textEdit20.StyleController = this.dataLayoutControl3;
@@ -1318,7 +1241,7 @@
             // textEdit21
             // 
             this.textEdit21.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "E_Mail", true));
-            this.textEdit21.Location = new System.Drawing.Point(710, 423);
+            this.textEdit21.Location = new System.Drawing.Point(710, 422);
             this.textEdit21.Name = "textEdit21";
             this.textEdit21.Size = new System.Drawing.Size(133, 20);
             this.textEdit21.StyleController = this.dataLayoutControl3;
@@ -1327,7 +1250,7 @@
             // comboBoxEdit4
             // 
             this.comboBoxEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Rating", true));
-            this.comboBoxEdit4.Location = new System.Drawing.Point(60, 311);
+            this.comboBoxEdit4.Location = new System.Drawing.Point(60, 310);
             this.comboBoxEdit4.Name = "comboBoxEdit4";
             this.comboBoxEdit4.Size = new System.Drawing.Size(558, 20);
             this.comboBoxEdit4.StyleController = this.dataLayoutControl3;
@@ -1336,7 +1259,7 @@
             // textEdit22
             // 
             this.textEdit22.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Email", true));
-            this.textEdit22.Location = new System.Drawing.Point(710, 447);
+            this.textEdit22.Location = new System.Drawing.Point(710, 446);
             this.textEdit22.Name = "textEdit22";
             this.textEdit22.Size = new System.Drawing.Size(133, 20);
             this.textEdit22.StyleController = this.dataLayoutControl3;
@@ -1345,7 +1268,7 @@
             // textEdit23
             // 
             this.textEdit23.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Email2", true));
-            this.textEdit23.Location = new System.Drawing.Point(710, 471);
+            this.textEdit23.Location = new System.Drawing.Point(710, 470);
             this.textEdit23.Name = "textEdit23";
             this.textEdit23.Size = new System.Drawing.Size(133, 20);
             this.textEdit23.StyleController = this.dataLayoutControl3;
@@ -1354,7 +1277,7 @@
             // textEdit24
             // 
             this.textEdit24.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Email3", true));
-            this.textEdit24.Location = new System.Drawing.Point(710, 495);
+            this.textEdit24.Location = new System.Drawing.Point(710, 494);
             this.textEdit24.Name = "textEdit24";
             this.textEdit24.Size = new System.Drawing.Size(133, 20);
             this.textEdit24.StyleController = this.dataLayoutControl3;
@@ -1363,7 +1286,7 @@
             // textEdit25
             // 
             this.textEdit25.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "BaisHamedresh", true));
-            this.textEdit25.Location = new System.Drawing.Point(104, 287);
+            this.textEdit25.Location = new System.Drawing.Point(104, 286);
             this.textEdit25.Name = "textEdit25";
             this.textEdit25.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textEdit25.Size = new System.Drawing.Size(352, 20);
@@ -1373,7 +1296,7 @@
             // textEdit26
             // 
             this.textEdit26.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Country", true));
-            this.textEdit26.Location = new System.Drawing.Point(104, 223);
+            this.textEdit26.Location = new System.Drawing.Point(104, 222);
             this.textEdit26.Name = "textEdit26";
             this.textEdit26.Size = new System.Drawing.Size(353, 20);
             this.textEdit26.StyleController = this.dataLayoutControl3;
@@ -1382,7 +1305,7 @@
             // textEdit27
             // 
             this.textEdit27.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "HomePhone3", true));
-            this.textEdit27.Location = new System.Drawing.Point(809, 159);
+            this.textEdit27.Location = new System.Drawing.Point(809, 158);
             this.textEdit27.Name = "textEdit27";
             this.textEdit27.Size = new System.Drawing.Size(133, 20);
             this.textEdit27.StyleController = this.dataLayoutControl3;
@@ -1391,7 +1314,7 @@
             // textEdit28
             // 
             this.textEdit28.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "WorkPhone2", true));
-            this.textEdit28.Location = new System.Drawing.Point(809, 279);
+            this.textEdit28.Location = new System.Drawing.Point(809, 278);
             this.textEdit28.Name = "textEdit28";
             this.textEdit28.Size = new System.Drawing.Size(133, 20);
             this.textEdit28.StyleController = this.dataLayoutControl3;
@@ -1400,7 +1323,7 @@
             // textEdit29
             // 
             this.textEdit29.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "CountryPhone1", true));
-            this.textEdit29.Location = new System.Drawing.Point(809, 327);
+            this.textEdit29.Location = new System.Drawing.Point(809, 326);
             this.textEdit29.Name = "textEdit29";
             this.textEdit29.Size = new System.Drawing.Size(133, 20);
             this.textEdit29.StyleController = this.dataLayoutControl3;
@@ -1409,7 +1332,7 @@
             // textEdit30
             // 
             this.textEdit30.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "CountryPhone2", true));
-            this.textEdit30.Location = new System.Drawing.Point(809, 351);
+            this.textEdit30.Location = new System.Drawing.Point(809, 350);
             this.textEdit30.Name = "textEdit30";
             this.textEdit30.Size = new System.Drawing.Size(133, 20);
             this.textEdit30.StyleController = this.dataLayoutControl3;
@@ -1418,7 +1341,7 @@
             // textEdit31
             // 
             this.textEdit31.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Pager2", true));
-            this.textEdit31.Location = new System.Drawing.Point(809, 255);
+            this.textEdit31.Location = new System.Drawing.Point(809, 254);
             this.textEdit31.Name = "textEdit31";
             this.textEdit31.Size = new System.Drawing.Size(133, 20);
             this.textEdit31.StyleController = this.dataLayoutControl3;
@@ -1427,7 +1350,7 @@
             // textEdit32
             // 
             this.textEdit32.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "InternationalPhone", true));
-            this.textEdit32.Location = new System.Drawing.Point(809, 375);
+            this.textEdit32.Location = new System.Drawing.Point(809, 374);
             this.textEdit32.Name = "textEdit32";
             this.textEdit32.Size = new System.Drawing.Size(133, 20);
             this.textEdit32.StyleController = this.dataLayoutControl3;
@@ -1436,7 +1359,7 @@
             // textEdit33
             // 
             this.textEdit33.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Mobile2", true));
-            this.textEdit33.Location = new System.Drawing.Point(809, 207);
+            this.textEdit33.Location = new System.Drawing.Point(809, 206);
             this.textEdit33.Name = "textEdit33";
             this.textEdit33.Size = new System.Drawing.Size(133, 20);
             this.textEdit33.StyleController = this.dataLayoutControl3;
@@ -1549,7 +1472,7 @@
             this.layoutControlGroup11.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup11.Name = "layoutControlGroup4";
             this.layoutControlGroup11.OptionsItemText.TextAlignMode = DevExpress.XtraLayout.TextAlignModeGroup.AlignLocal;
-            this.layoutControlGroup11.Size = new System.Drawing.Size(934, 471);
+            this.layoutControlGroup11.Size = new System.Drawing.Size(934, 472);
             this.layoutControlGroup11.Text = "Family Information";
             // 
             // layoutControlItem13
@@ -1636,7 +1559,7 @@
             this.layoutControlGroup12.Location = new System.Drawing.Point(674, 0);
             this.layoutControlGroup12.Name = "layoutControlGroup5";
             this.layoutControlGroup12.OptionsItemText.TextAlignMode = DevExpress.XtraLayout.TextAlignModeGroup.AlignLocal;
-            this.layoutControlGroup12.Size = new System.Drawing.Size(260, 471);
+            this.layoutControlGroup12.Size = new System.Drawing.Size(260, 472);
             this.layoutControlGroup12.Text = "Contact";
             // 
             // layoutControlItem20
@@ -1707,7 +1630,7 @@
             this.layoutControlItem26.CustomizationFormText = "Email3";
             this.layoutControlItem26.Location = new System.Drawing.Point(0, 384);
             this.layoutControlItem26.Name = "ItemForEmail3";
-            this.layoutControlItem26.Size = new System.Drawing.Size(236, 43);
+            this.layoutControlItem26.Size = new System.Drawing.Size(236, 44);
             this.layoutControlItem26.Text = "Email3";
             this.layoutControlItem26.TextLocation = DevExpress.Utils.Locations.Right;
             this.layoutControlItem26.TextSize = new System.Drawing.Size(95, 13);
@@ -1884,7 +1807,7 @@
             this.layoutControlGroup6.Location = new System.Drawing.Point(0, 256);
             this.layoutControlGroup6.Name = "layoutControlGroup4";
             this.layoutControlGroup6.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlGroup6.Size = new System.Drawing.Size(674, 215);
+            this.layoutControlGroup6.Size = new System.Drawing.Size(674, 216);
             this.layoutControlGroup6.Text = "Mechitunem";
             // 
             // layoutControlItem12
@@ -1893,7 +1816,7 @@
             this.layoutControlItem12.CustomizationFormText = "layoutControlItem1";
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem12.Name = "layoutControlItem1";
-            this.layoutControlItem12.Size = new System.Drawing.Size(664, 185);
+            this.layoutControlItem12.Size = new System.Drawing.Size(664, 186);
             this.layoutControlItem12.Text = "layoutControlItem1";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextToControlDistance = 0;
@@ -1971,9 +1894,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Gen_PictureTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.s_GUIDTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmailTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Email2TextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Email3TextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthDateDateEdit.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthDateDateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FamilyTextEdit.Properties)).EndInit();
@@ -1995,7 +1915,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForHeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForBirthDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForGirlsName)).EndInit();
@@ -2010,8 +1929,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForDor_Yeshurim)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
@@ -2117,9 +2034,6 @@
         private DevExpress.XtraEditors.TextEdit PictureTextEdit;
         private DevExpress.XtraEditors.TextEdit Gen_PictureTextEdit;
         private DevExpress.XtraEditors.TextEdit s_GUIDTextEdit;
-        private DevExpress.XtraEditors.TextEdit EmailTextEdit;
-        private DevExpress.XtraEditors.TextEdit Email2TextEdit;
-        private DevExpress.XtraEditors.TextEdit Email3TextEdit;
         private DevExpress.XtraEditors.DateEdit BirthDateDateEdit;
         private DevExpress.XtraEditors.TextEdit FamilyTextEdit;
         private DevExpress.XtraEditors.ComboBoxEdit HeightComboBoxEdit;
@@ -2132,12 +2046,9 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem ItemForAge;
         private DevExpress.XtraLayout.LayoutControlItem ItemForHeight;
-        private DevExpress.XtraLayout.LayoutControlItem ItemForEmail;
-        private DevExpress.XtraLayout.LayoutControlItem ItemForEmail2;
         private DevExpress.XtraLayout.LayoutControlItem ItemForBirthDate;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.LayoutControlItem ItemForEmail3;
         private System.Windows.Forms.BindingSource girlBindingSource;
         private DevExpress.XtraEditors.SpinEdit GirlsIDSpinEdit;
         private DevExpress.XtraEditors.TextEdit GirlsNameTextEdit;
