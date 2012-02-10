@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18.25, 15.75" name="ShiduchimDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18.25, 16.375" name="ShiduchimDB">
   <DataContextMoniker Name="/ShiduchimDBDataContext" />
   <nestedChildShapes>
     <classShape Id="e3c1522b-19b7-4943-88a6-af0805207e59" absoluteBounds="6.75, 0.75, 2, 1.5785953776041666">
@@ -14,16 +14,16 @@
         <elementListCompartment Id="4f39ca31-141b-4072-a4b0-ac732958f615" absoluteBounds="6.765, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="582ba2c4-6977-4ebf-94c9-cd9a0c825ac2" absoluteBounds="0.625, 11, 2, 1.5785953776041666">
+    <classShape Id="582ba2c4-6977-4ebf-94c9-cd9a0c825ac2" absoluteBounds="0.5, 8.625, 2, 1.5785953776041666">
       <DataClassMoniker Name="/ShiduchimDBDataContext/Country" />
       <nestedChildShapes>
-        <elementListCompartment Id="39b5413b-f8b8-4491-9e80-6022f770e034" absoluteBounds="0.64000000000000012, 11.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="39b5413b-f8b8-4491-9e80-6022f770e034" absoluteBounds="0.51500000000000012, 9.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="485b3483-1cb0-4b9d-9bb3-d237839796e6" absoluteBounds="0.5, 8.375, 2, 2.7324039713541666">
+    <classShape Id="485b3483-1cb0-4b9d-9bb3-d237839796e6" absoluteBounds="0.5, 4.875, 2, 2.7324039713541666">
       <DataClassMoniker Name="/ShiduchimDBDataContext/MadeShiduchim" />
       <nestedChildShapes>
-        <elementListCompartment Id="9c6d550f-0ef7-46dd-b988-e571c2de4657" absoluteBounds="0.51500000000000057, 8.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9c6d550f-0ef7-46dd-b988-e571c2de4657" absoluteBounds="0.51500000000000057, 5.3350000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="7be6f8b2-f99d-4afd-aa0e-3e5a0232eb6d" absoluteBounds="13.375, 0.625, 2, 2.3478011067708335">
@@ -50,22 +50,22 @@
         <elementListCompartment Id="ed586a06-0e9e-45c4-bb71-49af225fd3c5" absoluteBounds="10.515, 4.335, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="eaf6ddeb-06e2-491f-942c-251bd2bae0c9" absoluteBounds="6.25, 8.625, 2, 1.5785953776041666">
+    <classShape Id="eaf6ddeb-06e2-491f-942c-251bd2bae0c9" absoluteBounds="4, 9.5, 2, 1.5785953776041666">
       <DataClassMoniker Name="/ShiduchimDBDataContext/Camp" />
       <nestedChildShapes>
-        <elementListCompartment Id="62d801cd-ff16-42fa-b26e-3d45f14e4ee2" absoluteBounds="6.265, 9.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="62d801cd-ff16-42fa-b26e-3d45f14e4ee2" absoluteBounds="4.015, 9.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e0507394-c1be-4013-97e7-54ff80e3e954" absoluteBounds="3.75, 10, 2, 2.1554996744791666">
+    <classShape Id="e0507394-c1be-4013-97e7-54ff80e3e954" absoluteBounds="4, 6.625, 2, 2.1554996744791666">
       <DataClassMoniker Name="/ShiduchimDBDataContext/Duplicate" />
       <nestedChildShapes>
-        <elementListCompartment Id="cbf3959d-ac8c-4e7c-9b97-26ce4ecc79ba" absoluteBounds="3.765, 10.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cbf3959d-ac8c-4e7c-9b97-26ce4ecc79ba" absoluteBounds="4.0150000000000006, 7.0850000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7f7bdb7b-917a-4f08-bc29-31ee6b3b7efc" absoluteBounds="7.375, 11, 2, 4.4631168619791666">
+    <classShape Id="7f7bdb7b-917a-4f08-bc29-31ee6b3b7efc" absoluteBounds="4, 11.625, 2, 4.4631168619791666">
       <DataClassMoniker Name="/ShiduchimDBDataContext/Girl" />
       <nestedChildShapes>
-        <elementListCompartment Id="05a959a0-551f-4399-ad81-eb7adf95f07e" absoluteBounds="7.3900000000000006, 11.46, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="05a959a0-551f-4399-ad81-eb7adf95f07e" absoluteBounds="4.0150000000000006, 12.085, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="7a26e972-85a7-419d-ba0d-0f48820ee3a0" absoluteBounds="2.5, 1.625, 2, 1.5785953776041666">
@@ -105,7 +105,7 @@
         <classShapeMoniker Id="2a5b4df6-400d-4ab3-8615-d5e2f7224c51" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(16 : 11.7651684570312); (9.375 : 11.7651684570312)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(16 : 12.0776684570312); (6 : 12.0776684570312)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ShiduchimDBDataContext/Family/Family_Girl" />
       <nodes>
         <classShapeMoniker Id="d62a6dee-1f94-4412-adf3-e945c18c210f" />

@@ -202,19 +202,21 @@ namespace DatingManagement
             {
                 SaveFileDialog savedlg = new SaveFileDialog();
                 // savedlg.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
-                savedlg.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
-                List<Family> data = new List<Family>();
-
-                for (int i = 0; i < grvList.DataRowCount; i++)
+                savedlg.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
+                if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    data.Add((Family)grvList.GetRow(i));
+                    List<Family> data = new List<Family>();
+
+                    for (int i = 0; i < grvList.DataRowCount; i++)
+                    {
+                        data.Add((Family)grvList.GetRow(i));
+                    }
+
+                    XtraReport1 XReport = new XtraReport1();
+                    XReport.LoadLayout(Utils.GetReportPath(DatingManagement.Utils.Reports.FamilyReport));
+                    XReport.DataSource = data;
+                    XReport.ExportToPdf(savedlg.FileName);
                 }
-
-                XtraReport1 XReport = new XtraReport1();
-                XReport.LoadLayout(Utils.GetReportPath(DatingManagement.Utils.Reports.FamilyReport));
-                XReport.DataSource = data;
-                XReport.ExportToPdf(savedlg.FileName);
-
             }
         }
 

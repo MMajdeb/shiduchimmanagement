@@ -213,22 +213,25 @@ namespace DatingManagement
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (File.Exists(Utils.GetReportPath(DatingManagement.Utils.Reports.MadeShiduchim)))
+            if (File.Exists(Utils.GetReportPath(DatingManagement.Utils.Reports.GirlsReport)))
             {
                 SaveFileDialog savedlg = new SaveFileDialog();
                 // savedlg.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
-                savedlg.Filter = "xls files (*.xls)|*.xls|All files (*.*)|*.*";
-                List<Girl> data = new List<Girl>();
-
-                for (int i = 0; i < grvList.DataRowCount; i++)
+                savedlg.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
+                if (savedlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    data.Add((Girl)grvList.GetRow(i));
-                }
+                    List<Girl> data = new List<Girl>();
 
-                XtraReport1 XReport = new XtraReport1();
-                XReport.LoadLayout(Utils.GetReportPath(DatingManagement.Utils.Reports.GirlsReport));
-                XReport.DataSource = data;
-                XReport.ExportToPdf(savedlg.FileName);
+                    for (int i = 0; i < grvList.DataRowCount; i++)
+                    {
+                        data.Add((Girl)grvList.GetRow(i));
+                    }
+
+                    XtraReport1 XReport = new XtraReport1();
+                    XReport.LoadLayout(Utils.GetReportPath(DatingManagement.Utils.Reports.GirlsReport));
+                    XReport.DataSource = data;
+                    XReport.ExportToPdf(savedlg.FileName);
+                }
             }
         }
 
@@ -239,7 +242,7 @@ namespace DatingManagement
 
         private void barButtonItemPrintPreview_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (File.Exists(Utils.GetReportPath(DatingManagement.Utils.Reports.MadeShiduchim)))
+            if (File.Exists(Utils.GetReportPath(DatingManagement.Utils.Reports.GirlsReport)))
             {
 
                 List<Girl> data = new List<Girl>();
