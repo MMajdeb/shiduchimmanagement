@@ -37,8 +37,8 @@ namespace DatingManagement.Controls
                 if (File.Exists(Utils.GetReportPath(reportName)))
                 {
 
-                    FileStream strLayout = new FileStream(Utils.GetReportPath(reportName), FileMode.Open);
-                    rep.LoadLayout(strLayout);
+                    //FileStream strLayout = new FileStream(Utils.GetReportPath(reportName), FileMode.OpenOrCreate);
+                    rep.LoadLayout(Utils.GetReportPath(reportName));
                 }
 
                 rep.DataSource = GetReportDataPreview(reportName);
@@ -153,6 +153,9 @@ namespace DatingManagement.Controls
             System.IO.MemoryStream str = new System.IO.MemoryStream();
 
             XtraReport xtra = xrDesignPanel1.Report;
+            if (File.Exists(Utils.GetReportPath(reportName)))
+                File.Delete(Utils.GetReportPath(reportName));
+
             xtra.SaveLayout(Utils.GetReportPath(reportName));
 
             xrDesignPanel1.ReportState = ReportState.Opened;
