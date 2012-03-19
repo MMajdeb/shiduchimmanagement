@@ -99,20 +99,26 @@ namespace DatingManagement
             // grcList
             // 
             this.grcList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grcList.Location = new System.Drawing.Point(0, 42);
+            this.grcList.Location = new System.Drawing.Point(0, 40);
             this.grcList.MainView = this.grvList;
             this.grcList.Name = "grcList";
             this.grcList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
             this.repositoryItemCheckEdit1});
             this.grcList.ShowOnlyPredefinedDetails = true;
-            this.grcList.Size = new System.Drawing.Size(1216, 739);
+            this.grcList.Size = new System.Drawing.Size(1216, 741);
             this.grcList.TabIndex = 0;
             this.grcList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvList});
             // 
             // grvList
             // 
+            this.grvList.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvList.Appearance.FocusedRow.Options.UseFont = true;
+            this.grvList.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvList.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grvList.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvList.Appearance.Row.Options.UseFont = true;
             this.grvList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
@@ -342,7 +348,7 @@ namespace DatingManagement
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1216, 42);
+            this.barDockControlTop.Size = new System.Drawing.Size(1216, 40);
             // 
             // barDockControlBottom
             // 
@@ -355,15 +361,15 @@ namespace DatingManagement
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 739);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 741);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1216, 42);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 739);
+            this.barDockControlRight.Location = new System.Drawing.Point(1216, 40);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 741);
             // 
             // dockManager1
             // 
@@ -394,9 +400,9 @@ namespace DatingManagement
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.ctrlFamilyDetails1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(1210, 355);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(1208, 356);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // ctrlFamilyDetails1
@@ -406,7 +412,7 @@ namespace DatingManagement
             this.ctrlFamilyDetails1.Location = new System.Drawing.Point(0, 0);
             this.ctrlFamilyDetails1.Name = "ctrlFamilyDetails1";
             this.ctrlFamilyDetails1.Presenter = null;
-            this.ctrlFamilyDetails1.Size = new System.Drawing.Size(1210, 355);
+            this.ctrlFamilyDetails1.Size = new System.Drawing.Size(1208, 356);
             this.ctrlFamilyDetails1.TabIndex = 6;
             // 
             // repositoryItemDateEdit1
@@ -421,14 +427,14 @@ namespace DatingManagement
             // gridControlLite
             // 
             this.gridControlLite.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlLite.Location = new System.Drawing.Point(0, 42);
+            this.gridControlLite.Location = new System.Drawing.Point(0, 40);
             this.gridControlLite.MainView = this.gridView1;
             this.gridControlLite.Name = "gridControlLite";
             this.gridControlLite.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit2,
             this.repositoryItemCheckEdit2});
             this.gridControlLite.ShowOnlyPredefinedDetails = true;
-            this.gridControlLite.Size = new System.Drawing.Size(1216, 739);
+            this.gridControlLite.Size = new System.Drawing.Size(1216, 741);
             this.gridControlLite.TabIndex = 6;
             this.gridControlLite.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
