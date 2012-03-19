@@ -40,8 +40,8 @@ namespace DatingManagement
         }
         private void LoadLocalLists()
         {
-            view.FillListInGrid("BoysSide", "Name", "FathersID", Dataclass.Families.ToList());
-            view.FillListInGrid("GirlsSide", "Name", "FathersID", Dataclass.Families.ToList());
+            view.FillListInGrid("BoysSide", "Name", "FathersID", Dataclass.Families.OrderBy(F=>F.FatherName).ToList());
+            view.FillListInGrid("GirlsSide", "Name", "FathersID", Dataclass.Families.OrderBy(F=>F.FatherName).ToList());
         }
 
         public void Add()

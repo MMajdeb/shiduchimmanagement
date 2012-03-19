@@ -22,7 +22,7 @@ namespace DatingManagement
         {
             view = _view;
 
-            this.RegionList = this.Dataclass.Regions.ToList();
+            this.RegionList = this.Dataclass.Regions.OrderBy(F => F.Region1).ToList();
         }
 
         public void HandleLoadForm()

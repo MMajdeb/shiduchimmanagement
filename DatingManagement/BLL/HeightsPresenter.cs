@@ -22,7 +22,7 @@ namespace DatingManagement
         {
             view = _view;
 
-            this.HeightList = this.Dataclass.Heights.ToList();
+            this.HeightList = this.Dataclass.Heights.OrderBy(O => O.Height1).ToList();
         }
 
         public void HandleLoadForm()

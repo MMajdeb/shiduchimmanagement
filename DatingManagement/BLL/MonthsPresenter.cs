@@ -22,7 +22,7 @@ namespace DatingManagement
         {
             view = _view;
 
-            this.MonthList = this.Dataclass.Months.ToList();
+            this.MonthList = this.Dataclass.Months.OrderBy(F => F.Month1).ToList();
         }
 
         public void HandleLoadForm()

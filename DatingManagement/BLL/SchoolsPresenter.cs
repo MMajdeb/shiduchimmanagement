@@ -22,7 +22,7 @@ namespace DatingManagement
         {
             view = _view;
 
-            this.SchoolList = this.Dataclass.Schools.ToList();
+            this.SchoolList = this.Dataclass.Schools.OrderBy(F => F.School1).ToList();
         }
 
         public void HandleLoadForm()

@@ -22,11 +22,12 @@ namespace DatingManagement
         {
             view = _view;
 
-            this.CampList = this.Dataclass.Camps.ToList();
+           
         }
 
         public void HandleLoadForm()
         {
+            this.CampList = this.Dataclass.Camps.OrderBy(O=>O.Camp1).ToList();
             view.SetDataSource(CampList, false);
 
         }
