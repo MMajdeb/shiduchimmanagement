@@ -22,11 +22,12 @@ namespace DatingManagement
         {
             view = _view;
 
-            this.CountryList = this.Dataclass.Countries.ToList();
+
         }
 
         public void HandleLoadForm()
         {
+            this.CountryList = this.Dataclass.Countries.OrderBy(O=>O.Country1).ToList();
             view.SetDataSource(CountryList, false);
 
         }

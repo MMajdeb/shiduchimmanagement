@@ -41,7 +41,7 @@ namespace DatingManagement
         {
             this.Dataclass = new ShiduchimDBDataContext(DataLayer.ConnectionString);
             this.FamilyList = null;
-            this.FamilyList = this.Dataclass.Families.ToList();
+            this.FamilyList = this.Dataclass.Families.OrderBy(F => F.FatherName).ToList();
 
             view.SetDataSource(FamilyList, false);
 
@@ -192,12 +192,12 @@ namespace DatingManagement
 
             detailsView.LoadFormLayout();
             detailsView.SetPermissions();
-            detailsView.LoadRegions(Dataclass.Regions.Select(R => R.Region1).Distinct().ToList());
-            detailsView.LoadCountries(Dataclass.Countries.Select(R => R.Country1).Distinct().ToList());
-            detailsView.LoadHamedresh(Dataclass.BaisHamedreshes.Select(R => R.BaisHamedresh1).Distinct().ToList());
-            detailsView.LoadHeight(Dataclass.Heights.Select(R => R.Height1).Distinct().ToList());
-            detailsView.LoadYeshiva(Dataclass.Yeshivas.Select(R => R.Yeshiva1).Distinct().ToList());
-            detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.Select(R => R.BaisHamedresh1).Distinct().ToList());
+
+            detailsView.LoadRegions(Dataclass.Regions.OrderBy(S => S.Region1).Select(R => R.Region1).Distinct().ToList());
+            detailsView.LoadCountries(Dataclass.Countries.OrderBy(S => S.Country1).Select(R => R.Country1).Distinct().ToList());
+            detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.OrderBy(S => S.BaisHamedresh1).Select(R => R.BaisHamedresh1).Distinct().ToList());
+            detailsView.LoadYeshiva(Dataclass.Yeshivas.OrderBy(S => S.Yeshiva1).Select(R => R.Yeshiva1).Distinct().ToList());
+            detailsView.LoadHeight(Dataclass.Heights.OrderBy(S => S.Height1).Select(R => R.Height1).Distinct().ToList());
         }
 
         private void RefreshDetailsForm()

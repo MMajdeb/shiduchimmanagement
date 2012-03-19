@@ -22,7 +22,7 @@ namespace DatingManagement
         {
             view = _view;
 
-            this.YeshivaList = this.Dataclass.Yeshivas.ToList();
+            this.YeshivaList = this.Dataclass.Yeshivas.OrderBy(F => F.Yeshiva1).ToList();
         }
 
         public void HandleLoadForm()

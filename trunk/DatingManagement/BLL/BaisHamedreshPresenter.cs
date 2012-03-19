@@ -22,11 +22,12 @@ namespace DatingManagement
         {
             view = _view;
 
-            this.BaisHamedreshList = this.Dataclass.BaisHamedreshes.ToList();
+           
         }
 
         public void HandleLoadForm()
         {
+            this.BaisHamedreshList = this.Dataclass.BaisHamedreshes.OrderBy(R=>R.BaisHamedresh1).ToList();
             view.SetDataSource(BaisHamedreshList, false);
 
         }

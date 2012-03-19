@@ -38,7 +38,7 @@ namespace DatingManagement
 
         public void HandleLoadForm()
         {
-            this.GirlList = this.Dataclass.Girls.ToList();
+            this.GirlList = this.Dataclass.Girls.OrderBy(G => G.GirlsName).ToList();
 
             view.SetDataSource(GirlList, false);
 
@@ -207,17 +207,17 @@ namespace DatingManagement
 
             detailsView.LoadFormLayout();
             detailsView.SetPermissions();
-            detailsView.FillFamilyList("Name", "FathersID", Dataclass.Families.ToList());
+            detailsView.FillFamilyList("Name", "FathersID", Dataclass.Families.OrderBy(F=>F.FatherName).ToList());
 
-            detailsView.LoadRegions(Dataclass.Regions.Select(R => R.Region1).Distinct().ToList());
-            detailsView.LoadCountries(Dataclass.Countries.Select(R => R.Country1).Distinct().ToList());
-            detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.Select(R => R.BaisHamedresh1).Distinct().ToList());
-            detailsView.LoadYeshiva(Dataclass.Yeshivas.Select(R => R.Yeshiva1).Distinct().ToList());
+            detailsView.LoadRegions(Dataclass.Regions.OrderBy(S=>S.Region1).Select(R => R.Region1).Distinct().ToList());
+            detailsView.LoadCountries(Dataclass.Countries.OrderBy(S=>S.Country1).Select(R => R.Country1).Distinct().ToList());
+            detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.OrderBy(S=>S.BaisHamedresh1).Select(R => R.BaisHamedresh1).Distinct().ToList());
+            detailsView.LoadYeshiva(Dataclass.Yeshivas.OrderBy(S=>S.Yeshiva1).Select(R => R.Yeshiva1).Distinct().ToList());
 
-            detailsView.LoadHeight(Dataclass.Heights.Select(R => R.Height1).Distinct().ToList());
-            detailsView.LoadSchools(Dataclass.Schools.Select(R => R.School1).Distinct().ToList());
-            detailsView.LoadSeminary(Dataclass.Seminarys.Select(R => R.Seminary1).Distinct().ToList());
-            detailsView.LoadCamps(Dataclass.Camps.Select(R => R.Camp1).Distinct().ToList());
+            detailsView.LoadHeight(Dataclass.Heights.OrderBy(S=>S.Height1).Select(R => R.Height1).Distinct().ToList());
+            detailsView.LoadSchools(Dataclass.Schools.OrderBy(S=>S.School1).Select(R => R.School1).Distinct().ToList());
+            detailsView.LoadSeminary(Dataclass.Seminarys.OrderBy(S=>S.Seminary1).Select(R => R.Seminary1).Distinct().ToList());
+            detailsView.LoadCamps(Dataclass.Camps.OrderBy(S=>S.Camp1).Select(R => R.Camp1).Distinct().ToList());
 
         }
 
@@ -228,14 +228,16 @@ namespace DatingManagement
             detailsView.LoadFormLayout();
             detailsView.SetPermissions();
 
-            detailsView.LoadRegions(Dataclass.Regions.Select(R => R.Region1).Distinct().ToList());
-            detailsView.LoadCountries(Dataclass.Countries.Select(R => R.Country1).Distinct().ToList());
-            detailsView.LoadHeight(Dataclass.Heights.Select(R => R.Height1).Distinct().ToList());
-            detailsView.LoadYeshiva(Dataclass.Yeshivas.Select(R => R.Yeshiva1).Distinct().ToList());
-            detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.Select(R => R.BaisHamedresh1).Distinct().ToList());
+      
+            detailsView.LoadRegions(Dataclass.Regions.OrderBy(S => S.Region1).Select(R => R.Region1).Distinct().ToList());
+            detailsView.LoadCountries(Dataclass.Countries.OrderBy(S => S.Country1).Select(R => R.Country1).Distinct().ToList());
+            detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.OrderBy(S => S.BaisHamedresh1).Select(R => R.BaisHamedresh1).Distinct().ToList());
+            detailsView.LoadYeshiva(Dataclass.Yeshivas.OrderBy(S => S.Yeshiva1).Select(R => R.Yeshiva1).Distinct().ToList());
 
-            detailsView.LoadHeight(Dataclass.Heights.Select(R => R.Height1).Distinct().ToList());
-            detailsView.LoadYeshiva(Dataclass.Yeshivas.Select(R => R.Yeshiva1).Distinct().ToList());
+            detailsView.LoadHeight(Dataclass.Heights.OrderBy(S => S.Height1).Select(R => R.Height1).Distinct().ToList());
+            detailsView.LoadSchools(Dataclass.Schools.OrderBy(S => S.School1).Select(R => R.School1).Distinct().ToList());
+            detailsView.LoadSeminary(Dataclass.Seminarys.OrderBy(S => S.Seminary1).Select(R => R.Seminary1).Distinct().ToList());
+            detailsView.LoadCamps(Dataclass.Camps.OrderBy(S => S.Camp1).Select(R => R.Camp1).Distinct().ToList());
 
             // detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.Select(R => R.BaisHamedresh1).Distinct().ToList());
         }
