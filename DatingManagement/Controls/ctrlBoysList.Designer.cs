@@ -51,6 +51,7 @@ namespace DatingManagement
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnSave = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemClienti = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -72,7 +73,6 @@ namespace DatingManagement
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.barButtonItemPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.grcList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -106,6 +106,12 @@ namespace DatingManagement
             // 
             // grvList
             // 
+            this.grvList.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
+            this.grvList.Appearance.FocusedRow.Options.UseFont = true;
+            this.grvList.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
+            this.grvList.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grvList.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
+            this.grvList.Appearance.Row.Options.UseFont = true;
             this.grvList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn5,
@@ -124,6 +130,8 @@ namespace DatingManagement
             this.grvList.OptionsView.ShowAutoFilterRow = true;
             this.grvList.OptionsView.ShowFooter = true;
             this.grvList.OptionsView.ShowGroupPanel = false;
+            this.grvList.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.grvList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grvList_FocusedRowChanged);
             this.grvList.DoubleClick += new System.EventHandler(this.grvList_DoubleClick);
             // 
@@ -132,11 +140,12 @@ namespace DatingManagement
             this.gridColumn1.Caption = "Name";
             this.gridColumn1.FieldName = "Name";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
             this.gridColumn1.SummaryItem.DisplayFormat = "Total Boys";
             this.gridColumn1.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Custom;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 150;
+            this.gridColumn1.Width = 200;
             // 
             // gridColumn5
             // 
@@ -148,7 +157,7 @@ namespace DatingManagement
             this.gridColumn5.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 1;
-            this.gridColumn5.Width = 250;
+            this.gridColumn5.Width = 175;
             // 
             // gridColumn2
             // 
@@ -159,7 +168,7 @@ namespace DatingManagement
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
-            this.gridColumn2.Width = 150;
+            this.gridColumn2.Width = 154;
             // 
             // gridColumn3
             // 
@@ -168,7 +177,7 @@ namespace DatingManagement
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
-            this.gridColumn3.Width = 80;
+            this.gridColumn3.Width = 82;
             // 
             // gridColumn4
             // 
@@ -177,7 +186,7 @@ namespace DatingManagement
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
-            this.gridColumn4.Width = 80;
+            this.gridColumn4.Width = 120;
             // 
             // gridColumn6
             // 
@@ -186,7 +195,7 @@ namespace DatingManagement
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 50;
+            this.gridColumn6.Width = 30;
             // 
             // gridColumn7
             // 
@@ -195,7 +204,7 @@ namespace DatingManagement
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
-            this.gridColumn7.Width = 55;
+            this.gridColumn7.Width = 35;
             // 
             // gridColumn8
             // 
@@ -206,7 +215,7 @@ namespace DatingManagement
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 7;
-            this.gridColumn8.Width = 347;
+            this.gridColumn8.Width = 368;
             // 
             // repositoryItemTextEdit1
             // 
@@ -299,6 +308,13 @@ namespace DatingManagement
             this.barButtonItemClienti.Id = 5;
             this.barButtonItemClienti.Name = "barButtonItemClienti";
             this.barButtonItemClienti.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItemPrintPreview
+            // 
+            this.barButtonItemPrintPreview.Caption = "Print Preview";
+            this.barButtonItemPrintPreview.Id = 8;
+            this.barButtonItemPrintPreview.Name = "barButtonItemPrintPreview";
+            this.barButtonItemPrintPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPrintPreview_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -507,13 +523,6 @@ namespace DatingManagement
             // 
             this.repositoryItemCheckEdit2.AutoHeight = false;
             this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
-            // 
-            // barButtonItemPrintPreview
-            // 
-            this.barButtonItemPrintPreview.Caption = "Print Preview";
-            this.barButtonItemPrintPreview.Id = 8;
-            this.barButtonItemPrintPreview.Name = "barButtonItemPrintPreview";
-            this.barButtonItemPrintPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPrintPreview_ItemClick);
             // 
             // ctrlBoysList
             // 

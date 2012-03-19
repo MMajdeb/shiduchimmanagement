@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -38,9 +39,9 @@
             this.CampComboBoxEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnOpenFamily = new DevExpress.XtraEditors.SimpleButton();
             this.FathersIDLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
-            this.girlBindingSource = new System.Windows.Forms.BindingSource();
+            this.girlBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BoysIDSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.boyBindingSource = new System.Windows.Forms.BindingSource();
+            this.boyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AgeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.PictureTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.Gen_PictureTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -85,7 +86,7 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.familyBindingSource = new System.Windows.Forms.BindingSource();
+            this.familyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -198,35 +199,35 @@
             // 
             // SeminaryComboBoxEdit
             // 
-            this.SeminaryComboBoxEdit.Location = new System.Drawing.Point(619, 134);
+            this.SeminaryComboBoxEdit.Location = new System.Drawing.Point(658, 149);
             this.SeminaryComboBoxEdit.Name = "SeminaryComboBoxEdit";
             this.SeminaryComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.SeminaryComboBoxEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.SeminaryComboBoxEdit.Size = new System.Drawing.Size(280, 20);
+            this.SeminaryComboBoxEdit.Size = new System.Drawing.Size(241, 20);
             this.SeminaryComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.SeminaryComboBoxEdit.TabIndex = 36;
             this.SeminaryComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.SeminaryComboBoxEdit_SelectedIndexChanged);
             // 
             // SchoolComboBoxEdit
             // 
-            this.SchoolComboBoxEdit.Location = new System.Drawing.Point(619, 62);
+            this.SchoolComboBoxEdit.Location = new System.Drawing.Point(658, 67);
             this.SchoolComboBoxEdit.Name = "SchoolComboBoxEdit";
             this.SchoolComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
-            this.SchoolComboBoxEdit.Size = new System.Drawing.Size(280, 20);
+            this.SchoolComboBoxEdit.Size = new System.Drawing.Size(241, 20);
             this.SchoolComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.SchoolComboBoxEdit.TabIndex = 37;
             this.SchoolComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.SchoolComboBoxEdit_SelectedIndexChanged);
             // 
             // CampComboBoxEdit
             // 
-            this.CampComboBoxEdit.Location = new System.Drawing.Point(557, 216);
+            this.CampComboBoxEdit.Location = new System.Drawing.Point(596, 241);
             this.CampComboBoxEdit.Name = "CampComboBoxEdit";
             this.CampComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.CampComboBoxEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.CampComboBoxEdit.Size = new System.Drawing.Size(342, 20);
+            this.CampComboBoxEdit.Size = new System.Drawing.Size(303, 20);
             this.CampComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.CampComboBoxEdit.TabIndex = 35;
             this.CampComboBoxEdit.SelectedIndexChanged += new System.EventHandler(this.CampComboBoxEdit_SelectedIndexChanged);
@@ -244,9 +245,11 @@
             // FathersIDLookUpEdit
             // 
             this.FathersIDLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "FathersID", true));
-            this.FathersIDLookUpEdit.Location = new System.Drawing.Point(79, 12);
+            this.FathersIDLookUpEdit.Location = new System.Drawing.Point(118, 12);
             this.FathersIDLookUpEdit.Name = "FathersIDLookUpEdit";
-            this.FathersIDLookUpEdit.Size = new System.Drawing.Size(407, 20);
+            this.FathersIDLookUpEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FathersIDLookUpEdit.Properties.Appearance.Options.UseFont = true;
+            this.FathersIDLookUpEdit.Size = new System.Drawing.Size(368, 25);
             this.FathersIDLookUpEdit.StyleController = this.dataLayoutControl1;
             this.FathersIDLookUpEdit.TabIndex = 4;
             this.FathersIDLookUpEdit.EditValueChanged += new System.EventHandler(this.FathersIDLookUpEdit_EditValueChanged);
@@ -277,9 +280,11 @@
             // AgeTextEdit
             // 
             this.AgeTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Age", true));
-            this.AgeTextEdit.Location = new System.Drawing.Point(619, 86);
+            this.AgeTextEdit.Location = new System.Drawing.Point(658, 91);
             this.AgeTextEdit.Name = "AgeTextEdit";
-            this.AgeTextEdit.Size = new System.Drawing.Size(280, 20);
+            this.AgeTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AgeTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.AgeTextEdit.Size = new System.Drawing.Size(241, 25);
             this.AgeTextEdit.StyleController = this.dataLayoutControl1;
             this.AgeTextEdit.TabIndex = 7;
             // 
@@ -317,11 +322,13 @@
             // 
             this.BirthDateDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "BirthDate", true));
             this.BirthDateDateEdit.EditValue = new System.DateTime(2012, 1, 4, 0, 0, 0, 0);
-            this.BirthDateDateEdit.Location = new System.Drawing.Point(79, 60);
+            this.BirthDateDateEdit.Location = new System.Drawing.Point(118, 70);
             this.BirthDateDateEdit.Name = "BirthDateDateEdit";
+            this.BirthDateDateEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BirthDateDateEdit.Properties.Appearance.Options.UseFont = true;
             this.BirthDateDateEdit.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.BirthDateDateEdit.Size = new System.Drawing.Size(407, 20);
+            this.BirthDateDateEdit.Size = new System.Drawing.Size(368, 25);
             this.BirthDateDateEdit.StyleController = this.dataLayoutControl1;
             this.BirthDateDateEdit.TabIndex = 17;
             this.BirthDateDateEdit.EditValueChanged += new System.EventHandler(this.BirthDateDateEdit_EditValueChanged);
@@ -339,11 +346,13 @@
             // HeightComboBoxEdit
             // 
             this.HeightComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Height", true));
-            this.HeightComboBoxEdit.Location = new System.Drawing.Point(79, 84);
+            this.HeightComboBoxEdit.Location = new System.Drawing.Point(118, 99);
             this.HeightComboBoxEdit.Name = "HeightComboBoxEdit";
+            this.HeightComboBoxEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeightComboBoxEdit.Properties.Appearance.Options.UseFont = true;
             this.HeightComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
-            this.HeightComboBoxEdit.Size = new System.Drawing.Size(151, 20);
+            this.HeightComboBoxEdit.Size = new System.Drawing.Size(112, 25);
             this.HeightComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.HeightComboBoxEdit.TabIndex = 19;
             // 
@@ -365,67 +374,81 @@
             // GirlsNameTextEdit
             // 
             this.GirlsNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "GirlsName", true));
-            this.GirlsNameTextEdit.Location = new System.Drawing.Point(79, 36);
+            this.GirlsNameTextEdit.Location = new System.Drawing.Point(118, 41);
             this.GirlsNameTextEdit.Name = "GirlsNameTextEdit";
+            this.GirlsNameTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GirlsNameTextEdit.Properties.Appearance.Options.UseFont = true;
             this.GirlsNameTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.GirlsNameTextEdit.Size = new System.Drawing.Size(407, 20);
+            this.GirlsNameTextEdit.Size = new System.Drawing.Size(368, 25);
             this.GirlsNameTextEdit.StyleController = this.dataLayoutControl1;
             this.GirlsNameTextEdit.TabIndex = 23;
             // 
             // WorkTextEdit
             // 
             this.WorkTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Work", true));
-            this.WorkTextEdit.Location = new System.Drawing.Point(619, 158);
+            this.WorkTextEdit.Location = new System.Drawing.Point(658, 173);
             this.WorkTextEdit.Name = "WorkTextEdit";
-            this.WorkTextEdit.Size = new System.Drawing.Size(280, 20);
+            this.WorkTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WorkTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.WorkTextEdit.Size = new System.Drawing.Size(241, 25);
             this.WorkTextEdit.StyleController = this.dataLayoutControl1;
             this.WorkTextEdit.TabIndex = 27;
             // 
             // GraduateTextEdit
             // 
             this.GraduateTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Graduate", true));
-            this.GraduateTextEdit.Location = new System.Drawing.Point(301, 84);
+            this.GraduateTextEdit.Location = new System.Drawing.Point(340, 99);
             this.GraduateTextEdit.Name = "GraduateTextEdit";
-            this.GraduateTextEdit.Size = new System.Drawing.Size(185, 20);
+            this.GraduateTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GraduateTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.GraduateTextEdit.Size = new System.Drawing.Size(146, 25);
             this.GraduateTextEdit.StyleController = this.dataLayoutControl1;
             this.GraduateTextEdit.TabIndex = 28;
             // 
             // Dor_YeshurimTextEdit
             // 
             this.Dor_YeshurimTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Dor_Yeshurim", true));
-            this.Dor_YeshurimTextEdit.Location = new System.Drawing.Point(79, 108);
+            this.Dor_YeshurimTextEdit.Location = new System.Drawing.Point(118, 128);
             this.Dor_YeshurimTextEdit.Name = "Dor_YeshurimTextEdit";
-            this.Dor_YeshurimTextEdit.Size = new System.Drawing.Size(407, 20);
+            this.Dor_YeshurimTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dor_YeshurimTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.Dor_YeshurimTextEdit.Size = new System.Drawing.Size(368, 25);
             this.Dor_YeshurimTextEdit.StyleController = this.dataLayoutControl1;
             this.Dor_YeshurimTextEdit.TabIndex = 32;
             // 
             // CampTextEdit
             // 
             this.CampTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Camp", true));
-            this.CampTextEdit.Location = new System.Drawing.Point(557, 192);
+            this.CampTextEdit.Location = new System.Drawing.Point(596, 212);
             this.CampTextEdit.Name = "CampTextEdit";
+            this.CampTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CampTextEdit.Properties.Appearance.Options.UseFont = true;
             this.CampTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.CampTextEdit.Size = new System.Drawing.Size(342, 20);
+            this.CampTextEdit.Size = new System.Drawing.Size(303, 25);
             this.CampTextEdit.StyleController = this.dataLayoutControl1;
             this.CampTextEdit.TabIndex = 34;
             // 
             // SchoolTextEdit
             // 
             this.SchoolTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "School", true));
-            this.SchoolTextEdit.Location = new System.Drawing.Point(619, 38);
+            this.SchoolTextEdit.Location = new System.Drawing.Point(658, 38);
             this.SchoolTextEdit.Name = "SchoolTextEdit";
+            this.SchoolTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SchoolTextEdit.Properties.Appearance.Options.UseFont = true;
             this.SchoolTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.SchoolTextEdit.Size = new System.Drawing.Size(280, 20);
+            this.SchoolTextEdit.Size = new System.Drawing.Size(241, 25);
             this.SchoolTextEdit.StyleController = this.dataLayoutControl1;
             this.SchoolTextEdit.TabIndex = 40;
             // 
             // SeminaryTextEdit
             // 
             this.SeminaryTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.girlBindingSource, "Seminary", true));
-            this.SeminaryTextEdit.Location = new System.Drawing.Point(619, 110);
+            this.SeminaryTextEdit.Location = new System.Drawing.Point(658, 120);
             this.SeminaryTextEdit.Name = "SeminaryTextEdit";
+            this.SeminaryTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SeminaryTextEdit.Properties.Appearance.Options.UseFont = true;
             this.SeminaryTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.SeminaryTextEdit.Size = new System.Drawing.Size(280, 20);
+            this.SeminaryTextEdit.Size = new System.Drawing.Size(241, 25);
             this.SeminaryTextEdit.StyleController = this.dataLayoutControl1;
             this.SeminaryTextEdit.TabIndex = 42;
             // 
@@ -543,38 +566,44 @@
             // 
             // ItemForFathersID
             // 
+            this.ItemForFathersID.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemForFathersID.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForFathersID.Control = this.FathersIDLookUpEdit;
             this.ItemForFathersID.CustomizationFormText = "Family";
             this.ItemForFathersID.Location = new System.Drawing.Point(0, 0);
             this.ItemForFathersID.Name = "ItemForFathersID";
-            this.ItemForFathersID.Size = new System.Drawing.Size(478, 24);
+            this.ItemForFathersID.Size = new System.Drawing.Size(478, 29);
             this.ItemForFathersID.Text = "Family:";
-            this.ItemForFathersID.TextSize = new System.Drawing.Size(63, 13);
+            this.ItemForFathersID.TextSize = new System.Drawing.Size(102, 18);
             // 
             // ItemForHeight
             // 
+            this.ItemForHeight.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemForHeight.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForHeight.Control = this.HeightComboBoxEdit;
             this.ItemForHeight.CustomizationFormText = "Height";
-            this.ItemForHeight.Location = new System.Drawing.Point(0, 72);
+            this.ItemForHeight.Location = new System.Drawing.Point(0, 87);
             this.ItemForHeight.Name = "ItemForHeight";
-            this.ItemForHeight.Size = new System.Drawing.Size(222, 24);
+            this.ItemForHeight.Size = new System.Drawing.Size(222, 29);
             this.ItemForHeight.Text = "Height";
-            this.ItemForHeight.TextSize = new System.Drawing.Size(63, 13);
+            this.ItemForHeight.TextSize = new System.Drawing.Size(102, 18);
             // 
             // ItemForBirthDate
             // 
+            this.ItemForBirthDate.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemForBirthDate.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForBirthDate.Control = this.BirthDateDateEdit;
             this.ItemForBirthDate.CustomizationFormText = "Birth Date";
-            this.ItemForBirthDate.Location = new System.Drawing.Point(0, 48);
+            this.ItemForBirthDate.Location = new System.Drawing.Point(0, 58);
             this.ItemForBirthDate.Name = "ItemForBirthDate";
-            this.ItemForBirthDate.Size = new System.Drawing.Size(478, 24);
+            this.ItemForBirthDate.Size = new System.Drawing.Size(478, 29);
             this.ItemForBirthDate.Text = "Birth Date";
-            this.ItemForBirthDate.TextSize = new System.Drawing.Size(63, 13);
+            this.ItemForBirthDate.TextSize = new System.Drawing.Size(102, 18);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(540, 170);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(540, 190);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(351, 10);
             this.emptySpaceItem1.Text = "emptySpaceItem1";
@@ -582,72 +611,84 @@
             // 
             // ItemForGirlsName
             // 
+            this.ItemForGirlsName.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemForGirlsName.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForGirlsName.Control = this.GirlsNameTextEdit;
             this.ItemForGirlsName.CustomizationFormText = "Girls Name";
-            this.ItemForGirlsName.Location = new System.Drawing.Point(0, 24);
+            this.ItemForGirlsName.Location = new System.Drawing.Point(0, 29);
             this.ItemForGirlsName.Name = "ItemForGirlsName";
-            this.ItemForGirlsName.Size = new System.Drawing.Size(478, 24);
+            this.ItemForGirlsName.Size = new System.Drawing.Size(478, 29);
             this.ItemForGirlsName.Text = "Girls Name";
-            this.ItemForGirlsName.TextSize = new System.Drawing.Size(63, 13);
+            this.ItemForGirlsName.TextSize = new System.Drawing.Size(102, 18);
             // 
             // ItemForSeminary
             // 
+            this.ItemForSeminary.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemForSeminary.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForSeminary.Control = this.SeminaryTextEdit;
             this.ItemForSeminary.CustomizationFormText = "Seminary";
-            this.ItemForSeminary.Location = new System.Drawing.Point(540, 98);
+            this.ItemForSeminary.Location = new System.Drawing.Point(540, 108);
             this.ItemForSeminary.Name = "ItemForSeminary";
-            this.ItemForSeminary.Size = new System.Drawing.Size(351, 24);
+            this.ItemForSeminary.Size = new System.Drawing.Size(351, 29);
             this.ItemForSeminary.Text = "Seminary";
-            this.ItemForSeminary.TextSize = new System.Drawing.Size(63, 13);
+            this.ItemForSeminary.TextSize = new System.Drawing.Size(102, 18);
             // 
             // ItemForWork
             // 
+            this.ItemForWork.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemForWork.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForWork.Control = this.WorkTextEdit;
             this.ItemForWork.CustomizationFormText = "Work";
-            this.ItemForWork.Location = new System.Drawing.Point(540, 146);
+            this.ItemForWork.Location = new System.Drawing.Point(540, 161);
             this.ItemForWork.Name = "ItemForWork";
-            this.ItemForWork.Size = new System.Drawing.Size(351, 24);
+            this.ItemForWork.Size = new System.Drawing.Size(351, 29);
             this.ItemForWork.Text = "Work";
-            this.ItemForWork.TextSize = new System.Drawing.Size(63, 13);
+            this.ItemForWork.TextSize = new System.Drawing.Size(102, 18);
             // 
             // ItemForGraduate
             // 
+            this.ItemForGraduate.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemForGraduate.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForGraduate.Control = this.GraduateTextEdit;
             this.ItemForGraduate.CustomizationFormText = "Graduate";
-            this.ItemForGraduate.Location = new System.Drawing.Point(222, 72);
+            this.ItemForGraduate.Location = new System.Drawing.Point(222, 87);
             this.ItemForGraduate.Name = "ItemForGraduate";
-            this.ItemForGraduate.Size = new System.Drawing.Size(256, 24);
+            this.ItemForGraduate.Size = new System.Drawing.Size(256, 29);
             this.ItemForGraduate.Text = "Graduate";
-            this.ItemForGraduate.TextSize = new System.Drawing.Size(63, 13);
+            this.ItemForGraduate.TextSize = new System.Drawing.Size(102, 18);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
             this.emptySpaceItem3.Location = new System.Drawing.Point(478, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(62, 180);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(62, 200);
             this.emptySpaceItem3.Text = "emptySpaceItem3";
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // ItemForAge
             // 
+            this.ItemForAge.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemForAge.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForAge.Control = this.AgeTextEdit;
             this.ItemForAge.CustomizationFormText = "Age";
-            this.ItemForAge.Location = new System.Drawing.Point(540, 74);
+            this.ItemForAge.Location = new System.Drawing.Point(540, 79);
             this.ItemForAge.Name = "ItemForAge";
-            this.ItemForAge.Size = new System.Drawing.Size(351, 24);
+            this.ItemForAge.Size = new System.Drawing.Size(351, 29);
             this.ItemForAge.Text = "Age";
-            this.ItemForAge.TextSize = new System.Drawing.Size(63, 13);
+            this.ItemForAge.TextSize = new System.Drawing.Size(102, 18);
             // 
             // ItemForSchool
             // 
+            this.ItemForSchool.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemForSchool.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForSchool.Control = this.SchoolTextEdit;
             this.ItemForSchool.CustomizationFormText = "School";
             this.ItemForSchool.Location = new System.Drawing.Point(540, 26);
             this.ItemForSchool.Name = "ItemForSchool";
-            this.ItemForSchool.Size = new System.Drawing.Size(351, 24);
+            this.ItemForSchool.Size = new System.Drawing.Size(351, 29);
             this.ItemForSchool.Text = "School";
-            this.ItemForSchool.TextSize = new System.Drawing.Size(63, 13);
+            this.ItemForSchool.TextSize = new System.Drawing.Size(102, 18);
             // 
             // layoutControlItem1
             // 
@@ -663,67 +704,71 @@
             // 
             // ItemForCamp
             // 
+            this.ItemForCamp.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemForCamp.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForCamp.Control = this.CampTextEdit;
             this.ItemForCamp.CustomizationFormText = "Camps";
-            this.ItemForCamp.Location = new System.Drawing.Point(478, 180);
+            this.ItemForCamp.Location = new System.Drawing.Point(478, 200);
             this.ItemForCamp.Name = "ItemForCamp";
-            this.ItemForCamp.Size = new System.Drawing.Size(413, 24);
+            this.ItemForCamp.Size = new System.Drawing.Size(413, 29);
             this.ItemForCamp.Text = "Camps";
-            this.ItemForCamp.TextSize = new System.Drawing.Size(63, 13);
+            this.ItemForCamp.TextSize = new System.Drawing.Size(102, 18);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.CampComboBoxEdit;
             this.layoutControlItem2.CustomizationFormText = " ";
-            this.layoutControlItem2.Location = new System.Drawing.Point(478, 204);
+            this.layoutControlItem2.Location = new System.Drawing.Point(478, 229);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(413, 24);
             this.layoutControlItem2.Text = " ";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(63, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(102, 13);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.SchoolComboBoxEdit;
             this.layoutControlItem3.CustomizationFormText = " ";
-            this.layoutControlItem3.Location = new System.Drawing.Point(540, 50);
+            this.layoutControlItem3.Location = new System.Drawing.Point(540, 55);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(351, 24);
             this.layoutControlItem3.Text = " ";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(63, 13);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(102, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.SeminaryComboBoxEdit;
             this.layoutControlItem4.CustomizationFormText = " ";
-            this.layoutControlItem4.Location = new System.Drawing.Point(540, 122);
+            this.layoutControlItem4.Location = new System.Drawing.Point(540, 137);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(351, 24);
             this.layoutControlItem4.Text = " ";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(63, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(102, 13);
             // 
             // ItemForDor_Yeshurim
             // 
+            this.ItemForDor_Yeshurim.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemForDor_Yeshurim.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForDor_Yeshurim.Control = this.Dor_YeshurimTextEdit;
             this.ItemForDor_Yeshurim.CustomizationFormText = "Dor Yeshurim";
-            this.ItemForDor_Yeshurim.Location = new System.Drawing.Point(0, 96);
+            this.ItemForDor_Yeshurim.Location = new System.Drawing.Point(0, 116);
             this.ItemForDor_Yeshurim.Name = "ItemForDor_Yeshurim";
-            this.ItemForDor_Yeshurim.Size = new System.Drawing.Size(478, 24);
+            this.ItemForDor_Yeshurim.Size = new System.Drawing.Size(478, 29);
             this.ItemForDor_Yeshurim.Text = "Dor Yeshurim";
-            this.ItemForDor_Yeshurim.TextSize = new System.Drawing.Size(63, 13);
+            this.ItemForDor_Yeshurim.TextSize = new System.Drawing.Size(102, 18);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.CustomizationFormText = "emptySpaceItem4";
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 228);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 253);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(891, 37);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(891, 12);
             this.emptySpaceItem4.Text = "emptySpaceItem4";
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 120);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 145);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(478, 108);
             this.emptySpaceItem2.Text = "emptySpaceItem2";
@@ -766,6 +811,8 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Appearance.Options.UseFont = true;
             this.btnCancel.Location = new System.Drawing.Point(558, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(171, 40);
@@ -775,6 +822,8 @@
             // 
             // btnSave
             // 
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Location = new System.Drawing.Point(735, 5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(171, 40);

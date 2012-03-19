@@ -52,6 +52,7 @@ namespace DatingManagement
             this.barButtonItemRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnSave = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemClienti = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemprintpreview = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -70,7 +71,6 @@ namespace DatingManagement
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.barButtonItemprintpreview = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.grcList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditBoysSide)).BeginInit();
@@ -92,7 +92,7 @@ namespace DatingManagement
             // grcList
             // 
             this.grcList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grcList.Location = new System.Drawing.Point(0, 42);
+            this.grcList.Location = new System.Drawing.Point(0, 40);
             this.grcList.MainView = this.grvList;
             this.grcList.Name = "grcList";
             this.grcList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -101,13 +101,21 @@ namespace DatingManagement
             this.repositoryItemLookUpEditBoysSide,
             this.repositoryItemLookUpEditGirlsSide});
             this.grcList.ShowOnlyPredefinedDetails = true;
-            this.grcList.Size = new System.Drawing.Size(889, 739);
+            this.grcList.Size = new System.Drawing.Size(889, 741);
             this.grcList.TabIndex = 0;
             this.grcList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvList});
             // 
             // grvList
             // 
+            this.grvList.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.grvList.Appearance.FocusedRow.Options.UseFont = true;
+            this.grvList.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.grvList.Appearance.GroupRow.Options.UseFont = true;
+            this.grvList.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grvList.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grvList.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.grvList.Appearance.Row.Options.UseFont = true;
             this.grvList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
@@ -308,12 +316,19 @@ namespace DatingManagement
             this.barButtonItemClienti.Name = "barButtonItemClienti";
             this.barButtonItemClienti.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
+            // barButtonItemprintpreview
+            // 
+            this.barButtonItemprintpreview.Caption = "Print Preview";
+            this.barButtonItemprintpreview.Id = 8;
+            this.barButtonItemprintpreview.Name = "barButtonItemprintpreview";
+            this.barButtonItemprintpreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemprintpreview_ItemClick);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(889, 42);
+            this.barDockControlTop.Size = new System.Drawing.Size(889, 40);
             // 
             // barDockControlBottom
             // 
@@ -326,15 +341,15 @@ namespace DatingManagement
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 739);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 741);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(889, 42);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 739);
+            this.barDockControlRight.Location = new System.Drawing.Point(889, 40);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 741);
             // 
             // dockManager1
             // 
@@ -358,7 +373,7 @@ namespace DatingManagement
             // gridControlLite
             // 
             this.gridControlLite.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlLite.Location = new System.Drawing.Point(0, 42);
+            this.gridControlLite.Location = new System.Drawing.Point(0, 40);
             this.gridControlLite.MainView = this.gridView1;
             this.gridControlLite.Name = "gridControlLite";
             this.gridControlLite.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -367,7 +382,7 @@ namespace DatingManagement
             this.repositoryItemLookUpEdit1,
             this.repositoryItemLookUpEdit2});
             this.gridControlLite.ShowOnlyPredefinedDetails = true;
-            this.gridControlLite.Size = new System.Drawing.Size(889, 739);
+            this.gridControlLite.Size = new System.Drawing.Size(889, 741);
             this.gridControlLite.TabIndex = 6;
             this.gridControlLite.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -475,13 +490,6 @@ namespace DatingManagement
             // 
             this.repositoryItemCheckEdit2.AutoHeight = false;
             this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
-            // 
-            // barButtonItemprintpreview
-            // 
-            this.barButtonItemprintpreview.Caption = "Print Preview";
-            this.barButtonItemprintpreview.Id = 8;
-            this.barButtonItemprintpreview.Name = "barButtonItemprintpreview";
-            this.barButtonItemprintpreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemprintpreview_ItemClick);
             // 
             // ctrlMadeShiduchimList
             // 
