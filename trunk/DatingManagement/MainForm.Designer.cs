@@ -37,7 +37,6 @@
             this.btnSchools = new DevExpress.XtraBars.BarButtonItem();
             this.btnCamps = new DevExpress.XtraBars.BarButtonItem();
             this.btnCountry = new DevExpress.XtraBars.BarButtonItem();
-            this.btnHeights = new DevExpress.XtraBars.BarButtonItem();
             this.btnSeminarys = new DevExpress.XtraBars.BarButtonItem();
             this.btnYeshivas = new DevExpress.XtraBars.BarButtonItem();
             this.btnBaisHamedresh = new DevExpress.XtraBars.BarButtonItem();
@@ -69,7 +68,6 @@
             this.btnSchools,
             this.btnCamps,
             this.btnCountry,
-            this.btnHeights,
             this.btnSeminarys,
             this.btnYeshivas,
             this.btnBaisHamedresh,
@@ -97,6 +95,8 @@
             // 
             // btnBoys
             // 
+            this.btnBoys.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBoys.Appearance.Options.UseFont = true;
             this.btnBoys.Caption = "Boys";
             this.btnBoys.Id = 2;
             this.btnBoys.LargeGlyph = global::DatingManagement.Properties.Resources.admin_2_32;
@@ -106,6 +106,8 @@
             // 
             // btnGirls
             // 
+            this.btnGirls.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGirls.Appearance.Options.UseFont = true;
             this.btnGirls.Caption = "Girls";
             this.btnGirls.Id = 3;
             this.btnGirls.LargeGlyph = global::DatingManagement.Properties.Resources.student_2_32;
@@ -148,14 +150,6 @@
             this.btnCountry.LargeWidth = 80;
             this.btnCountry.Name = "btnCountry";
             this.btnCountry.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCountry_ItemClick);
-            // 
-            // btnHeights
-            // 
-            this.btnHeights.Caption = "Heights";
-            this.btnHeights.Id = 8;
-            this.btnHeights.LargeGlyph = global::DatingManagement.Properties.Resources.pencil_32;
-            this.btnHeights.LargeWidth = 80;
-            this.btnHeights.Name = "btnHeights";
             // 
             // btnSeminarys
             // 
@@ -222,7 +216,6 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btnYeshivas);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnCamps);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnCountry);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnHeights);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnSeminarys);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnBaisHamedresh);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItemReportDesigner);
@@ -276,7 +269,6 @@
         private DevExpress.XtraBars.BarButtonItem btnCountry;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager TabManager;
-        private DevExpress.XtraBars.BarButtonItem btnHeights;
         private DevExpress.XtraBars.BarButtonItem btnSeminarys;
         private DevExpress.XtraBars.BarButtonItem btnYeshivas;
         private DevExpress.XtraBars.BarButtonItem btnBaisHamedresh;
