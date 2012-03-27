@@ -36,7 +36,7 @@ namespace DatingManagement
 
         public void HandleLoadForm()
         {
-            this.BoyList = this.Dataclass.Boys.OrderBy(B=>B.Name).ToList();
+            this.BoyList = this.Dataclass.Boys.OrderBy(B=>B.BoysName).ToList();
 
             view.SetDataSource(BoyList, false);
 
