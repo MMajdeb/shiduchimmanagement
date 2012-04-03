@@ -94,10 +94,8 @@ namespace DatingManagement
             frmBoysDetails frm = new frmBoysDetails();
             frm.Presenter = presenter;
             presenter.LoadDetailsView(frm);
-            presenter.Add();
+            presenter.Add(frm);
             frm.ShowDialog();
-
-
         }
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -111,7 +109,6 @@ namespace DatingManagement
 
         private void frmRoomDetails1_Load(object sender, EventArgs e)
         {
-
             this.presenter = new BoysListPresenter(this, ctrlBoysDetails1);
 
             this.ctrlBoysDetails1.Presenter = presenter;
@@ -236,9 +233,9 @@ namespace DatingManagement
             frmBoysDetails frm = new frmBoysDetails();
             frm.Presenter = presenter;
             presenter.LoadDetailsView(frm);
-            presenter.LoadPopupDetailsForm(detail);
+            presenter.LoadPopupDetailsForm(detail,frm);
             frm.ShowDialog();
-
+            presenter.HandleLoadForm();
         }
 
         private void barButtonItemPrintPreview_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -251,7 +248,6 @@ namespace DatingManagement
                 {
                     data.Add((Boy)grvList.GetRow(i));
                 }
-
                 XtraReport1 XReport = new XtraReport1();
                 XReport.LoadLayout(Utils.GetReportPath(DatingManagement.Utils.Reports.BoysReport));
                 XReport.DataSource = data;
@@ -259,8 +255,9 @@ namespace DatingManagement
             }
         }
 
+        public void ShowDetailsForm()
+        {
 
-
-
+        }
     }
 }

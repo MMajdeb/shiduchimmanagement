@@ -1068,7 +1068,7 @@
             // 
             // CountryComboBoxEdit
             // 
-            this.CountryComboBoxEdit.Location = new System.Drawing.Point(453, 252);
+            this.CountryComboBoxEdit.Location = new System.Drawing.Point(453, 253);
             this.CountryComboBoxEdit.Name = "CountryComboBoxEdit";
             this.CountryComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down)});
@@ -1079,7 +1079,7 @@
             // 
             // BaisHamedreshComboBoxEdit
             // 
-            this.BaisHamedreshComboBoxEdit.Location = new System.Drawing.Point(452, 331);
+            this.BaisHamedreshComboBoxEdit.Location = new System.Drawing.Point(452, 332);
             this.BaisHamedreshComboBoxEdit.Name = "BaisHamedreshComboBoxEdit";
             this.BaisHamedreshComboBoxEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Down, "", -1, true, true, true, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
@@ -1091,7 +1091,7 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(29, 414);
+            this.gridControl1.Location = new System.Drawing.Point(29, 415);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1170,7 +1170,7 @@
             // textEdit7
             // 
             this.textEdit7.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "LastName", true));
-            this.textEdit7.Location = new System.Drawing.Point(148, 78);
+            this.textEdit7.Location = new System.Drawing.Point(148, 79);
             this.textEdit7.Name = "textEdit7";
             this.textEdit7.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit7.Properties.Appearance.Options.UseFont = true;
@@ -1181,7 +1181,7 @@
             // textEdit8
             // 
             this.textEdit8.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "FatherName", true));
-            this.textEdit8.Location = new System.Drawing.Point(414, 78);
+            this.textEdit8.Location = new System.Drawing.Point(414, 79);
             this.textEdit8.Name = "textEdit8";
             this.textEdit8.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit8.Properties.Appearance.Options.UseFont = true;
@@ -1193,7 +1193,7 @@
             // textEdit9
             // 
             this.textEdit9.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "MotherName", true));
-            this.textEdit9.Location = new System.Drawing.Point(148, 107);
+            this.textEdit9.Location = new System.Drawing.Point(148, 108);
             this.textEdit9.Name = "textEdit9";
             this.textEdit9.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit9.Properties.Appearance.Options.UseFont = true;
@@ -1205,7 +1205,7 @@
             // textEdit10
             // 
             this.textEdit10.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Address", true));
-            this.textEdit10.Location = new System.Drawing.Point(148, 194);
+            this.textEdit10.Location = new System.Drawing.Point(148, 195);
             this.textEdit10.Name = "textEdit10";
             this.textEdit10.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit10.Properties.Appearance.Options.UseFont = true;
@@ -1216,7 +1216,7 @@
             // RegionComboBoxEdit
             // 
             this.RegionComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Region", true));
-            this.RegionComboBoxEdit.Location = new System.Drawing.Point(148, 165);
+            this.RegionComboBoxEdit.Location = new System.Drawing.Point(148, 166);
             this.RegionComboBoxEdit.Name = "RegionComboBoxEdit";
             this.RegionComboBoxEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegionComboBoxEdit.Properties.Appearance.Options.UseFont = true;
@@ -1229,7 +1229,7 @@
             // textEdit11
             // 
             this.textEdit11.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "City", true));
-            this.textEdit11.Location = new System.Drawing.Point(148, 223);
+            this.textEdit11.Location = new System.Drawing.Point(148, 224);
             this.textEdit11.Name = "textEdit11";
             this.textEdit11.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit11.Properties.Appearance.Options.UseFont = true;
@@ -1240,7 +1240,7 @@
             // textEdit12
             // 
             this.textEdit12.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "State", true));
-            this.textEdit12.Location = new System.Drawing.Point(24, 302);
+            this.textEdit12.Location = new System.Drawing.Point(24, 303);
             this.textEdit12.Name = "textEdit12";
             this.textEdit12.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit12.Properties.Appearance.Options.UseFont = true;
@@ -1251,7 +1251,7 @@
             // textEdit13
             // 
             this.textEdit13.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Zip", true));
-            this.textEdit13.Location = new System.Drawing.Point(170, 302);
+            this.textEdit13.Location = new System.Drawing.Point(170, 303);
             this.textEdit13.Name = "textEdit13";
             this.textEdit13.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit13.Properties.Appearance.Options.UseFont = true;
@@ -1262,7 +1262,7 @@
             // textEdit14
             // 
             this.textEdit14.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "HomePhone1", true));
-            this.textEdit14.Location = new System.Drawing.Point(851, 115);
+            this.textEdit14.Location = new System.Drawing.Point(851, 116);
             this.textEdit14.Name = "textEdit14";
             this.textEdit14.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit14.Properties.Appearance.Options.UseFont = true;
@@ -1273,7 +1273,7 @@
             // textEdit15
             // 
             this.textEdit15.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "HomePhone2", true));
-            this.textEdit15.Location = new System.Drawing.Point(851, 144);
+            this.textEdit15.Location = new System.Drawing.Point(851, 145);
             this.textEdit15.Name = "textEdit15";
             this.textEdit15.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit15.Properties.Appearance.Options.UseFont = true;
@@ -1284,7 +1284,7 @@
             // textEdit16
             // 
             this.textEdit16.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "WorkPhone", true));
-            this.textEdit16.Location = new System.Drawing.Point(851, 347);
+            this.textEdit16.Location = new System.Drawing.Point(851, 348);
             this.textEdit16.Name = "textEdit16";
             this.textEdit16.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit16.Properties.Appearance.Options.UseFont = true;
@@ -1295,7 +1295,7 @@
             // textEdit17
             // 
             this.textEdit17.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Pager", true));
-            this.textEdit17.Location = new System.Drawing.Point(851, 260);
+            this.textEdit17.Location = new System.Drawing.Point(851, 261);
             this.textEdit17.Name = "textEdit17";
             this.textEdit17.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit17.Properties.Appearance.Options.UseFont = true;
@@ -1306,7 +1306,7 @@
             // textEdit18
             // 
             this.textEdit18.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Mobile", true));
-            this.textEdit18.Location = new System.Drawing.Point(851, 202);
+            this.textEdit18.Location = new System.Drawing.Point(851, 203);
             this.textEdit18.Name = "textEdit18";
             this.textEdit18.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit18.Properties.Appearance.Options.UseFont = true;
@@ -1317,7 +1317,7 @@
             // textEdit19
             // 
             this.textEdit19.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Fax", true));
-            this.textEdit19.Location = new System.Drawing.Point(851, 463);
+            this.textEdit19.Location = new System.Drawing.Point(851, 464);
             this.textEdit19.Name = "textEdit19";
             this.textEdit19.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit19.Properties.Appearance.Options.UseFont = true;
@@ -1328,7 +1328,7 @@
             // textEdit20
             // 
             this.textEdit20.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Work", true));
-            this.textEdit20.Location = new System.Drawing.Point(148, 136);
+            this.textEdit20.Location = new System.Drawing.Point(148, 137);
             this.textEdit20.Name = "textEdit20";
             this.textEdit20.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit20.Properties.Appearance.Options.UseFont = true;
@@ -1339,7 +1339,7 @@
             // textEdit21
             // 
             this.textEdit21.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "E_Mail", true));
-            this.textEdit21.Location = new System.Drawing.Point(698, 492);
+            this.textEdit21.Location = new System.Drawing.Point(698, 493);
             this.textEdit21.Name = "textEdit21";
             this.textEdit21.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit21.Properties.Appearance.Options.UseFont = true;
@@ -1350,7 +1350,7 @@
             // comboBoxEdit4
             // 
             this.comboBoxEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Rating", true));
-            this.comboBoxEdit4.Location = new System.Drawing.Point(78, 360);
+            this.comboBoxEdit4.Location = new System.Drawing.Point(78, 361);
             this.comboBoxEdit4.Name = "comboBoxEdit4";
             this.comboBoxEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxEdit4.Properties.Appearance.Options.UseFont = true;
@@ -1361,7 +1361,7 @@
             // textEdit22
             // 
             this.textEdit22.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Email", true));
-            this.textEdit22.Location = new System.Drawing.Point(698, 521);
+            this.textEdit22.Location = new System.Drawing.Point(698, 522);
             this.textEdit22.Name = "textEdit22";
             this.textEdit22.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit22.Properties.Appearance.Options.UseFont = true;
@@ -1372,7 +1372,7 @@
             // textEdit23
             // 
             this.textEdit23.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Email2", true));
-            this.textEdit23.Location = new System.Drawing.Point(698, 550);
+            this.textEdit23.Location = new System.Drawing.Point(698, 551);
             this.textEdit23.Name = "textEdit23";
             this.textEdit23.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit23.Properties.Appearance.Options.UseFont = true;
@@ -1383,7 +1383,7 @@
             // textEdit24
             // 
             this.textEdit24.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Email3", true));
-            this.textEdit24.Location = new System.Drawing.Point(698, 579);
+            this.textEdit24.Location = new System.Drawing.Point(698, 580);
             this.textEdit24.Name = "textEdit24";
             this.textEdit24.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit24.Properties.Appearance.Options.UseFont = true;
@@ -1394,7 +1394,7 @@
             // textEdit25
             // 
             this.textEdit25.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "BaisHamedresh", true));
-            this.textEdit25.Location = new System.Drawing.Point(148, 331);
+            this.textEdit25.Location = new System.Drawing.Point(148, 332);
             this.textEdit25.Name = "textEdit25";
             this.textEdit25.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit25.Properties.Appearance.Options.UseFont = true;
@@ -1406,7 +1406,7 @@
             // textEdit26
             // 
             this.textEdit26.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Country", true));
-            this.textEdit26.Location = new System.Drawing.Point(148, 252);
+            this.textEdit26.Location = new System.Drawing.Point(148, 253);
             this.textEdit26.Name = "textEdit26";
             this.textEdit26.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit26.Properties.Appearance.Options.UseFont = true;
@@ -1417,7 +1417,7 @@
             // textEdit27
             // 
             this.textEdit27.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "HomePhone3", true));
-            this.textEdit27.Location = new System.Drawing.Point(851, 173);
+            this.textEdit27.Location = new System.Drawing.Point(851, 174);
             this.textEdit27.Name = "textEdit27";
             this.textEdit27.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit27.Properties.Appearance.Options.UseFont = true;
@@ -1428,7 +1428,7 @@
             // textEdit28
             // 
             this.textEdit28.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "WorkPhone2", true));
-            this.textEdit28.Location = new System.Drawing.Point(851, 318);
+            this.textEdit28.Location = new System.Drawing.Point(851, 319);
             this.textEdit28.Name = "textEdit28";
             this.textEdit28.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit28.Properties.Appearance.Options.UseFont = true;
@@ -1439,7 +1439,7 @@
             // textEdit29
             // 
             this.textEdit29.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "CountryPhone1", true));
-            this.textEdit29.Location = new System.Drawing.Point(851, 376);
+            this.textEdit29.Location = new System.Drawing.Point(851, 377);
             this.textEdit29.Name = "textEdit29";
             this.textEdit29.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit29.Properties.Appearance.Options.UseFont = true;
@@ -1450,7 +1450,7 @@
             // textEdit30
             // 
             this.textEdit30.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "CountryPhone2", true));
-            this.textEdit30.Location = new System.Drawing.Point(851, 405);
+            this.textEdit30.Location = new System.Drawing.Point(851, 406);
             this.textEdit30.Name = "textEdit30";
             this.textEdit30.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit30.Properties.Appearance.Options.UseFont = true;
@@ -1461,7 +1461,7 @@
             // textEdit31
             // 
             this.textEdit31.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Pager2", true));
-            this.textEdit31.Location = new System.Drawing.Point(851, 289);
+            this.textEdit31.Location = new System.Drawing.Point(851, 290);
             this.textEdit31.Name = "textEdit31";
             this.textEdit31.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit31.Properties.Appearance.Options.UseFont = true;
@@ -1472,7 +1472,7 @@
             // textEdit32
             // 
             this.textEdit32.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "InternationalPhone", true));
-            this.textEdit32.Location = new System.Drawing.Point(851, 434);
+            this.textEdit32.Location = new System.Drawing.Point(851, 435);
             this.textEdit32.Name = "textEdit32";
             this.textEdit32.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit32.Properties.Appearance.Options.UseFont = true;
@@ -1483,7 +1483,7 @@
             // textEdit33
             // 
             this.textEdit33.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.familyBindingSource, "Mobile2", true));
-            this.textEdit33.Location = new System.Drawing.Point(851, 231);
+            this.textEdit33.Location = new System.Drawing.Point(851, 232);
             this.textEdit33.Name = "textEdit33";
             this.textEdit33.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit33.Properties.Appearance.Options.UseFont = true;
@@ -1544,7 +1544,7 @@
             this.layoutControlGroup9});
             this.layoutControlGroup5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup5.Name = "layoutControlGroup1";
-            this.layoutControlGroup5.Size = new System.Drawing.Size(961, 640);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(961, 641);
             this.layoutControlGroup5.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup5.Text = "layoutControlGroup1";
             this.layoutControlGroup5.TextVisible = false;
@@ -1559,7 +1559,7 @@
             this.layoutControlItem1});
             this.layoutControlGroup9.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup9.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup9.Size = new System.Drawing.Size(941, 620);
+            this.layoutControlGroup9.Size = new System.Drawing.Size(941, 621);
             this.layoutControlGroup9.Text = "autoGeneratedGroup0";
             // 
             // tabbedControlGroup2
@@ -1569,7 +1569,7 @@
             this.tabbedControlGroup2.Name = "tabbedControlGroup1";
             this.tabbedControlGroup2.SelectedTabPage = this.layoutControlGroup11;
             this.tabbedControlGroup2.SelectedTabPageIndex = 0;
-            this.tabbedControlGroup2.Size = new System.Drawing.Size(941, 587);
+            this.tabbedControlGroup2.Size = new System.Drawing.Size(941, 588);
             this.tabbedControlGroup2.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup11});
             this.tabbedControlGroup2.Text = "tabbedControlGroup1";

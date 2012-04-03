@@ -94,7 +94,7 @@ namespace DatingManagement
             frmGirlDetails frm = new frmGirlDetails();
             frm.Presenter = presenter;
             presenter.LoadDetailsView(frm);
-            presenter.Add();
+            presenter.Add(frm);
             frm.ShowDialog();
         }
 
@@ -117,7 +117,7 @@ namespace DatingManagement
             presenter.LoadDetailsView(frm);
             presenter.LoadPopupDetailsForm(detail);
             frm.ShowDialog();
-
+            presenter.HandleLoadForm();
         }
 
         private void frmRoomDetails1_Load(object sender, EventArgs e)
