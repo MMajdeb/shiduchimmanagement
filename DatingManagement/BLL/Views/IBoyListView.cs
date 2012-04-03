@@ -22,7 +22,9 @@ namespace DatingManagement
 
         void LoadDetails();
          
-        void SetDataSource(List<DAL.Boy> BoyList, bool p); 
-        
+        void SetDataSource(List<DAL.Boy> BoyList, bool p);
+
+
+        void ShowDetailsForm();
     }
 }

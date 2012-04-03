@@ -242,6 +242,7 @@ namespace DatingManagement
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            presenter.RemoveNewAdded();
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
         }

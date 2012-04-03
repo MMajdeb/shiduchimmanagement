@@ -38,6 +38,7 @@ namespace DatingManagement
 
         public void HandleLoadForm()
         {
+            this.Dataclass = null;
             this.GirlList = this.Dataclass.Girls.OrderBy(G => G.GirlsName).ToList();
 
             view.SetDataSource(GirlList, false);
@@ -69,26 +70,27 @@ namespace DatingManagement
             detailsView.LoadDetails(selectedDetail, _selectedFamily);
         }
 
-        public void Add()
+        public void Add(IGirlDetailsView detailsViewForm)
         {
             if (IsUnsavedDataExists())
             {
-                if (view != null)
-                    view.DisplayMessage("Save first the new Girl",
-                                    Definitions.MESSAGEBOXTITLE.WARNING);
-                return;
+                //if (view != null)
+                //    view.DisplayMessage("Save first the new Girl",
+                //                    Definitions.MESSAGEBOXTITLE.WARNING);
+                RemoveNewAdded();
             }
             Girl cs = AddNewGirl();
-
             this.GirlList.Add(cs);
+            selectedDetail = cs;
             Family newFamily = new Family();
             newFamily.MotherName = string.Empty;
             newFamily.FatherName = string.Empty;
             newFamily.Girls.Add(cs);
             _selectedFamily = newFamily;
+
             this.Dataclass.Families.InsertOnSubmit(newFamily);
-            selectedDetail = cs;
-            detailsView.LoadDetails(selectedDetail, _selectedFamily);
+
+            detailsViewForm.LoadDetails(selectedDetail, _selectedFamily);
         }
 
         private Girl AddNewGirl()
@@ -161,7 +163,6 @@ namespace DatingManagement
             selectedDetail = details.First();
             detailsView.LoadDetails(selectedDetail);
             detailsView.ShowPanel();
-            detailsView.ShowPanel();
         }
 
         private void RefreDetailsForm()
@@ -173,7 +174,6 @@ namespace DatingManagement
         {
             if (view != null)
                 view.ResetChange();
-
         }
 
         public void RemoveNewAdded()
@@ -183,8 +183,7 @@ namespace DatingManagement
             {
                 Girl deletedObject = (Girl)q.First();
 
-                Dataclass.Girls.DeleteOnSubmit(deletedObject);
-
+                Dataclass.Families.DeleteOnSubmit(_selectedFamily);
                 GirlList.Remove(deletedObject);
             }
         }
@@ -207,17 +206,17 @@ namespace DatingManagement
 
             detailsView.LoadFormLayout();
             detailsView.SetPermissions();
-            detailsView.FillFamilyList("Name", "FathersID", Dataclass.Families.OrderBy(F=>F.FatherName).ToList());
+            detailsView.FillFamilyList("Name", "FathersID", Dataclass.Families.OrderBy(F => F.FatherName).ToList());
 
-            detailsView.LoadRegions(Dataclass.Regions.OrderBy(S=>S.Region1).Select(R => R.Region1).Distinct().ToList());
-            detailsView.LoadCountries(Dataclass.Countries.OrderBy(S=>S.Country1).Select(R => R.Country1).Distinct().ToList());
-            detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.OrderBy(S=>S.BaisHamedresh1).Select(R => R.BaisHamedresh1).Distinct().ToList());
-            detailsView.LoadYeshiva(Dataclass.Yeshivas.OrderBy(S=>S.Yeshiva1).Select(R => R.Yeshiva1).Distinct().ToList());
+            detailsView.LoadRegions(Dataclass.Regions.OrderBy(S => S.Region1).Select(R => R.Region1).Distinct().ToList());
+            detailsView.LoadCountries(Dataclass.Countries.OrderBy(S => S.Country1).Select(R => R.Country1).Distinct().ToList());
+            detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.OrderBy(S => S.BaisHamedresh1).Select(R => R.BaisHamedresh1).Distinct().ToList());
+            detailsView.LoadYeshiva(Dataclass.Yeshivas.OrderBy(S => S.Yeshiva1).Select(R => R.Yeshiva1).Distinct().ToList());
 
-            detailsView.LoadHeight(Dataclass.Heights.OrderBy(S=>S.Height1).Select(R => R.Height1).Distinct().ToList());
-            detailsView.LoadSchools(Dataclass.Schools.OrderBy(S=>S.School1).Select(R => R.School1).Distinct().ToList());
-            detailsView.LoadSeminary(Dataclass.Seminarys.OrderBy(S=>S.Seminary1).Select(R => R.Seminary1).Distinct().ToList());
-            detailsView.LoadCamps(Dataclass.Camps.OrderBy(S=>S.Camp1).Select(R => R.Camp1).Distinct().ToList());
+            detailsView.LoadHeight(Dataclass.Heights.OrderBy(S => S.Height1).Select(R => R.Height1).Distinct().ToList());
+            detailsView.LoadSchools(Dataclass.Schools.OrderBy(S => S.School1).Select(R => R.School1).Distinct().ToList());
+            detailsView.LoadSeminary(Dataclass.Seminarys.OrderBy(S => S.Seminary1).Select(R => R.Seminary1).Distinct().ToList());
+            detailsView.LoadCamps(Dataclass.Camps.OrderBy(S => S.Camp1).Select(R => R.Camp1).Distinct().ToList());
 
         }
 
@@ -228,7 +227,7 @@ namespace DatingManagement
             detailsView.LoadFormLayout();
             detailsView.SetPermissions();
 
-      
+
             detailsView.LoadRegions(Dataclass.Regions.OrderBy(S => S.Region1).Select(R => R.Region1).Distinct().ToList());
             detailsView.LoadCountries(Dataclass.Countries.OrderBy(S => S.Country1).Select(R => R.Country1).Distinct().ToList());
             detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.OrderBy(S => S.BaisHamedresh1).Select(R => R.BaisHamedresh1).Distinct().ToList());
@@ -250,7 +249,7 @@ namespace DatingManagement
         {
             if (detailsView != null)
             {
-                Add();
+                Add(detailsView);
                 detailsView.LoadDetails(selectedDetail);
             }
         }

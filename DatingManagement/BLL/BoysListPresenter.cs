@@ -36,7 +36,8 @@ namespace DatingManagement
 
         public void HandleLoadForm()
         {
-            this.BoyList = this.Dataclass.Boys.OrderBy(B=>B.BoysName).ToList();
+            this.Dataclass = null;
+            this.BoyList = this.Dataclass.Boys.OrderBy(B => B.BoysName).ToList();
 
             view.SetDataSource(BoyList, false);
 
@@ -73,18 +74,19 @@ namespace DatingManagement
             return cs;
         }
 
-        public void Add()
+        public void Add(IBoyDetailsView detailsViewForm)
         {
             if (IsUnsavedDataExists())
             {
-                if (view != null)
-                    view.DisplayMessage("Save first the new Boy",
-                                    Definitions.MESSAGEBOXTITLE.WARNING);
-                return;
+                //if (view != null)
+                //    view.DisplayMessage("Save first the new Boy",
+                //                    Definitions.MESSAGEBOXTITLE.WARNING);
+                RemoveNewAdded();
             }
 
             AddNew();
-            detailsView.LoadDetails(selectedDetail, _selectedFamily);
+            detailsViewForm.LoadDetails(selectedDetail, _selectedFamily);
+
         }
 
         private void AddNew()
@@ -117,11 +119,8 @@ namespace DatingManagement
                 if (view != null)
                     view.DisplayMessage(string.Format(Definitions.Messages.CANBEDELETED, "Boy"),
                         Definitions.MESSAGEBOXTITLE.ERROR);
-
             }
         }
-
-
 
         private bool IsUnsavedDataExists()
         {
@@ -134,6 +133,7 @@ namespace DatingManagement
             {
                 if (GoodToCalculate(true))
                 {
+
                     this.Dataclass.SubmitChanges();
                     if (view != null)
                         view.DisplayMessage(Definitions.Message.SAVEDSUCCESSFULLYMSG, Definitions.MESSAGEBOXTITLE.SUCCESS);
@@ -187,7 +187,7 @@ namespace DatingManagement
             {
                 Boy deletedObject = (Boy)q.First();
 
-                Dataclass.Boys.DeleteOnSubmit(deletedObject);
+                Dataclass.Families.DeleteOnSubmit(_selectedFamily);
 
                 BoyList.Remove(deletedObject);
             }
@@ -212,7 +212,7 @@ namespace DatingManagement
             detailsView.LoadFormLayout();
             detailsView.SetPermissions();
             detailsView.FillFamilyList("Name", "FathersID", Dataclass.Families.ToList());
- 
+
 
             detailsView.LoadRegions(Dataclass.Regions.OrderBy(S => S.Region1).Select(R => R.Region1).Distinct().ToList());
             detailsView.LoadCountries(Dataclass.Countries.OrderBy(S => S.Country1).Select(R => R.Country1).Distinct().ToList());
@@ -220,7 +220,7 @@ namespace DatingManagement
             detailsView.LoadYeshiva(Dataclass.Yeshivas.OrderBy(S => S.Yeshiva1).Select(R => R.Yeshiva1).Distinct().ToList());
             detailsView.LoadHeight(Dataclass.Heights.OrderBy(S => S.Height1).Select(R => R.Height1).Distinct().ToList());
             detailsView.LoadHamedresh(Dataclass.BaisHamedreshes.OrderBy(S => S.BaisHamedresh1).Select(R => R.BaisHamedresh1).Distinct().ToList());
-          
+
             // detailsView.LoadBaisHamedresh(Dataclass.BaisHamedreshes.Select(R => R.BaisHamedresh1).Distinct().ToList());
         }
 
@@ -334,12 +334,12 @@ namespace DatingManagement
             detailsView.LoadDetails(selectedDetail, _selectedFamily);
         }
 
-        internal void LoadPopupDetailsForm(Boy detail)
+        internal void LoadPopupDetailsForm(Boy detail, IBoyDetailsView detailsViewForm)
         {
             selectedDetail = detail;
             _selectedFamily = Dataclass.Families.Where(F => F.FathersID == detail.FathersID).First();
 
-            detailsView.LoadDetails(selectedDetail, _selectedFamily);
+            detailsViewForm.LoadDetails(selectedDetail, _selectedFamily);
         }
 
 
