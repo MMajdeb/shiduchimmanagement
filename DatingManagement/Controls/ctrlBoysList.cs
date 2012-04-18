@@ -104,6 +104,7 @@ namespace DatingManagement
             {
                 Boy detail = (Boy)grvList.GetRow(grvList.FocusedRowHandle);
                 presenter.Remove(detail);
+                barButtonItemRefresh.PerformClick();
             }
         }
 
