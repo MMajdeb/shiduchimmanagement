@@ -135,12 +135,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_166B03D237E34DF48C31B25FED3CD984"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_1818968E8921D1CB5EC5D98483FA109A"
         "OwnerKey" = "8:_CAC57E539BE09D276CCF453074A30604"
         "MsmSig" = "8:_UNDEFINED"
@@ -501,12 +495,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_37E21CAB585D48118F5FED04C2F6F49E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_3DBF9EEE6CCEB76A259EC098CDFE5098"
         "OwnerKey" = "8:_A5575B7EF46AF207A94414B4D6329C31"
         "MsmSig" = "8:_UNDEFINED"
@@ -725,12 +713,6 @@
         {
         "MsmKey" = "8:_4E4E180487DD2DD4EB13ED17903D844A"
         "OwnerKey" = "8:_1308E05FB6B548ADB0A2D4968E9E9529"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_519A56BC36E44429B7C422B2E9B21D67"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1293,18 +1275,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B138E356D2D540A8A4BB033276DE70B3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B384F29C71B04AFAA02D11BC7622E7DA"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_B7FACAB52523CAA969963A6A87B0C842"
         "OwnerKey" = "8:_2DD546037D00E7C5C9A9BEA85105BFE6"
         "MsmSig" = "8:_UNDEFINED"
@@ -1401,12 +1371,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C6DC74B154664863A25FB806E6AB8D98"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C96AC07718D7E64245AAEBCB28D260DD"
         "OwnerKey" = "8:_0ED5C8231EDFDE55DF1B77D77D3657C7"
         "MsmSig" = "8:_UNDEFINED"
@@ -1415,12 +1379,6 @@
         {
         "MsmKey" = "8:_C96AC07718D7E64245AAEBCB28D260DD"
         "OwnerKey" = "8:_1308E05FB6B548ADB0A2D4968E9E9529"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C9E474F0BE91478DB298DFC8B1FA6BD8"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1583,12 +1541,6 @@
         {
         "MsmKey" = "8:_FBA1F9DCD8EA0E785278328BC0A33764"
         "OwnerKey" = "8:_1308E05FB6B548ADB0A2D4968E9E9529"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FE4DE91595224EE19476D5CDCD697380"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -2297,26 +2249,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_166B03D237E34DF48C31B25FED3CD984"
-            {
-            "SourcePath" = "8:..\\ref\\sqlcese35.dll"
-            "TargetName" = "8:sqlcese35.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1818968E8921D1CB5EC5D98483FA109A"
             {
             "AssemblyRegister" = "3:1"
@@ -2698,26 +2630,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_37E21CAB585D48118F5FED04C2F6F49E"
-            {
-            "SourcePath" = "8:..\\ref\\sqlceme35.dll"
-            "TargetName" = "8:sqlceme35.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3DBF9EEE6CCEB76A259EC098CDFE5098"
             {
             "AssemblyRegister" = "3:1"
@@ -2902,26 +2814,6 @@
             "Register" = "3:1"
             "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_519A56BC36E44429B7C422B2E9B21D67"
-            {
-            "SourcePath" = "8:..\\ref\\sqlcecompact35.dll"
-            "TargetName" = "8:sqlcecompact35.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_612296BC3CA15F2CDC6F1A6400D3A3C4"
@@ -3728,46 +3620,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B138E356D2D540A8A4BB033276DE70B3"
-            {
-            "SourcePath" = "8:..\\ref\\sqlceca35.dll"
-            "TargetName" = "8:sqlceca35.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B384F29C71B04AFAA02D11BC7622E7DA"
-            {
-            "SourcePath" = "8:..\\ref\\sqlceer35EN.dll"
-            "TargetName" = "8:sqlceer35EN.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B7FACAB52523CAA969963A6A87B0C842"
             {
             "AssemblyRegister" = "3:1"
@@ -3974,26 +3826,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C6DC74B154664863A25FB806E6AB8D98"
-            {
-            "SourcePath" = "8:..\\DatingManagement\\shiduchim.sdf"
-            "TargetName" = "8:shiduchim.sdf"
-            "Tag" = "8:"
-            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C96AC07718D7E64245AAEBCB28D260DD"
             {
             "AssemblyRegister" = "3:1"
@@ -4023,26 +3855,6 @@
             "Register" = "3:1"
             "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C9E474F0BE91478DB298DFC8B1FA6BD8"
-            {
-            "SourcePath" = "8:..\\ref\\sqlceoledb35.dll"
-            "TargetName" = "8:sqlceoledb35.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CAC57E539BE09D276CCF453074A30604"
@@ -4373,26 +4185,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FE4DE91595224EE19476D5CDCD697380"
-            {
-            "SourcePath" = "8:..\\ref\\sqlceqp35.dll"
-            "TargetName" = "8:sqlceqp35.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_809EEAEFAFE549EEAA1E79A33DA9DEAB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
@@ -4450,7 +4242,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup"
         "ProductCode" = "8:{0431A0D4-1CDA-460C-BF47-AF3DCEC24157}"
-        "PackageCode" = "8:{0883227D-167A-4D6F-B014-F3276FAA888C}"
+        "PackageCode" = "8:{5F19F0FF-D1BA-45BF-86A9-1A6E0378071E}"
         "UpgradeCode" = "8:{A1DEEEBF-3EBB-471F-A59E-0212A15F7262}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
