@@ -184,7 +184,7 @@ namespace DatingManagement
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(894, 40);
+            this.barDockControlTop.Size = new System.Drawing.Size(894, 42);
             // 
             // barDockControlBottom
             // 
@@ -197,15 +197,15 @@ namespace DatingManagement
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 549);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 547);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(894, 40);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 549);
+            this.barDockControlRight.Location = new System.Drawing.Point(894, 42);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 547);
             // 
             // dockManager1
             // 
@@ -239,10 +239,9 @@ namespace DatingManagement
             // 
             // dockPanel1_Container
             // 
-            this.dockPanel1_Container.Controls.Add(this.ctrlGirlDetails1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(886, 0);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(888, 0);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // ctrlGirlDetails1
@@ -252,7 +251,7 @@ namespace DatingManagement
             this.ctrlGirlDetails1.Location = new System.Drawing.Point(0, 0);
             this.ctrlGirlDetails1.Name = "ctrlGirlDetails1";
             this.ctrlGirlDetails1.Presenter = null;
-            this.ctrlGirlDetails1.Size = new System.Drawing.Size(886, 0);
+            this.ctrlGirlDetails1.Size = new System.Drawing.Size(888, 0);
             this.ctrlGirlDetails1.TabIndex = 0;
             // 
             // repositoryItemDateEdit1
@@ -267,14 +266,14 @@ namespace DatingManagement
             // grcList
             // 
             this.grcList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grcList.Location = new System.Drawing.Point(0, 40);
+            this.grcList.Location = new System.Drawing.Point(0, 42);
             this.grcList.MainView = this.grvList;
             this.grcList.Name = "grcList";
             this.grcList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
             this.repositoryItemCheckEdit1});
             this.grcList.ShowOnlyPredefinedDetails = true;
-            this.grcList.Size = new System.Drawing.Size(894, 522);
+            this.grcList.Size = new System.Drawing.Size(894, 520);
             this.grcList.TabIndex = 6;
             this.grcList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvList});
@@ -440,14 +439,14 @@ namespace DatingManagement
             // gridControlLite
             // 
             this.gridControlLite.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlLite.Location = new System.Drawing.Point(0, 40);
+            this.gridControlLite.Location = new System.Drawing.Point(0, 42);
             this.gridControlLite.MainView = this.gridView1;
             this.gridControlLite.Name = "gridControlLite";
             this.gridControlLite.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit2,
             this.repositoryItemCheckEdit2});
             this.gridControlLite.ShowOnlyPredefinedDetails = true;
-            this.gridControlLite.Size = new System.Drawing.Size(894, 522);
+            this.gridControlLite.Size = new System.Drawing.Size(894, 520);
             this.gridControlLite.TabIndex = 12;
             this.gridControlLite.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

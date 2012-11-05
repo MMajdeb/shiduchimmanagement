@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace DatingManagement
 {
@@ -19,9 +20,8 @@ namespace DatingManagement
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Blue");
             DevExpress.Skins.SkinManager.EnableFormSkins();
 
-
-            DataLayer.ConnectionString = @"Data Source=|DataDirectory|\shiduchim.sdf;Max Database Size=2047";
-    
+            DataLayer.ConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
+                  
             Application.Run(new MainForm());
         }
     }

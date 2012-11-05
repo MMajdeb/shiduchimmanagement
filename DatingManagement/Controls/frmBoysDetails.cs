@@ -41,7 +41,6 @@ namespace DatingManagement
 
         }
 
-
         #region IRoomDetailsView Members
 
         public void LoadFormLayout()
@@ -76,7 +75,6 @@ namespace DatingManagement
             this.boyBindingSource.Add(detailObject);
             dataLayoutControl1.DataSource = detailObject;
 
-
             isLoading = false;
         }
 
@@ -95,7 +93,6 @@ namespace DatingManagement
         public event RefreshDetailFormEvent RefreshDetailFormEvent;
 
         #endregion
-
 
         private void barButtonItemSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -134,7 +131,6 @@ namespace DatingManagement
         {
             isChanged = true;
         }
-
 
         public void SetPermissions()
         {
@@ -205,7 +201,6 @@ namespace DatingManagement
             YeshivaComboBoxEdit.Properties.Items.AddRange(list);
         }
 
-
         private void BirthDateDateEdit_EditValueChanged(object sender, EventArgs e)
         {
             presenter.UpdateAge((DateTime)BirthDateDateEdit.EditValue);
@@ -239,7 +234,6 @@ namespace DatingManagement
             frm.ShowDialog();
         }
 
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             presenter.RemoveNewAdded();
@@ -253,10 +247,8 @@ namespace DatingManagement
             {
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
                 this.Close();
-
             }
         }
-
 
         public void ShowPanel()
         {
@@ -283,12 +275,10 @@ namespace DatingManagement
             BaisHamedreshComboBoxEdit.Properties.Items.AddRange(list);
         }
 
-
         public void FillFamilyList(string p, string p_2, List<Family> list)
         {
             Utils.LoadLookupList(ref FathersIDLookUpEdit, p, p_2, list, false);
         }
-
 
         private void CountryComboBoxEdit_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -319,6 +309,6 @@ namespace DatingManagement
             if (isLoading) return;
             presenter.LoadFamilyDetails((int)FathersIDLookUpEdit.EditValue);
         }
-         
+
     }
 }
