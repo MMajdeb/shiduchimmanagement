@@ -53,13 +53,13 @@ namespace DatingManagement
 
         public void Add()
         {
-            if (IsUnsavedDataExists())
-            {
-                if (view != null)
-                    view.DisplayMessage("Save first the new family",
-                                    Definitions.MESSAGEBOXTITLE.WARNING);
-                return;
-            }
+            //if (IsUnsavedDataExists())
+            //{
+            //    if (view != null)
+            //        view.DisplayMessage("Save first the new family",
+            //                        Definitions.MESSAGEBOXTITLE.WARNING);
+            //    return;
+            //}
 
             AddNew();
             view.SetDataSource(FamilyList, true);

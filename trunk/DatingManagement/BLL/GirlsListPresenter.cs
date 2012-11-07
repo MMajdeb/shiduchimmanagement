@@ -43,7 +43,6 @@ namespace DatingManagement
 
             view.SetDataSource(GirlList, false);
 
-
             view.SetPermission();
 
             view.LoadDetails();
@@ -55,10 +54,10 @@ namespace DatingManagement
             if (IsUnsavedDataExists())
             {
                 if (view != null)
-                    view.DisplayMessage("Save first the new Girl",
-                                    Definitions.MESSAGEBOXTITLE.WARNING);
+                    view.DisplayMessage("Save first the new Girl",  Definitions.MESSAGEBOXTITLE.WARNING);
                 return;
             }
+
             Girl cs = AddNewGirl();
             cs.FathersID = Family.FathersID;
             this.Dataclass.Girls.InsertOnSubmit(cs);

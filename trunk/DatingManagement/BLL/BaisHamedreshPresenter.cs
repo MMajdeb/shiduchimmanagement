@@ -20,9 +20,7 @@ namespace DatingManagement
         public BaisHamedreshPresenter(IBaisHamedreshsView _view)
             : base(_view)
         {
-            view = _view;
-
-           
+            view = _view;           
         }
 
         public void HandleLoadForm()
@@ -36,11 +34,11 @@ namespace DatingManagement
         public void Add()
         {
 
-            if (IsUnsavedDataExists())
-            {
-                view.DisplayMessage("Save first the Bais Hamedresh", Definitions.MESSAGEBOXTITLE.WARNING);
-                return;
-            }
+            //if (IsUnsavedDataExists())
+            //{
+            //    view.DisplayMessage("Save first the Bais Hamedresh", Definitions.MESSAGEBOXTITLE.WARNING);
+            //    return;
+            //}
 
             AddNew();
             view.SetDataSource(BaisHamedreshList, true);
