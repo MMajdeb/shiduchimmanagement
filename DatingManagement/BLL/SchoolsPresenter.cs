@@ -34,12 +34,11 @@ namespace DatingManagement
 
         public void Add()
         {
-
-            if (IsUnsavedDataExists())
-            {
-                view.DisplayMessage("Save first the School", Definitions.MESSAGEBOXTITLE.WARNING);
-                return;
-            }
+            //if (IsUnsavedDataExists())
+            //{
+            //    view.DisplayMessage("Save first the School", Definitions.MESSAGEBOXTITLE.WARNING);
+            //    return;
+            //}
 
             AddNew();
             view.SetDataSource(SchoolList, true);

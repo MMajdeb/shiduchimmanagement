@@ -35,11 +35,11 @@ namespace DatingManagement
         public void Add()
         {
 
-            if (IsUnsavedDataExists())
-            {
-                view.DisplayMessage("Save first the Yeshiva", Definitions.MESSAGEBOXTITLE.WARNING);
-                return;
-            }
+            //if (IsUnsavedDataExists())
+            //{
+            //    view.DisplayMessage("Save first the Yeshiva", Definitions.MESSAGEBOXTITLE.WARNING);
+            //    return;
+            //}
 
             AddNew();
             view.SetDataSource(YeshivaList, true);

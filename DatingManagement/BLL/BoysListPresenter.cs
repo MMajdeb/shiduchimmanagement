@@ -76,13 +76,13 @@ namespace DatingManagement
 
         public void Add(IBoyDetailsView detailsViewForm)
         {
-            if (IsUnsavedDataExists())
-            {
-                //if (view != null)
-                //    view.DisplayMessage("Save first the new Boy",
-                //                    Definitions.MESSAGEBOXTITLE.WARNING);
-                RemoveNewAdded();
-            }
+            //if (IsUnsavedDataExists())
+            //{
+            //    //if (view != null)
+            //    //    view.DisplayMessage("Save first the new Boy",
+            //    //                    Definitions.MESSAGEBOXTITLE.WARNING);
+            //    RemoveNewAdded();
+            //}
 
             AddNew();
             detailsViewForm.LoadDetails(selectedDetail, _selectedFamily);
